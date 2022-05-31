@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Marquee from "react-fast-marquee";
 
 const SliderBlock = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const SliderBlock = styled.div`
 `;
 
 const SliderTitle = styled.span`
-  font-family: 'SF Pro Display';
+  font-family: 'SF Pro Display', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
@@ -39,47 +40,21 @@ const SliderIconBlock = styled.div`
   margin-right: 70px;
 `;
 
-const TickerWrapperFirstHalf = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  animation: ticker 30s infinite linear forwards;
-
-
-  @keyframes ticker {
-    0% {
-      transform: translate(100%, 0);
-    }
-
-    50% {
-      transform: translate(0, 0);
-    }
-
-    100% {
-      transform: translate(-100%, 0);
-    }
-  }
-`;
-
-
-const Slider = ({ sliderContent }) => {
+const Slider = ({sliderContent}) => {
   return (
-    <SliderBlock>
-      <TickerWrapperFirstHalf>
+    <Marquee gradient={false}>
+      <SliderBlock>
         {sliderContent.map(item => {
           if (item === 'icon') {
             return <SliderIconBlock ket={item}><SliderIcon/></SliderIconBlock>
           }
-          if (item.name === 'img'){
-            return <SliderImg key={item.img} src={`./${item.img}`} />
+          if (item.name === 'img') {
+            return <SliderImg key={item.img} src={`./${item.img}`}/>
           }
           return <SliderTitle key={item}>{item}</SliderTitle>
         })}
-      </TickerWrapperFirstHalf>
-    </SliderBlock>
+      </SliderBlock>
+    </Marquee>
   )
 }
 
