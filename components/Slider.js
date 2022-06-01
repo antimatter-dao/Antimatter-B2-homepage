@@ -29,10 +29,6 @@ const SliderIcon = styled.span`
   transform: rotate(-45deg);
 `;
 
-const SliderImg = styled.img`
-  height: 82px;
-`;
-
 const SliderIconBlock = styled.div`
   display: flex;
   align-items: center;
@@ -42,14 +38,11 @@ const SliderIconBlock = styled.div`
 
 const Slider = ({sliderContent}) => {
   return (
-    <Marquee gradient={false} speed={90}>
+    <Marquee gradient={false} speed={90} style={{ background: '#000'}}>
       <SliderBlock>
         {sliderContent.map(item => {
           if (item === 'icon') {
             return <SliderIconBlock ket={item}><SliderIcon/></SliderIconBlock>
-          }
-          if (item.name === 'img') {
-            return <SliderImg key={item.img} src={`./${item.img}`}/>
           }
           return <SliderTitle key={item}>{item}</SliderTitle>
         })}

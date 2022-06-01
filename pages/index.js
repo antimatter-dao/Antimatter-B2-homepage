@@ -20,10 +20,6 @@ const Wrapper = styled.div`
 
 export default function Home() {
   const sliderContent = ['Scalability', 'icon', 'Financial Infrastructure', 'icon', 'Security', 'icon', 'Ecosystem', 'icon', 'Financial support', 'icon']
-  const partners = [{name: 'img', img: 'img1.jpg'}, {name: 'img', img: 'img2.jpg'}, {
-    name: 'img',
-    img: 'img3.jpg'
-  }, {name: 'img', img: 'img4.jpg'}, {name: 'img', img: 'img5.jpg'}, {name: 'img', img: 'img6.jpg'}]
 
   return (
       <Wrapper>
