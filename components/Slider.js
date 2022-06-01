@@ -42,7 +42,7 @@ const SliderIconBlock = styled.div`
 
 const Slider = ({sliderContent}) => {
   return (
-    <Marquee gradient={false}>
+    <Marquee gradient={false} speed={90}>
       <SliderBlock>
         {sliderContent.map(item => {
           if (item === 'icon') {

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Lottie from "lottie-react";
 
 import Button from "../../shared/Button/Button";
-import Chart from '../../../public/chart.json'
+import Chart from '../../../public/сhart.json'
 
 const Wrapper = styled.div`
   display: flex;
@@ -62,7 +62,7 @@ const CustomButton = styled.div`
 `
 
 
-const ThirdBlock = () => (
+const AboutB2 = () => (
   <Wrapper>
     <Content>
       <ContentInfo>
@@ -80,11 +80,11 @@ const ThirdBlock = () => (
       </ContentInfo>
       <WrapperImg>
         <ContainerImg>
-          <Lottie animationData={Chart}/>;
+          <Lottie animationData={Chart} autoplay={true} loop={true}/>;
         </ContainerImg>
       </WrapperImg>
     </Content>
   </Wrapper>
 )
 
-export default ThirdBlock
+export default AboutB2

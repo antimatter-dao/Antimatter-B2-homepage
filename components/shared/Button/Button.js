@@ -24,7 +24,7 @@ const sizesMap = {
 
 const themesMap = {
   [BUTTON_THEME.YELLOW]: css`
-    background: #F8D448;
+    background: linear-gradient(90deg, #F8D448 0%, #F8D448 100%);
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
@@ -34,14 +34,31 @@ const themesMap = {
     text-align: center;
     color: #1B1A1F;
     border: none;
+    
 
     &:hover {
-      background-position: 100% 0;
-      moz-transition: all 5s ease-in-out;
-      -o-transition: all 5s ease-in-out;
-      -webkit-transition: all 5s ease-in-out;
-      transition: all 5s ease-in-out;
-      background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
+      
+      animation: change-color .8s ease-in-out infinite;
+      animation-direction: alternate;
+      animation-fill-mode: both;
+    }
+
+    @keyframes change-color {
+      0% {
+        background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
+      }
+      25% {
+        background: linear-gradient(90deg, #8FC147 0%, #F8D448 30%, #8FC147 48.75% ,#31B047 100%);
+      }
+      50% {
+        background: linear-gradient(90deg, #31B047 0%, #F8D448 48.75%, #31B047 100%);
+      }
+      75% {
+        background: linear-gradient(90deg, #31B047 0%, #8FC147 30% ,#F8D448 70%, #31B047 100%);
+      }
+      100% {
+        background: linear-gradient(90deg, #31B047 0%, #8FC147 48.75%, #F8D448 100%);
+      }
     }
   `,
 
