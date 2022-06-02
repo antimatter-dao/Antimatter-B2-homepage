@@ -10,6 +10,7 @@ export const BUTTON_THEME = {
 export const BUTTON_SIZE = {
   SMALL: "small",
   LARGE: "large",
+  MEDIUM: "medium",
 }
 
 const sizesMap = {
@@ -19,6 +20,10 @@ const sizesMap = {
 
   [BUTTON_SIZE.LARGE]: css`
     padding: 19px 40px;
+  `,
+
+  [BUTTON_SIZE.MEDIUM]: css`
+    padding: 20px 24px;
   `,
 };
 
@@ -41,24 +46,6 @@ const themesMap = {
       animation: change-color .8s ease-in-out infinite;
       animation-direction: alternate;
       animation-fill-mode: both;
-    }
-
-    @keyframes change-color {
-      0% {
-        background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
-      }
-      25% {
-        background: linear-gradient(90deg, #8FC147 0%, #F8D448 30%, #8FC147 48.75% ,#31B047 100%);
-      }
-      50% {
-        background: linear-gradient(90deg, #31B047 0%, #F8D448 48.75%, #31B047 100%);
-      }
-      75% {
-        background: linear-gradient(90deg, #31B047 0%, #8FC147 30% ,#F8D448 70%, #31B047 100%);
-      }
-      100% {
-        background: linear-gradient(90deg, #31B047 0%, #8FC147 48.75%, #F8D448 100%);
-      }
     }
   `,
 

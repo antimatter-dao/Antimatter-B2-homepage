@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import Lottie from "lottie-react";
+
+import Vector from "../../../public/icon-vector.svg";
+import Pig from "../../../public/pig.json";
 
 const Wrapper = styled.div`
   display: flex;
@@ -39,9 +43,28 @@ const Block = styled.div`
   background: #121212;
   margin-right: 20px;
   margin-bottom: 20px;
+  cursor: pointer;
+  
+  &:hover{
+    background: #F8D448;
+    transition: .7s;
+   
+    h3{
+      color: #121212 !important;
+    }
+    span{
+      color: #121212 !important;
+    }
+    svg{
+      circle{
+        stroke: #000000
+      }
+      path{
+        stroke: #000000
+      }
+    }
+  }
 `;
-
-const Icon = styled.img``;
 
 const SubTitle = styled.h3`
   font-family: 'SF Pro Display', sans-serif;
@@ -52,6 +75,9 @@ const SubTitle = styled.h3`
   color: #FFFFFF;
   padding-bottom: 43px;
   margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 const Description = styled.span`
@@ -70,36 +96,39 @@ const AntimatterDapps = () => {
       <Title>Built-in Antimatter DApps</Title>
       <Blocks>
         <Block>
-          <SubTitle>Quanto Trading</SubTitle>
+          <SubTitle>Quanto Trading <Vector /></SubTitle>
           <Description>
             Cross-currency derivatives platform. Options are settled in another currency than the underlying asset.
           </Description>
         </Block>
         <Block>
-          <SubTitle>Bull & Bear</SubTitle>
+          <SubTitle>
+            Bull & Bear <Vector />
+          </SubTitle>
           <Description>
             Tokenized perpetual options.
             No forced liquidation, non-oracle based.
           </Description>
         </Block>
         <Block>
-          <SubTitle>DAO</SubTitle>
+          <SubTitle>DAO <Vector /></SubTitle>
           <Description>
             A club for derivatives fanatics. Share your ideas and collaborate. On-chain governance.
           </Description>
         </Block>
         <Block>
-          <SubTitle>Structured</SubTitle>
+          <SubTitle>Structured <Vector /></SubTitle>
           <Description>
             A platform for structured products. Earn yield based on underlying assets.
           </Description>
         </Block>
         <Block>
-          <SubTitle>Nonfungible</SubTitle>
+          <SubTitle>Nonfungible <Vector /></SubTitle>
           <Description>
             NFTs as a vehicle or container to facilitate financial activities.
           </Description>
         </Block>
+        <Lottie animationData={Pig} autoplay={true} loop={true}/>
       </Blocks>
     </Content>
   </Wrapper>)

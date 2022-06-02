@@ -13,5 +13,51 @@ a {
 
 * {
   box-sizing: border-box;
-  font-family: 'SF Pro Display', sans-serif
+  font-family: 'SF Pro Display', sans-serif;
+
+}
+
+@keyframes bounce-and-scale {
+  from {
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+  to {
+    transform: translate3d(0, 20px, 0) scale(1.1, 1);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 20px, 0);
+  }
+}
+
+@keyframes change-icon-color {
+  0% {
+    background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, #31B047 0%, #8FC147 48.75%, #F8D448 100%);
+  }
+}
+
+@keyframes change-color {
+  0% {
+    background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
+  }
+  25% {
+    background: linear-gradient(90deg, #8FC147 0%, #F8D448 30%, #8FC147 48.75% ,#31B047 100%);
+  }
+  50% {
+    background: linear-gradient(90deg, #31B047 0%, #F8D448 48.75%, #31B047 100%);
+  }
+  75% {
+    background: linear-gradient(90deg, #31B047 0%, #8FC147 30% ,#F8D448 70%, #31B047 100%);
+  }
+  100% {
+    background: linear-gradient(90deg, #31B047 0%, #8FC147 48.75%, #F8D448 100%);
+  }
 }

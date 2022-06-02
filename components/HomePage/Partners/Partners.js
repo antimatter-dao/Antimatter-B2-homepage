@@ -1,11 +1,9 @@
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
-import Partner1 from "../../../public/partners1.svg";
 import Partner2 from "../../../public/partners2.svg";
 import Partner3 from "../../../public/partners3.svg";
 import Partner4 from "../../../public/partners4.svg";
 import Partner5 from "../../../public/partners5.svg";
-import Partner6 from "../../../public/partners6.svg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -47,7 +45,7 @@ const Partners = () => {
     <Marquee gradient={false} speed={90}>
       <Container>
         <ImgContainer>
-          <Partner1 />
+          <img src="./partners-1.svg" alt="partners"/>
         </ImgContainer>
         <ImgContainer>
           <Partner2 />
@@ -62,7 +60,7 @@ const Partners = () => {
           <Partner5 />
         </ImgContainer>
         <ImgContainer paddingBottom={'18px'}>
-          <Partner6 />
+          <img src="./partners-6.svg" alt="partners"/>
         </ImgContainer>
       </Container>
     </Marquee>

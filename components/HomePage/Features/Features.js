@@ -1,9 +1,13 @@
 import styled from "styled-components";
 
+import Zap from "../../../public/zap.svg";
+import Lock from "../../../public/lock.svg";
+import LinkSolid from "../../../public/linkSolid.svg";
+import Arc from "../../../public/arc.svg";
+
 const Wrapper = styled.div`
   display: flex;
   margin: 120px 0;
-  
 `;
 
 const Content = styled.div`
@@ -28,6 +32,7 @@ const Title = styled.h1`
 `;
 
 const Block = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   border: 1px solid #121212;
@@ -43,7 +48,22 @@ const Block = styled.div`
   }
 `;
 
-const Icon = styled.img``;
+const IconBlock = styled.div`
+  width: 60px;
+  height: 60px;
+  background: #31B047;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+
+    animation: change-icon-color 1s ease-in-out infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+  }
+`;
 
 const SubTitle = styled.h3`
   font-family: 'SF Pro Display', sans-serif;
@@ -63,6 +83,17 @@ const Description = styled.span`
   line-height: 145%;
   color: #1B1A1F;`;
 
+const AnimationBlock = styled.div`
+  position: absolute;
+  top: -111px;
+  right: 20px;
+
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+`
+
 const Features = () => {
   return(
     <Wrapper>
@@ -70,25 +101,34 @@ const Features = () => {
         <Title>Features</Title>
         <Blocks>
           <Block>
-            <Icon />
+            <IconBlock>
+              <Zap />
+            </IconBlock>
             <SubTitle>High-speed Transactions</SubTitle>
             <Description>
               B2 is designed for very high transaction outputs. This is achieved by having a smaller set of validators
             </Description>
           </Block>
           <Block>
-            <Icon />
+            <IconBlock>
+              <LinkSolid />
+            </IconBlock>
             <SubTitle>On-chain Governance</SubTitle>
             <Description>
               A governance system let's B2 validator owners in the chain create new proposals and vote for them. Voting power is distributed based on the total delegated amount to the validator.
             </Description>
           </Block>
           <Block>
-            <Icon />
+            <IconBlock>
+              <Lock />
+            </IconBlock>
             <SubTitle>Data Storage</SubTitle>
             <Description>
               B2 serves as a data storage of our Dapps. This way user records and transactions are stored in a decentralized way and we stay in sync with our multi-chain applications
             </Description>
+            <AnimationBlock>
+              <Arc />
+            </AnimationBlock>
           </Block>
         </Blocks>
       </Content>

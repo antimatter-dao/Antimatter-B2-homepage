@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Lottie from "lottie-react";
+
 import Guy1 from "../../../public/guy1.json";
 import Guy2 from "../../../public/guy2.json";
 import Guy3 from "../../../public/guy3.json";

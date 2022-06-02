@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import Ladder from "../../../public/ladder.svg";
+import Polyhedron from "../../../public/polyhedron.svg";
+
 const Content = styled.div`
   display: flex;
 `;
@@ -15,6 +18,7 @@ const InfoBlock = styled.div`
   min-height: 214px;
   max-width: 285px;
   margin-right: 20px;
+  position: relative;
 `;
 
 const InfoBlockTitle = styled.span`
@@ -43,7 +47,29 @@ const Wrapper = styled.div`
   margin-top: 120px;
 `;
 
-const SecondBlock = () => (
+const PolyhedronIcon = styled.div`
+  position: absolute;
+  top: -34px;
+  right: 50px;
+
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+`;
+
+const LadderIcon = styled.div`
+  position: absolute;
+  bottom: -64px;
+  right: 30px;
+  
+  animation: bounce 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+`;
+
+const InformationAboutB2 = () => (
   <Wrapper>
     <Content>
       <InfoBlock>
@@ -51,6 +77,9 @@ const SecondBlock = () => (
         <InfoBlockDescription>
           Increased throughput and low transaction fees
         </InfoBlockDescription>
+        <LadderIcon>
+          <Ladder />
+        </LadderIcon>
       </InfoBlock>
       <InfoBlock>
         <InfoBlockTitle>Financial Infrastructure</InfoBlockTitle>
@@ -69,8 +98,11 @@ const SecondBlock = () => (
         <InfoBlockDescription>
           Powering an ecosystem of Financial applications and Web3 Consumer apps
         </InfoBlockDescription>
+        <PolyhedronIcon>
+          <Polyhedron />
+        </PolyhedronIcon>
       </InfoBlock>
     </Content>
   </Wrapper>
 )
-export default SecondBlock
+export default InformationAboutB2
