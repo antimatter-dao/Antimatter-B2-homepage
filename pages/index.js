@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import {ParallaxProvider} from 'react-scroll-parallax';
+
 import Slider from "../components/Slider";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -22,19 +24,21 @@ export default function Home() {
   const sliderContent = ['Scalability', 'icon', 'Financial Infrastructure', 'icon', 'Security', 'icon', 'Ecosystem', 'icon', 'Financial support', 'icon']
 
   return (
+    <ParallaxProvider>
       <Wrapper>
-        <Header />
-        <MainBlock />
+        <Header/>
+        <MainBlock/>
         <Slider sliderContent={sliderContent}/>
-        <InformationAboutB2 />
-        <AboutB2 />
-        <Features />
-        <AntimatterDapps />
-        <BackedBy />
-        <Partners />
-        <Blog />
-        <Footer />
+        <InformationAboutB2/>
+        <AboutB2/>
+        <Features/>
+        <AntimatterDapps/>
+        <BackedBy/>
+        <Partners/>
+        <Blog/>
+        <Footer/>
       </Wrapper>
+    </ParallaxProvider>
   );
 }
 

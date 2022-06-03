@@ -1,7 +1,10 @@
+import {useEffect, useRef} from 'react'
 import styled from "styled-components";
 
 import Ladder from "../../../public/ladder.svg";
 import Polyhedron from "../../../public/polyhedron.svg";
+import useIntersectionObserver from "../../../hook/useIntersectionObserver";
+import { Parallax ,useParallax} from "react-scroll-parallax";
 
 const Content = styled.div`
   display: flex;
@@ -51,58 +54,65 @@ const PolyhedronIcon = styled.div`
   position: absolute;
   top: -34px;
   right: 50px;
-
-  animation: bounce 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
+  
+  transition: 4s;
+  transform: translate(${props => props?.isVisible ? "0, 17px": "0px 0px"});
 `;
 
 const LadderIcon = styled.div`
   position: absolute;
   bottom: -64px;
   right: 30px;
-  
-  animation: bounce 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
+
+  transition: 4s;
+  transform: translate(${props => props?.isVisible ? "0, 17px": "0px 0px"});
 `;
 
-const InformationAboutB2 = () => (
-  <Wrapper>
-    <Content>
-      <InfoBlock>
-        <InfoBlockTitle>Scalability</InfoBlockTitle>
-        <InfoBlockDescription>
-          Increased throughput and low transaction fees
-        </InfoBlockDescription>
-        <LadderIcon>
-          <Ladder />
-        </LadderIcon>
-      </InfoBlock>
-      <InfoBlock>
-        <InfoBlockTitle>Financial Infrastructure</InfoBlockTitle>
-        <InfoBlockDescription>
-          B2 is optimized to facilitate financial DApps
-        </InfoBlockDescription>
-      </InfoBlock>
-      <InfoBlock>
-        <InfoBlockTitle>Security</InfoBlockTitle>
-        <InfoBlockDescription>
-          A set of community-owned validators validate transactions on the blockchain
-        </InfoBlockDescription>
-      </InfoBlock>
-      <InfoBlock>
-        <InfoBlockTitle>Ecosystem</InfoBlockTitle>
-        <InfoBlockDescription>
-          Powering an ecosystem of Financial applications and Web3 Consumer apps
-        </InfoBlockDescription>
-        <PolyhedronIcon>
-          <Polyhedron />
-        </PolyhedronIcon>
-      </InfoBlock>
-    </Content>
-  </Wrapper>
-)
+const InformationAboutB2 = () => {
+  const parallaxLadder = useParallax({
+    translateY: [-30, 10],
+    speed: 10
+  });
+  const parallaxPolyhedron = useParallax({
+    translateY: [-30, 60],
+    speed: -1000
+  });
+
+  return (
+    <Wrapper>
+      <Content>
+        <InfoBlock>
+          <InfoBlockTitle>Scalability</InfoBlockTitle>
+          <InfoBlockDescription>
+            Increased throughput and low transaction fees
+          </InfoBlockDescription>
+            <LadderIcon ref={parallaxLadder.ref} >
+              <Ladder/>
+            </LadderIcon>
+        </InfoBlock>
+        <InfoBlock>
+          <InfoBlockTitle>Financial Infrastructure</InfoBlockTitle>
+          <InfoBlockDescription>
+            B2 is optimized to facilitate financial DApps
+          </InfoBlockDescription>
+        </InfoBlock>
+        <InfoBlock>
+          <InfoBlockTitle>Security</InfoBlockTitle>
+          <InfoBlockDescription>
+            A set of community-owned validators validate transactions on the blockchain
+          </InfoBlockDescription>
+        </InfoBlock>
+        <InfoBlock>
+          <InfoBlockTitle>Ecosystem</InfoBlockTitle>
+          <InfoBlockDescription>
+            Powering an ecosystem of Financial applications and Web3 Consumer apps
+          </InfoBlockDescription>
+          <PolyhedronIcon ref={parallaxPolyhedron.ref}>
+            <Polyhedron/>
+          </PolyhedronIcon>
+        </InfoBlock>
+      </Content>
+    </Wrapper>
+  )
+}
 export default InformationAboutB2

@@ -43,7 +43,7 @@ const themesMap = {
 
     &:hover {
       
-      animation: change-color .8s ease-in-out infinite;
+      animation: change-color 0.9s ease-in-out infinite;
       animation-direction: alternate;
       animation-fill-mode: both;
     }

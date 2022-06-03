@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Lottie from "lottie-react";
 
 import Vector from "../../../public/icon-vector.svg";
-import Pig from "../../../public/pig.json";
+import Pig from "../../../public/AnimationJson/pig.json";
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const Content = styled.div`
 const Blocks = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 233px 233px;
 `;
 
 const Title = styled.h1`
@@ -40,6 +40,7 @@ const Block = styled.div`
   box-sizing: border-box;
   padding: 32px 24px;
   min-width: 387px;
+  max-height: 233px;
   background: #121212;
   margin-right: 20px;
   margin-bottom: 20px;

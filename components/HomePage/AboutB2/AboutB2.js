@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Lottie from "lottie-react";
 
 import Button from "../../shared/Button/Button";
-import Chart from '../../../public/сhart.json'
+import Chart from '../../../public/AnimationJson/сhart.json'
 
 const Wrapper = styled.div`
   display: flex;

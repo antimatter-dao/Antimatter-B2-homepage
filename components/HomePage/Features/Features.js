@@ -1,9 +1,12 @@
+import { useRef } from "react";
 import styled from "styled-components";
 
 import Zap from "../../../public/zap.svg";
 import Lock from "../../../public/lock.svg";
 import LinkSolid from "../../../public/linkSolid.svg";
 import Arc from "../../../public/arc.svg";
+import useIntersectionObserver from "../../../hook/useIntersectionObserver";
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -87,19 +90,20 @@ const AnimationBlock = styled.div`
   position: absolute;
   top: -111px;
   right: 20px;
-
-  animation: bounce 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
+  transition: 4s;
+  transform: translate(${props => props?.isVisible ? "0px, 30px": "0px 0px"});
 `
 
 const Features = () => {
+  const ref = useRef(null)
+  const entry = useIntersectionObserver(ref, {})
+  const isVisible = !!entry?.isIntersecting
+
   return(
     <Wrapper>
       <Content>
         <Title>Features</Title>
-        <Blocks>
+        <Blocks ref={ref}>
           <Block>
             <IconBlock>
               <Zap />
@@ -126,7 +130,7 @@ const Features = () => {
             <Description>
               B2 serves as a data storage of our Dapps. This way user records and transactions are stored in a decentralized way and we stay in sync with our multi-chain applications
             </Description>
-            <AnimationBlock>
+            <AnimationBlock isVisible={isVisible}>
               <Arc />
             </AnimationBlock>
           </Block>

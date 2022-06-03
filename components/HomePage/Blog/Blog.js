@@ -15,10 +15,11 @@ const Container = styled.div`
 `;
 
 const Content = styled.div`
-  display: flex;
+  display: grid;
   width: 100%;
-  justify-content: space-between;
-  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 `;
 
 const BlogContainer = styled.div`
@@ -29,10 +30,6 @@ const BlogContainer = styled.div`
   border-radius: 30px;
 
   flex-direction: column;
-
-  &:nth-child(2) {
-    margin: 0 20px;
-  }
 `;
 
 const HeaderContainer = styled.div`
@@ -142,6 +139,57 @@ const Blog = () => {
           <Button>Open All Articles</Button>
         </HeaderContainer>
         <Content>
+          <BlogContainer>
+            <BlogImg backgroundImg={'blog1.jpg'}/>
+            <BlogInfo>
+              <SubTitle>All Ye Faithful</SubTitle>
+              <Description>
+                Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
+                faithful with FUD in service to their master...
+              </Description>
+              <BlogWrap>
+                <BlogButton>Read More</BlogButton>
+                <BlogDateContainer>
+                  <BlogDate>Oct 14, 2021</BlogDate>
+                  <BlogDateImg src='./bitmex.jpg' />
+                </BlogDateContainer>
+              </BlogWrap>
+            </BlogInfo>
+          </BlogContainer>
+          <BlogContainer>
+            <BlogImg backgroundImg={'blog2.jpg'}/>
+            <BlogInfo>
+              <SubTitle>All Ye Faithful</SubTitle>
+              <Description>
+                Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
+                faithful with FUD in service to their master.
+              </Description>
+              <BlogWrap>
+                <BlogButton>Read More</BlogButton>
+                <BlogDateContainer>
+                  <BlogDate>Oct 14, 2021</BlogDate>
+                  <BlogDateImg src='./bitmex.jpg' />
+                </BlogDateContainer>
+              </BlogWrap>
+            </BlogInfo>
+          </BlogContainer>
+          <BlogContainer>
+            <BlogImg backgroundImg={'blog3.jpg'}/>
+            <BlogInfo>
+              <SubTitle>All Ye Faithful</SubTitle>
+              <Description>
+                Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
+                faithful with FUD in service to their master.
+              </Description>
+              <BlogWrap>
+                <BlogButton>Read More</BlogButton>
+                <BlogDateContainer>
+                  <BlogDate>Oct 14, 2021</BlogDate>
+                  <BlogDateImg src='./bitmex.jpg' />
+                </BlogDateContainer>
+              </BlogWrap>
+            </BlogInfo>
+          </BlogContainer>
           <BlogContainer>
             <BlogImg backgroundImg={'blog1.jpg'}/>
             <BlogInfo>

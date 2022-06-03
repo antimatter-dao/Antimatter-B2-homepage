@@ -26,15 +26,6 @@ a {
   }
 }
 
-@keyframes bounce {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 20px, 0);
-  }
-}
-
 @keyframes change-icon-color {
   0% {
     background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
@@ -46,18 +37,12 @@ a {
 
 @keyframes change-color {
   0% {
-    background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
+    background:  linear-gradient(90deg, #F8D448 0%, #8FC147 35.21%, #74BC47 60.73%, #5BB847 80.52%, #31B047 100%);
   }
-  25% {
-    background: linear-gradient(90deg, #8FC147 0%, #F8D448 30%, #8FC147 48.75% ,#31B047 100%);
-  }
-  50% {
-    background: linear-gradient(90deg, #31B047 0%, #F8D448 48.75%, #31B047 100%);
-  }
-  75% {
-    background: linear-gradient(90deg, #31B047 0%, #8FC147 30% ,#F8D448 70%, #31B047 100%);
+  50%{
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 20.83%, #F8D448 50%, #31B047 100%);;
   }
   100% {
-    background: linear-gradient(90deg, #31B047 0%, #8FC147 48.75%, #F8D448 100%);
+    background: linear-gradient(90deg, #31B047 0%, #5BB847 35.21%, #74BC47 60.73% ,#8FC147 80.52%, #F8D448 100%);
   }
 }
