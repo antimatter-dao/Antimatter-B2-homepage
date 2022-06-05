@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {ParallaxProvider} from 'react-scroll-parallax';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import Slider from "../components/Slider";
 import Header from "../components/Header/Header";

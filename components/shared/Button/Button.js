@@ -5,6 +5,7 @@ export const BUTTON_THEME = {
   YELLOW: "yellow",
   TRANSPARENT: "transparent",
   BORDER: "border",
+  BLACK_BORDER: "black_border",
 }
 
 export const BUTTON_SIZE = {
@@ -60,6 +61,23 @@ const themesMap = {
     line-height: 120%;
     text-align: center;
     color: #F8D448;
+
+    &:hover {
+     
+    }
+  `,
+
+  [BUTTON_THEME.BLACK_BORDER]: css`
+    border: 1px solid #000000;
+    border-radius: 20px;
+    background: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
 
     &:hover {
      

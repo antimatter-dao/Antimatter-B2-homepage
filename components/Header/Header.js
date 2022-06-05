@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Logo from '../../public/logo.svg'
+
 const Wrapper = styled.div`
   display: flex;
   top: 0;
@@ -11,9 +13,23 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const Logo = styled.img``;
+const IconWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+ svg{
+   path{
+     fill: ${props => props?.fill ? '#000000' : '#F8D448'};
+   }
+ }
+`;
 
-const Links = styled.div``;
+const Links = styled.div`
+  a{
+    color: ${props => props?.fill ? '#000000' : '#FFFFFF'} !important;
+  }
+`;
 
 const Link = styled.a`
   font-family: 'Inter', sans-serif;
@@ -21,7 +37,6 @@ const Link = styled.a`
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
-  color: #FFFFFF;
   opacity: 0.8;
   padding-right: 40px;
   
@@ -30,13 +45,17 @@ const Link = styled.a`
   }
 `;
 
-const Header = () => {
+const Header = (props) => {
   return(
     <Wrapper>
-      <Logo src={'./logo.svg'}/>
-      <Links>
-        <Link>Ecosystem</Link>
+      <IconWrapper fill={props.fill}>
+        <Logo />
+      </IconWrapper>
+      <Links fill={props.fill}>
+        <Link href={'/ecosystem'}>Ecosystem</Link>
         <Link>Resources</Link>
+        <Link>Explorer</Link>
+        <Link>Faucet</Link>
         <Link>Contact</Link>
       </Links>
     </Wrapper>
