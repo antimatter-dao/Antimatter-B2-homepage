@@ -39,6 +39,7 @@ const Link = styled.a`
   line-height: 19px;
   opacity: 0.8;
   padding-right: 40px;
+  cursor: pointer;
   
   &:last-child{
     padding-right: 0;

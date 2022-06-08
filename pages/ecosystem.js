@@ -4,6 +4,10 @@ import Header from "../components/Header/Header";
 import MainBlock from "../components/EcosystemPage/MainBlock/MainBlock";
 import Footer from "../components/Footer/Footer";
 import Slide from "../components/EcosystemPage/Slide/Slide";
+import Candles from '../public/candles.svg'
+import {WithScrollFreezing} from "../hook/withScrollFreezingProps";
+
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,22 +19,24 @@ const Wrapper = styled.div`
 export default function Ecosystem() {
   const slideArray = [
     {
-    title: 'BNB Quanto Derivatives',
-    description: 'An onchain decentralized perpetual contract with underlying  in BNB, but the instrument is settled in other crypto.',
-    buttonTitle: 'Coming Soon',
-    backgroundFill: '#121212',
-    colorText: '#FFFFFF',
-    imgUrl: 'candles.svg',
-      id: 1
-  },
+      title: 'BNB Quanto Derivatives',
+      description: 'An onchain decentralized perpetual contract with underlying  in BNB, but the instrument is settled in other crypto.',
+      buttonTitle: 'Coming Soon',
+      backgroundFill: '#121212',
+      colorText: '#FFFFFF',
+      imgSvg: <Candles/>,
+      id: 1,
+      translate: [0, 100],
+    },
     {
       title: 'Defi Option Vault',
       description: 'Covered call and put strategies to generate yield from the option market.',
       buttonTitle: 'Launch Defi Option Vault',
       backgroundFill: '#F0F1F3',
       colorText: '#121212',
-      imgUrl: './Screenshots/OptionValueScreenshot.jpg',
-      id: 2
+      imgUrl: './Screenshots/OptionValueScreenshot.png',
+      id: 2,
+      translate: [0, 50],
     },
     {
       title: 'Sharkfin',
@@ -44,8 +50,9 @@ export default function Ecosystem() {
         'Weekly cycles with redemption at maturity. The higher the settlement price the higher the APR.',
         'Ethereum and Bitcoin as underlying assets. Invest $BTC, $ETH or $USDT.'
       ],
-      imgUrl: './Screenshots/SharkfinScreenshot.jpg',
-      id: 3
+      imgUrl: './Screenshots/SharkfinScreenshot.png',
+      id: 3,
+      translate: [0, 10],
     },
     {
       title: 'Dual Investment',
@@ -59,8 +66,9 @@ export default function Ecosystem() {
         'Options are settled on delivery date in either the token or a stablecoin.',
         'Dual Investment is available for $BTC, $ETH, $BNB and many more different altcoins.'
       ],
-      imgUrl: './Screenshots/DualInvestmentScreenshot.jpg',
-      id: 4
+      imgUrl: './Screenshots/DualInvestmentScreenshot.png',
+      id: 4,
+      translate: [0, 10],
     },
     {
       title: 'BULL & BEAR',
@@ -74,8 +82,9 @@ export default function Ecosystem() {
         'Generated tokens have no expiry and timeframe. This also means no forced liquidation.',
         'We offer permission-less creation of  Bull & Bear tokens of any asset.'
       ],
-      imgUrl: './Screenshots/BullAndBearScreenshot.jpg',
-      id: 5
+      imgUrl: './Screenshots/BullAndBearScreenshot.png',
+      id: 5,
+      translate: [0, 10],
     },
     {
       title: 'Nonfungible Finance',
@@ -89,8 +98,9 @@ export default function Ecosystem() {
         'Financial ETFs and formation of customized indexes through NFTs',
         'Select assets to put into a locker NFT and set a release schedule.'
       ],
-      imgUrl: './Screenshots/NonfungibleFinanceScreenshot.jpg',
-      id: 6
+      imgUrl: './Screenshots/NonfungibleFinanceScreenshot.png',
+      id: 6,
+      translate: [0, 10],
     },
     {
       title: 'Antimatter DAO',
@@ -104,20 +114,24 @@ export default function Ecosystem() {
         'Stake your tokens or collect trading rewards for using our products',
         'Get involved through governance and give your feedback on our forum'
       ],
-      imgUrl: './Screenshots/AntimatterDAOScreenshot.jpg',
-      id: 7
+      imgUrl: './Screenshots/AntimatterDAOScreenshot.png',
+      id: 7,
+      translate: [0, 20],
     }]
 
   return (
     <Wrapper>
       <Header fill={'white'}/>
-      <MainBlock/>
+      <WithScrollFreezing isChainBlock={true}>
+        <MainBlock/>
+      </WithScrollFreezing>
       {slideArray.map((slide) => {
-          return (
-            <Slide key={slide.id} slide={slide} />
-          )
-        })}
+        return (
+          <Slide key={slide.id} slide={slide}/>
+        )
+      })}
       <Footer/>
     </Wrapper>
   );
 }
+

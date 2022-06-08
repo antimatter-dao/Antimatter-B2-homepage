@@ -19,6 +19,8 @@ const Blocks = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 233px 233px;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 `;
 
 const Title = styled.h1`
@@ -40,10 +42,8 @@ const Block = styled.div`
   box-sizing: border-box;
   padding: 32px 24px;
   min-width: 387px;
-  max-height: 233px;
+  height: 100%;
   background: #121212;
-  margin-right: 20px;
-  margin-bottom: 20px;
   cursor: pointer;
   
   &:hover{
@@ -96,39 +96,49 @@ const AntimatterDapps = () => {
     <Content>
       <Title>Built-in Antimatter DApps</Title>
       <Blocks>
-        <Block>
-          <SubTitle>Quanto Trading <Vector /></SubTitle>
-          <Description>
-            Cross-currency derivatives platform. Options are settled in another currency than the underlying asset.
-          </Description>
-        </Block>
-        <Block>
-          <SubTitle>
-            Bull & Bear <Vector />
-          </SubTitle>
-          <Description>
-            Tokenized perpetual options.
-            No forced liquidation, non-oracle based.
-          </Description>
-        </Block>
-        <Block>
-          <SubTitle>DAO <Vector /></SubTitle>
-          <Description>
-            A club for derivatives fanatics. Share your ideas and collaborate. On-chain governance.
-          </Description>
-        </Block>
-        <Block>
-          <SubTitle>Structured <Vector /></SubTitle>
-          <Description>
-            A platform for structured products. Earn yield based on underlying assets.
-          </Description>
-        </Block>
-        <Block>
-          <SubTitle>Nonfungible <Vector /></SubTitle>
-          <Description>
-            NFTs as a vehicle or container to facilitate financial activities.
-          </Description>
-        </Block>
+        <a href="" target="_blank">
+          <Block>
+            <SubTitle>Quanto Trading <Vector /></SubTitle>
+            <Description>
+              Cross-currency derivatives platform. Options are settled in another currency than the underlying asset.
+            </Description>
+          </Block>
+        </a>
+        <a href="https://app.antimatter.finance" target="_blank">
+          <Block>
+            <SubTitle>
+              Bull & Bear <Vector />
+            </SubTitle>
+            <Description>
+              Tokenized perpetual options.
+              No forced liquidation, non-oracle based.
+            </Description>
+          </Block>
+        </a>
+        <a href="https://dao.antimatter.finance" target="_blank">
+          <Block>
+            <SubTitle>DAO <Vector /></SubTitle>
+            <Description>
+              A club for derivatives fanatics. Share your ideas and collaborate. On-chain governance.
+            </Description>
+          </Block>
+        </a>
+        <a href="https://invest.antimatter.finance" target="_blank">
+          <Block>
+            <SubTitle>Structured <Vector /></SubTitle>
+            <Description>
+              A platform for structured products. Earn yield based on underlying assets.
+            </Description>
+          </Block>
+        </a>
+        <a href="https://nonfungible.finance" target="_blank">
+          <Block>
+            <SubTitle>Nonfungible <Vector /></SubTitle>
+            <Description>
+              NFTs as a vehicle or container to facilitate financial activities.
+            </Description>
+          </Block>
+        </a>
         <Lottie animationData={Pig} autoplay={true} loop={true}/>
       </Blocks>
     </Content>

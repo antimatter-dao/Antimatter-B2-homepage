@@ -21,26 +21,28 @@ const IconLeft = styled.div`
   position: absolute;
   width: 80px;
   height: 80px;
-  bottom: 161px;
+  bottom: 220px;
   left: 183px;
   
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
+  animation-delay: .4s;
 `
 
 const IconBottom = styled.div`
   position: absolute;
   width: 72px;
   height: 72px;
-  bottom: 44px;
+  bottom: 100px;
   left: 674px;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
+  animation-delay: .1s;
 `
 
 const IconTop = styled.div`
@@ -48,12 +50,13 @@ const IconTop = styled.div`
   width: 80px;
   height: 80px;
   right: 295px;
-  bottom: 121px;
+  bottom: 181px;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
+  animation-delay: .3s;
 `
 
 const IconRight = styled.div`
@@ -61,12 +64,13 @@ const IconRight = styled.div`
   width: 72px;
   height: 72px;
   right: 78px;
-  top: 290px;
+  top: 230px;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
+  animation-delay: .2s;
 `
 
 const Content = styled.div`

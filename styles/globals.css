@@ -22,27 +22,48 @@ a {
     transform: translate3d(0, 0, 0) scale(1, 1);
   }
   to {
-    transform: translate3d(0, 20px, 0) scale(1.1, 1);
+    transform: translate3d(0, 80px, 0) scale(1.1, 1);
   }
 }
 
 @keyframes change-icon-color {
   0% {
-    background: linear-gradient(90deg, #F8D448 0%, #8FC147 48.75%, #31B047 100%);
+    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 0.01%, #31B047 100%), #F8D448;
+  }
+  25% {
+    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 31.77%, #31B047 100%), #F8D448;
+  }
+  50%{
+    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 47.92%, #31B047 100%), #F8D448;
+  }
+  75%{
+    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 70.83%, #31B047 100%), #F8D448;
   }
   100% {
-    background: linear-gradient(90deg, #31B047 0%, #8FC147 48.75%, #F8D448 100%);
+    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 99.99%, #31B047 100%), #F8D448;
   }
 }
 
 @keyframes change-color {
   0% {
-    background:  linear-gradient(90deg, #F8D448 0%, #8FC147 35.21%, #74BC47 60.73%, #5BB847 80.52%, #31B047 100%);
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 50%, #F8D448 99.99%, #31B047 100%);
+  }
+  20%{
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 84.9%, #31B047 100%);
+  }
+  40%{
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 69.79%, #31B047 100%);
   }
   50%{
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 20.83%, #F8D448 50%, #31B047 100%);;
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 24.48%, #F8D448 53.13%, #31B047 100%);
+  }
+  60%{
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 10.42%, #F8D448 34.9%, #31B047 100%);
+  }
+  80%{
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 19.79%, #31B047 100%);
   }
   100% {
-    background: linear-gradient(90deg, #31B047 0%, #5BB847 35.21%, #74BC47 60.73% ,#8FC147 80.52%, #F8D448 100%);
+    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 0.03%, #31B047 100%);
   }
 }

@@ -1,10 +1,9 @@
-import {useEffect, useRef} from 'react'
 import styled from "styled-components";
+import { useParallax} from "react-scroll-parallax";
 
 import Ladder from "../../../public/ladder.svg";
 import Polyhedron from "../../../public/polyhedron.svg";
-import useIntersectionObserver from "../../../hook/useIntersectionObserver";
-import { Parallax ,useParallax} from "react-scroll-parallax";
+
 
 const Content = styled.div`
   display: flex;
@@ -70,12 +69,12 @@ const LadderIcon = styled.div`
 
 const InformationAboutB2 = () => {
   const parallaxLadder = useParallax({
-    translateY: [-30, 10],
+    translateY: [0, 40],
     speed: 10
   });
   const parallaxPolyhedron = useParallax({
-    translateY: [-30, 60],
-    speed: -1000
+    translateY: [0, 60],
+    speed: -10
   });
 
   return (

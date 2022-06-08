@@ -8,6 +8,7 @@ import Twitter from "../../../public/twitter.svg";
 import Partner1 from "../../../public/monday-capital.svg";
 import Partner2 from "../../../public/NGC.svg";
 import Partner3 from "../../../public/huobi.svg";
+import {useEffect, useRef} from "react";
 
 const Wrapper = styled.div`
   display: flex;

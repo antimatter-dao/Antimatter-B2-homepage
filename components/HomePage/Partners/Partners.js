@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
+
 import Partner2 from "../../../public/partners/partners2.svg";
 import Partner3 from "../../../public/partners/partners3.svg";
 import Partner4 from "../../../public/partners/partners4.svg";

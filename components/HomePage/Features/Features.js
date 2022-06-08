@@ -6,6 +6,7 @@ import Lock from "../../../public/lock.svg";
 import LinkSolid from "../../../public/linkSolid.svg";
 import Arc from "../../../public/arc.svg";
 import useIntersectionObserver from "../../../hook/useIntersectionObserver";
+import {useParallax} from "react-scroll-parallax";
 
 
 const Wrapper = styled.div`
@@ -61,8 +62,7 @@ const IconBlock = styled.div`
   align-items: center;
 
   &:hover {
-
-    animation: change-icon-color 1s ease-in-out infinite;
+    animation: change-icon-color .5s ease-in-out infinite;
     animation-direction: alternate;
     animation-fill-mode: both;
   }
@@ -95,15 +95,16 @@ const AnimationBlock = styled.div`
 `
 
 const Features = () => {
-  const ref = useRef(null)
-  const entry = useIntersectionObserver(ref, {})
-  const isVisible = !!entry?.isIntersecting
+  const parallaxArc = useParallax({
+    translateY: [0, 60],
+    speed: 20
+  });
 
   return(
     <Wrapper>
       <Content>
         <Title>Features</Title>
-        <Blocks ref={ref}>
+        <Blocks>
           <Block>
             <IconBlock>
               <Zap />
@@ -130,7 +131,7 @@ const Features = () => {
             <Description>
               B2 serves as a data storage of our Dapps. This way user records and transactions are stored in a decentralized way and we stay in sync with our multi-chain applications
             </Description>
-            <AnimationBlock isVisible={isVisible}>
+            <AnimationBlock ref={parallaxArc.ref}>
               <Arc />
             </AnimationBlock>
           </Block>

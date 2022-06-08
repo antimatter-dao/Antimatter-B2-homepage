@@ -3,6 +3,7 @@ import Lottie from "lottie-react";
 
 import Button from "../../shared/Button/Button";
 import Chart from '../../../public/AnimationJson/сhart.json'
+import {useRouter} from "next/router";
 
 const Wrapper = styled.div`
   display: flex;
@@ -62,29 +63,35 @@ const CustomButton = styled.div`
 `
 
 
-const AboutB2 = () => (
-  <Wrapper>
-    <Content>
-      <ContentInfo>
-        <ContentInfoTitle>
-          What is B2?
-        </ContentInfoTitle>
-        <ContentInfoDescription>
-          B2 is a BNB sidechain based on the BAS framework. It solves network scalability problems by having a
-          higher output of transactions and lower gas fees. B2 is built to facilitate the financial infrastructure
-          of the Antimatter ecosystem.
-        </ContentInfoDescription>
-        <CustomButton>
-          <Button>Explore Documents</Button>
-        </CustomButton>
-      </ContentInfo>
-      <WrapperImg>
-        <ContainerImg>
-          <Lottie animationData={Chart} autoplay={true} loop={true}/>;
-        </ContainerImg>
-      </WrapperImg>
-    </Content>
-  </Wrapper>
-)
+const AboutB2 = () => {
+  const router = useRouter()
+  const onClick = async () => {
+    await router.push('https://docs.antimatter.finance/introduction/antimatter-overview')
+  }
+  return(
+    <Wrapper>
+      <Content>
+        <ContentInfo>
+          <ContentInfoTitle>
+            What is B2?
+          </ContentInfoTitle>
+          <ContentInfoDescription>
+            B2 is a BNB sidechain based on the BAS framework. It solves network scalability problems by having a
+            higher output of transactions and lower gas fees. B2 is built to facilitate the financial infrastructure
+            of the Antimatter ecosystem.
+          </ContentInfoDescription>
+          <CustomButton>
+            <Button onClick={onClick}>Explore Documents</Button>
+          </CustomButton>
+        </ContentInfo>
+        <WrapperImg>
+          <ContainerImg>
+            <Lottie animationData={Chart} autoplay={true} loop={true}/>;
+          </ContainerImg>
+        </WrapperImg>
+      </Content>
+    </Wrapper>
+  )
+}
 
 export default AboutB2

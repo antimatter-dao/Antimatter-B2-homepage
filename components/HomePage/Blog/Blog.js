@@ -123,6 +123,12 @@ const BlogButton = styled.button`
   text-align: center;
   color: #FFFFFF;
   border: none;
+  
+  &:hover{
+    background: #F8D448;
+    color: #121212;
+    transition: .7s;
+  }
 `
 
 const BlogDateImg = styled.img`

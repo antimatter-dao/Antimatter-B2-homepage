@@ -5,7 +5,9 @@ import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
 const Wrapper = styled.div`
   display: flex;
   height: 100vh;
+  width: 100%;
   position: relative;
+  z-index: 1;
 `;
 
 const Content = styled.div`
