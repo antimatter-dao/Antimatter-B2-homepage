@@ -1,18 +1,12 @@
-import React, {
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
-import classNames from 'classnames';
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import classNames from "classnames";
 
 export const WithScrollFreezing = ({ children, isChainBlock }) => {
-
-  const [wrapHeight, setWrapHeight] = useState('auto');
+  const [wrapHeight, setWrapHeight] = useState("auto");
   const [floatingWrapClass, setFloatingWrapClass] = useState({
-    position: 'relative',
+    position: "relative",
     zIndex: 2,
-    transition: 'transform 0.2s, filter 0.2s',
+    transition: "transform 0.2s, filter 0.2s",
   });
 
   const wrapRef = useRef(null);
@@ -22,7 +16,7 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
     if (floatingWrapRef.current) {
       const floatingWrap = floatingWrapRef.current;
       const height = floatingWrap?.offsetHeight;
-      setWrapHeight(height ?? 'auto');
+      setWrapHeight(height ?? "auto");
     }
   }, [floatingWrapRef]);
 
@@ -34,7 +28,7 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
     if (isChainBlock) {
       if (wrapBottom <= scrollTop && scrollTop < wrapBottomFallBack) {
         setFloatingWrapClass({
-          position: 'fixed',
+          position: "fixed",
           left: 0,
           right: 0,
           bottom: 233,
@@ -42,57 +36,58 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
         });
       } else {
         setFloatingWrapClass({
-          position: 'relative',
+          position: "relative",
           zIndex: 2,
-          transition: 'transform 0.2s, filter 0.2s',
+          transition: "transform 0.2s, filter 0.2s",
         });
       }
     } else {
-      const scrollTopForEffect =
-        window.scrollY - 200 + window.innerHeight / 2;
+      const scrollTopForEffect = window.scrollY - 200 + window.innerHeight / 2;
       if (scrollTop > wrapBottom && scrollTop < wrapBottomFallBack) {
         if (scrollTopForEffect > wrapBottom) {
           {
-            setFloatingWrapClass(
-              classNames({
-                position: 'fixed',
+            setFloatingWrapClass({
+              ...{
+                position: "fixed",
                 left: 0,
                 right: 0,
                 bottom: 0,
                 zIndex: 1,
-                '& #backed-by': {
-                  borderRadius: '0 0 30px 30px',
-                  transform: 'translateY(-60px)',
-                  height: 'calc(auto + 60px)',
-                }
-              }, {
-                filter: 'grayscale(0.3)',
-                pointerEvents: 'none',
-                '& *': {
-                  pointerEvents: 'none !important',
+                "& #backed-by": {
+                  borderRadius: "0 0 30px 30px",
+                  transform: "translateY(-60px)",
+                  height: "calc(auto + 60px)",
                 },
-              }),
-            );
+              },
+
+              ...{
+                filter: "grayscale(0.3)",
+                pointerEvents: "none",
+                "& *": {
+                  pointerEvents: "none !important",
+                },
+              },
+            });
           }
         } else {
           setFloatingWrapClass({
-            position: 'fixed',
+            position: "fixed",
             left: 0,
             right: 0,
             bottom: 0,
             zIndex: 1,
-            '& #backed-by': {
-              borderRadius: '0 0 30px 30px',
-              transform: 'translateY(-60px)',
-              height: 'calc(auto + 60px)',
+            "& #backed-by": {
+              borderRadius: "0 0 30px 30px",
+              transform: "translateY(-60px)",
+              height: "calc(auto + 60px)",
             },
           });
         }
       } else {
         setFloatingWrapClass({
-          position: 'relative',
+          position: "relative",
           zIndex: 2,
-          transition: 'transform 0.2s, filter 0.2s',
+          transition: "transform 0.2s, filter 0.2s",
         });
       }
     }
@@ -105,25 +100,25 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
   useEffect(() => {
     getWrapHeight();
     toggleFreezing();
-    window.addEventListener('ready', getWrapHeight);
-    window.addEventListener('resize', getWrapHeight);
-    window.addEventListener('scroll', toggleFreezing);
+    window.addEventListener("ready", getWrapHeight);
+    window.addEventListener("resize", getWrapHeight);
+    window.addEventListener("scroll", toggleFreezing);
     return () => {
-      window.removeEventListener('ready', getWrapHeight);
-      window.removeEventListener('resize', getWrapHeight);
-      window.removeEventListener('scroll', toggleFreezing);
+      window.removeEventListener("ready", getWrapHeight);
+      window.removeEventListener("resize", getWrapHeight);
+      window.removeEventListener("scroll", toggleFreezing);
     };
   }, []);
-
   return (
-    <div ref={wrapRef} style={{height: wrapHeight}}>
+    <div ref={wrapRef} style={{ height: wrapHeight }}>
       <div
         ref={floatingWrapRef}
-        className={classNames({
+        style={{
           paddingTop: 200,
-          transition: 'transform 0.5s, filter 0.5s',
-          willChange: 'transform, filter',
-        }, floatingWrapClass)}
+          transition: "transform 0.5s, filter 0.5s",
+          willChange: "transform, filter",
+          ...floatingWrapClass,
+        }}
       >
         {children}
       </div>
