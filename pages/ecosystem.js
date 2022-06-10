@@ -41,9 +41,10 @@ export default function Ecosystem() {
       colorText: '#121212',
       imgUrl: './Screenshots/OptionValueScreenshot.png',
       id: 2,
-      translate: `20px, 90px`,
+      translate: `20px, -13px`,
       minHeight: "100vh",
-      marginTopButton: '32px'
+      marginTopButton: '32px',
+      widthImg: "57vw"
     },
     {
       title: 'Sharkfin',
@@ -59,8 +60,9 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/SharkfinScreenshot.png',
       id: 3,
-      translate: `30px, 145px`,
-      minHeight: "100vh"
+      translate: `30px, -20px`,
+      minHeight: "100vh",
+      widthImg: "63vw"
     },
     {
       title: 'Dual Investment',
@@ -76,8 +78,9 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/DualInvestmentScreenshot.png',
       id: 4,
-      translate: `20px, 90px`,
-      minHeight: "100vh"
+      translate: `20px, -12px`,
+      minHeight: "100vh",
+      widthImg: "63vw"
     },
     {
       title: 'BULL & BEAR',
@@ -93,8 +96,9 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/BullAndBearScreenshot.png',
       id: 5,
-      translate: `20px, 220px`,
-      minHeight: "100vh"
+      translate: `20px, -16px`,
+      minHeight: "100vh",
+      widthImg: "76vw"
     },
     {
       title: 'Nonfungible Finance',
@@ -110,8 +114,9 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/NonfungibleFinanceScreenshot.png',
       id: 6,
-      translate: `20px, 90px`,
-      minHeight: "100vh"
+      translate: `20px, -14px`,
+      minHeight: "100vh",
+      widthImg: "66vw"
     },
     {
       title: 'Antimatter DAO',
@@ -127,8 +132,9 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/AntimatterDAOScreenshot.png',
       id: 7,
-      translate: `20px, 90px`,
-      minHeight: "100vh"
+      translate: `20px, 0px`,
+      minHeight: "100vh",
+      widthImg: "63vw"
     }
     ]
 

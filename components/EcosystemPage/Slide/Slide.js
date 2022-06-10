@@ -74,8 +74,10 @@ const Button = styled.button`
 `
 
 const ImgContainer = styled.div`
-  padding-top: 86px;
+  padding-top: 140px;
   width: 50%;
+  height: 100%;
+  position: relative;
 `
 
 const ImgContainerSvg = styled.div`
@@ -86,9 +88,10 @@ const ImgContainerSvg = styled.div`
 `
 
 const Img = styled.img`
-  width: 750px;
   position: absolute;
   transform: translate(${props => props?.translate && props?.translate});
+  width: ${props => props?.width && props?.width};
+  height: 100vh;
 `
 
 const Slide = ({slide}) => {
@@ -127,7 +130,7 @@ const Slide = ({slide}) => {
             ) : (
               <ImgContainer>
                 <FadeInUp active={isVisible}>
-                  <Img src={slide.imgUrl} translate={slide.translate}/>
+                  <Img src={slide.imgUrl} width={slide.widthImg} translate={slide.translate}/>
                 </FadeInUp>
               </ImgContainer>
             )
