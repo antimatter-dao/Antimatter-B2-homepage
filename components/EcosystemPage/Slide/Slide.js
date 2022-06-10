@@ -1,21 +1,29 @@
 import styled from "styled-components";
 
 import ListFeature from "../../shared/ListFeature/ListFeature";
-import { WithScrollFreezing } from "../../../hook/withScrollFreezingProps";
+import {WithScrollFreezing} from "../../../hook/withScrollFreezingProps";
+import Footer from "../../Footer/Footer";
+import FadeInUp from "../../../utils/fade-in-up";
+import {useRef, useState} from "react";
+import useIntersectionObserver from "../../../hook/useIntersectionObserver";
+
 
 const Wrapper = styled.div`
   display: flex;
-  min-height: 740px;
+  height: ${props => props?.minHeight && props?.minHeight};
   background: ${props => props?.background && props?.background};
   border-radius: 30px 30px 0 0;
   position: relative;
+  justify-content: space-between;
+  overflow: hidden;
 `;
 
 const Content = styled.div`
-  padding: 108px 30px 0 120px;
+  padding: 140px 30px 0 120px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  width: 50%;
 `
 
 const InfoBlock = styled.div`
@@ -50,9 +58,7 @@ const Description = styled.h3`
 const Button = styled.button`
   border-radius: 20px;
   padding: 20px 30px;
-  background: #F8D448;
   max-width: 344px;
-  border: none;
 
   font-family: 'Poppins', sans-serif;
   font-style: normal;
@@ -60,15 +66,20 @@ const Button = styled.button`
   font-size: 20px;
   line-height: 120%;
   text-align: center;
-  color: #000000;
+
+  margin-top: ${props => props?.marginTop ? props?.marginTop : "0px"};
+  background: ${props => props?.background ? props?.background : "#F8D448"};
+  border: ${props => props?.border ? props?.border : "none"};
+  color: ${props => props?.color ? props?.color : "#000000"};
 `
 
 const ImgContainer = styled.div`
   padding-top: 86px;
+  width: 50%;
 `
 
 const ImgContainerSvg = styled.div`
-  width: 100%;
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,38 +87,59 @@ const ImgContainerSvg = styled.div`
 
 const Img = styled.img`
   width: 750px;
+  position: absolute;
+  transform: translate(${props => props?.translate && props?.translate});
 `
 
 const Slide = ({slide}) => {
-  return (
-    <WithScrollFreezing>
-      <Wrapper background={slide.backgroundFill}>
-        <Content>
-          <InfoBlock>
-            <Title color={slide.colorText}>{slide.title}</Title>
-            <Description color={slide.colorText}>{slide.description}</Description>
-            {
-              slide.list && (
-                <ListFeature listFeature={slide.list} fill={slide.fill}/>
-              )
-            }
-            <Button>{slide.buttonTitle}</Button>
-          </InfoBlock>
-        </Content>
+  const ref = useRef(null)
+  const entry = useIntersectionObserver(ref, {})
+  const isVisible = !!entry?.isIntersecting;
 
+  return (
+    <>
+      <WithScrollFreezing>
+        <Wrapper background={slide.backgroundFill} minHeight={slide.minHeight} ref={ref}>
+          <Content>
+            <InfoBlock>
+              <Title color={slide.colorText}>{slide.title}</Title>
+              <Description color={slide.colorText}>{slide.description}</Description>
+              {
+                slide.list && (
+                  <ListFeature listFeature={slide.list} fill={slide.fill}/>
+                )
+              }
+              <Button
+                border={slide.buttonBorder}
+                background={slide.buttonBackground}
+                marginTop={slide.marginTopButton}
+                color={slide.buttonColor}
+              >
+                {slide.buttonTitle}
+              </Button>
+            </InfoBlock>
+          </Content>
+          {
+            slide.imgSvg ? (
+              <ImgContainerSvg>
+                {slide.imgSvg}
+              </ImgContainerSvg>
+            ) : (
+              <ImgContainer>
+                <FadeInUp active={isVisible}>
+                  <Img src={slide.imgUrl} translate={slide.translate}/>
+                </FadeInUp>
+              </ImgContainer>
+            )
+          }
+        </Wrapper>
         {
-          slide.imgSvg ? (
-            <ImgContainerSvg>
-              {slide.imgSvg}
-            </ImgContainerSvg>
-          ) : (
-            <ImgContainer>
-              <Img src={slide.imgUrl}/>
-            </ImgContainer>
+          slide.id === 7 && (
+            <Footer/>
           )
         }
-      </Wrapper>
-    </WithScrollFreezing>
+      </WithScrollFreezing>
+    </>
   )
 }
 

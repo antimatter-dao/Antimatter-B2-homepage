@@ -31,7 +31,7 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
           position: "fixed",
           left: 0,
           right: 0,
-          bottom: 233,
+          bottom: 0,
           zIndex: 1,
         });
       } else {
@@ -42,7 +42,7 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
         });
       }
     } else {
-      const scrollTopForEffect = window.scrollY - 200 + window.innerHeight / 2;
+      const scrollTopForEffect = window.scrollY - 1000 + window.innerHeight / 2;
       if (scrollTop > wrapBottom && scrollTop < wrapBottomFallBack) {
         if (scrollTopForEffect > wrapBottom) {
           {
@@ -55,8 +55,8 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
                 zIndex: 1,
                 "& #backed-by": {
                   borderRadius: "0 0 30px 30px",
-                  transform: "translateY(-60px)",
-                  height: "calc(auto + 60px)",
+                  transform: "translateY(-100px)",
+                  height: "calc(auto + 100px)",
                 },
               },
 
@@ -78,8 +78,8 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
             zIndex: 1,
             "& #backed-by": {
               borderRadius: "0 0 30px 30px",
-              transform: "translateY(-60px)",
-              height: "calc(auto + 60px)",
+              transform: "translateY(-100px)",
+              height: "calc(auto + 100px)",
             },
           });
         }
@@ -114,7 +114,6 @@ export const WithScrollFreezing = ({ children, isChainBlock }) => {
       <div
         ref={floatingWrapRef}
         style={{
-          paddingTop: 200,
           transition: "transform 0.5s, filter 0.5s",
           willChange: "transform, filter",
           ...floatingWrapClass,

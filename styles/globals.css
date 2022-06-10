@@ -26,6 +26,33 @@ a {
   }
 }
 
+@keyframes slide {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  50% {
+    left: 244px;
+    top: 100px;
+  }
+  100% {
+    left: 488px;
+    top: 0;
+  }
+}
+
+@keyframes showScreenshots {
+  0% {
+    top: -100%;
+  }
+  50% {
+    top: 50%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
 @keyframes change-icon-color {
   0% {
     background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 0.01%, #31B047 100%), #F8D448;

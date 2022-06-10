@@ -1,8 +1,8 @@
 import styled from "styled-components";
+import {ParallaxProvider, useParallax} from "react-scroll-parallax";
 
 import Header from "../components/Header/Header";
 import MainBlock from "../components/EcosystemPage/MainBlock/MainBlock";
-import Footer from "../components/Footer/Footer";
 import Slide from "../components/EcosystemPage/Slide/Slide";
 import Candles from '../public/candles.svg'
 import {WithScrollFreezing} from "../hook/withScrollFreezingProps";
@@ -14,6 +14,7 @@ const Wrapper = styled.div`
   width: 100%;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 `;
 
 export default function Ecosystem() {
@@ -26,7 +27,11 @@ export default function Ecosystem() {
       colorText: '#FFFFFF',
       imgSvg: <Candles/>,
       id: 1,
-      translate: [0, 100],
+      minHeight: "100vh",
+      marginTopButton: '32px',
+      buttonBackground: 'transparent',
+      buttonBorder: '1px solid #F8D448',
+      buttonColor: '#F8D448',
     },
     {
       title: 'Defi Option Vault',
@@ -36,7 +41,9 @@ export default function Ecosystem() {
       colorText: '#121212',
       imgUrl: './Screenshots/OptionValueScreenshot.png',
       id: 2,
-      translate: [0, 50],
+      translate: `20px, 90px`,
+      minHeight: "100vh",
+      marginTopButton: '32px'
     },
     {
       title: 'Sharkfin',
@@ -52,7 +59,8 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/SharkfinScreenshot.png',
       id: 3,
-      translate: [0, 10],
+      translate: `30px, 145px`,
+      minHeight: "100vh"
     },
     {
       title: 'Dual Investment',
@@ -68,7 +76,8 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/DualInvestmentScreenshot.png',
       id: 4,
-      translate: [0, 10],
+      translate: `20px, 90px`,
+      minHeight: "100vh"
     },
     {
       title: 'BULL & BEAR',
@@ -84,7 +93,8 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/BullAndBearScreenshot.png',
       id: 5,
-      translate: [0, 10],
+      translate: `20px, 220px`,
+      minHeight: "100vh"
     },
     {
       title: 'Nonfungible Finance',
@@ -100,7 +110,8 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/NonfungibleFinanceScreenshot.png',
       id: 6,
-      translate: [0, 10],
+      translate: `20px, 90px`,
+      minHeight: "100vh"
     },
     {
       title: 'Antimatter DAO',
@@ -116,13 +127,16 @@ export default function Ecosystem() {
       ],
       imgUrl: './Screenshots/AntimatterDAOScreenshot.png',
       id: 7,
-      translate: [0, 20],
-    }]
+      translate: `20px, 90px`,
+      minHeight: "100vh"
+    }
+    ]
 
   return (
-    <Wrapper>
-      <Header fill={'white'}/>
+    <ParallaxProvider>
+     <Wrapper>
       <WithScrollFreezing isChainBlock={true}>
+        <Header fill={'white'}/>
         <MainBlock/>
       </WithScrollFreezing>
       {slideArray.map((slide) => {
@@ -130,8 +144,8 @@ export default function Ecosystem() {
           <Slide key={slide.id} slide={slide}/>
         )
       })}
-      <Footer/>
-    </Wrapper>
+     </Wrapper>
+    </ParallaxProvider>
   );
 }
 
