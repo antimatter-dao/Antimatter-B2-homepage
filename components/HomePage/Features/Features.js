@@ -1,12 +1,10 @@
-import { useRef } from "react";
 import styled from "styled-components";
+import { useParallax } from "react-scroll-parallax";
 
 import Zap from "../../../public/zap.svg";
 import Lock from "../../../public/lock.svg";
 import LinkSolid from "../../../public/linkSolid.svg";
 import Arc from "../../../public/arc.svg";
-import useIntersectionObserver from "../../../hook/useIntersectionObserver";
-import {useParallax} from "react-scroll-parallax";
 
 
 const Wrapper = styled.div`

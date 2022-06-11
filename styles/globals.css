@@ -26,6 +26,26 @@ a {
   }
 }
 
+@keyframes promotionColumn {
+  0% {
+    transform: translate(0, 300px);
+    opacity: 0;
+  }
+  100% {
+    transform:  translate(0, 0);
+    opacity: 2;
+  }
+}
+
+@keyframes iconColumn {
+  from {
+    transform: translate3d(0, 0, 0) scale(1, 1);
+  }
+  to {
+    transform: translate3d(0, 80px, 0) scale(1.1, 1);
+  }
+}
+
 @keyframes slide {
   0% {
     left: 0;
