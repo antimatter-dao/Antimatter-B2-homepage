@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { useLottie } from "lottie-react";
+import {useEffect, useState} from "react";
 
 import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
 import Column1 from "../../../public/Columns/firstСolumn.svg";
@@ -6,11 +8,15 @@ import Column2 from "../../../public/Columns/secondСolumn.svg";
 import Column3 from "../../../public/Columns/thirdСolumn.svg";
 import Column4 from "../../../public/Columns/fourthСolumn.svg";
 import Column5 from "../../../public/Columns/fifthСolumn.svg";
-import QuantoIcon from "../../../public/Columns/quantoIcon.svg";
-import DaoIcon from "../../../public/Columns/daoIcon.svg";
-import MetaverseIcon from "../../../public/Columns/metaverseIcon.svg";
-import NonfungibleIcon from "../../../public/Columns/nonfungibleIcon.svg";
-import BullBearIcon from "../../../public/Columns/bull_bearIcon.svg";
+import Column6 from "../../../public/Columns/column6.svg";
+import Column7 from "../../../public/Columns/column7.svg";
+
+import Quanto from "../../../public/AnimationJson/Quanto.json";
+import Bull from "../../../public/AnimationJson/Bull.json";
+import Dao from "../../../public/AnimationJson/Dao.json";
+import Meta from "../../../public/AnimationJson/Meta.json";
+import Nonfung from "../../../public/AnimationJson/Non.json";
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,6 +24,7 @@ const Wrapper = styled.div`
   width: 100%;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 `;
 
 const Content = styled.div`
@@ -64,106 +71,162 @@ const Description = styled.h3`
 `;
 
 const FirstColumn = styled.div`
-  width: 80px;
-  height: 80px;
   position: absolute;
-  bottom: 210px;
+  bottom: -40px;
   left: -20%;
 
-  animation: promotionColumn 1.4s ease-in-out;
-  animation-delay: .5s;
+  animation: promotionColumn 1.2s ease-in-out;
 `
 
 const FirstColumnIcon = styled.div`
-  width: 80px;
-  height: 80px;
   position: fixed;
-  bottom: 307px;
-  left: 123px;
+  bottom: 267px;
+  left: 119px;
 `
 
 const SecondColumn = styled.div`
-  width: 80px;
-  height: 80px;
   position: absolute;
-  bottom: 210px;
-  right: 40%;
+  bottom: -40px;
+  right: 7%;
   z-index: 1;
 
-  animation: promotionColumn 1.4s ease-in-out;
-  animation-delay: .4s;
+  animation: promotionColumn 1s ease-in-out;
 `
 
 const SecondColumnIcon = styled.div`
-  width: 80px;
-  height: 80px;
+  display: ${props => props?.display ? 'block': 'none'};
   position: fixed;
-  bottom: 290px;
-  right: 11%;
-  z-index: 1;
+  bottom: 265px;
+  right: 121px;
 `
 
 const ThirdColumn = styled.div`
-  width: 80px;
-  height: 80px;
   position: absolute;
-  bottom: 0;
+  bottom: -254px;
   left: 18%;
 
-  animation: promotionColumn 1.4s ease-in-out;
-  animation-delay: .1s;
+  animation: promotionColumn 0.9s ease-in-out;
 `
 
 const ThirdColumnIcon = styled.div`
-  width: 80px;
-  height: 80px;
   position: fixed;
-  bottom: 113px;
-  left: 46%;
+  bottom: 53px;
+  left: 657px;
+  z-index: 3;
+  transition: 1s;
 `
 
 const FourthColumn = styled.div`
-  width: 80px;
-  height: 80px;
   position: absolute;
-  bottom: 78px;
-  right: 57%;
+  bottom: -150px;
+  right: 27%;
   z-index: 2;
 
-  animation: promotionColumn 1.4s ease-in-out;
-  animation-delay: .3s;
+  animation: promotionColumn .8s ease-in-out;
 `
 
 const FourthColumnIcon = styled.div`
-  width: 80px;
-  height: 80px;
+  display: ${props => props?.display ? 'block': 'none'};
   position: fixed;
-  bottom: 191px;
-  right: 29%;
-  z-index: 2;
+  bottom: 157px;
+  right: 403px;
 `
 
 const FifthColumn = styled.div`
-  width: 80px;
-  height: 80px;
   position: absolute;
-  bottom: 78px;
+  bottom: -150px;
   left: 0;
 
-  animation: promotionColumn 1.4s ease-in-out;
-  animation-delay: .2s;
+  animation: promotionColumn .7s ease-in-out;
 `
 
 const FifthColumnIcon = styled.div`
-  width: 80px;
-  height: 80px;
+  display: ${props => props?.display ? 'block': 'none'};
   position: fixed;
-  bottom: 174px;
-  left: 29%;
+  bottom: 157px;
+  left: 403px;
 `
+
+const SixthColumn = styled.div`
+  position: absolute;
+  right: 580px;
+  bottom: 74px;
+
+  animation: promotionColumn 1.4s ease-in-out;
+`
+
+const SeventhColumn = styled.div`
+  position: absolute;
+  bottom: 170px;
+  left: 530px;
+
+  animation: promotionColumn 1.6s ease-in-out;
+`
+
+const optionsColumnQuanto = {
+  animationData: Quanto,
+  loop: true,
+  autoplay: true
+};
+
+const optionsColumnBull = {
+  animationData: Bull,
+  loop: true,
+  autoplay: true
+};
+
+const optionsColumnDao = {
+  animationData: Dao,
+  loop: true,
+  autoplay: true
+};
+
+const optionsColumnMeta = {
+  animationData: Meta,
+  loop: true,
+  autoplay: true
+};
+
+const optionsColumnNonfung = {
+  animationData: Nonfung,
+  loop: true,
+  autoplay: true
+};
 
 
 const MainBlock = () => {
+  const animationQuanto = useLottie(optionsColumnQuanto);
+  const animationBull = useLottie(optionsColumnBull);
+  const animationDao = useLottie(optionsColumnDao);
+  const animationMeta = useLottie(optionsColumnMeta);
+  const animationNonfung = useLottie(optionsColumnNonfung);
+
+  const [displayBull, setDisplayBull] = useState(false)
+  const [displayDao, setDisplayDao] = useState(false)
+  const [displayNonfung, setDisplayNonfung] = useState(false)
+
+  useEffect(()=> {
+    setTimeout(()=> animationQuanto.play(), 1200)
+
+    setTimeout(()=> {
+      animationBull.play()
+      setDisplayBull(true)
+    }, 900)
+
+    setTimeout(()=> {
+      animationDao.play()
+      setDisplayDao(true)
+    }, 1000)
+
+    setTimeout(()=> animationMeta.play(), 900)
+
+    setTimeout(()=> {
+      animationNonfung.play()
+      setDisplayNonfung(true)
+    }, 900)
+
+  },[animationQuanto, animationBull, animationNonfung])
+
   return(
     <Wrapper>
       <Content>
@@ -178,37 +241,46 @@ const MainBlock = () => {
       <FirstColumn>
         <Column1 />
         <FirstColumnIcon>
-          <QuantoIcon />
+          {animationQuanto.View}
         </FirstColumnIcon>
       </FirstColumn>
 
       <FifthColumn>
         <Column5 />
-        <FifthColumnIcon>
-          <BullBearIcon />
+        <FifthColumnIcon display={displayBull}>
+          {animationBull.View}
         </FifthColumnIcon>
       </FifthColumn>
 
       <ThirdColumn>
         <Column3 />
         <ThirdColumnIcon>
-          <MetaverseIcon />
+          {animationMeta.View}
         </ThirdColumnIcon>
       </ThirdColumn>
 
       <FourthColumn>
         <Column4 />
-        <FourthColumnIcon>
-          <NonfungibleIcon />
+        <FourthColumnIcon display={displayNonfung}>
+          {animationNonfung.View}
         </FourthColumnIcon>
       </FourthColumn>
 
       <SecondColumn>
         <Column2 />
-        <SecondColumnIcon>
-          <DaoIcon />
+        <SecondColumnIcon display={displayDao}>
+          {animationDao.View}
         </SecondColumnIcon>
       </SecondColumn>
+
+
+      <SixthColumn>
+        <Column6 />
+      </SixthColumn>
+
+      <SeventhColumn>
+        <Column7 />
+      </SeventhColumn>
 
     </Wrapper>
     )

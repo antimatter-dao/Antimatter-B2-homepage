@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Lottie from "lottie-react";
+import Lottie, {useLottie} from "lottie-react";
 
 import Guy1 from "../../../public/AnimationJson/guy1.json";
 import Guy2 from "../../../public/AnimationJson/guy2.json";
@@ -83,8 +83,36 @@ const Name = styled.span`
 
 const IconSocial = styled.a``
 
+const optionsGuy1 = {
+  animationData: Guy1,
+  // loop: true,
+  autoplay: false
+};
+
+const optionsGuy2 = {
+  animationData: Guy2,
+  // loop: true,
+  autoplay: false
+};
+
+const optionsGuy3 = {
+  animationData: Guy3,
+  // loop: true,
+  autoplay: false
+};
 
 const BackedBy = () => {
+  const animationGuy1 = useLottie(optionsGuy1);
+  const animationGuy2 = useLottie(optionsGuy2);
+  const animationGuy3 = useLottie(optionsGuy3);
+
+
+  useEffect(()=>{
+    setTimeout(()=> animationGuy1.play(), 500)
+    setTimeout(()=> animationGuy2.play(), 100)
+    setTimeout(()=> animationGuy3.play(), 1000)
+  },[])
+
   return (
     <Wrapper>
       <Content>
@@ -92,7 +120,7 @@ const BackedBy = () => {
         <Guys>
           <Container>
             <ContainerImg>
-              <Lottie animationData={Guy1} autoplay={true} loop={true}/>
+              {animationGuy1.View}
             </ContainerImg>
             <InfoGuy>
               <Name>Tekin Salimi</Name>
@@ -101,7 +129,7 @@ const BackedBy = () => {
           </Container>
           <Container>
             <ContainerImg>
-              <Lottie animationData={Guy2} autoplay={true} loop={true}/>
+              {animationGuy2.View}
             </ContainerImg>
             <InfoGuy>
               <Name>Justin Sun</Name>
@@ -110,7 +138,7 @@ const BackedBy = () => {
           </Container>
           <Container>
             <ContainerImg>
-              <Lottie animationData={Guy3} autoplay={true} loop={true}/>
+              {animationGuy3.View}
             </ContainerImg>
             <InfoGuy>
               <Name>Brian Lee</Name>

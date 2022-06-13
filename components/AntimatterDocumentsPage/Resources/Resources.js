@@ -54,6 +54,8 @@ const Block = styled.div`
   border-radius: 30px;
   box-sizing: border-box;
   padding: 32px 24px;
+  min-height: 280px;
+  max-height: 280px;
 `
 
 const BlockTitle = styled.h3`
@@ -64,6 +66,7 @@ const BlockTitle = styled.h3`
   font-size: 28px;
   line-height: 124%;
   color: #121212;
+  padding-bottom: 16px;
 `
 
 const BlockDescription = styled.span`

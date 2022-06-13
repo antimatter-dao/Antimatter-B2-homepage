@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+import Figure1 from "../../public/figure.svg";
+import Figure2 from "../../public/figure2.svg";
+import {useParallax} from "react-scroll-parallax";
+import Polyhedron from "../../public/polyhedron.svg";
+
 const Container = styled.div`
   background: #F0F1F3;
   height: 100vh;
@@ -145,35 +150,68 @@ const BlockButton = styled.button`
   height: 64px;
 `
 
-const MainBlock = () => (
-  <Container>
-    <Title>Antimatter Documents</Title>
-    <Description>Explore all information about our products in one place</Description>
-    <Button>Open Documentation</Button>
+const Figure1Icon = styled.div`
+  position: absolute;
+  top: -87px;
+  right: 70px;
+`;
 
-    <InfoBlocks>
-      <BlockAntimatterB2Paper>
-        <BlockAntimatterB2PaperTitle>
-          Antimatter B2 Paper
-        </BlockAntimatterB2PaperTitle>
-        <BlockAntimatterB2PaperDescription>
-          This whitepaper expands the role of B2 in the Antimatter ecosystem, laying out the key advancements for B2 to power a suite of decentralized financial infrastructure for DeFi.
-        </BlockAntimatterB2PaperDescription>
-        <BlockButton>Download whitepaper</BlockButton>
-      </BlockAntimatterB2Paper>
+const Figure2Icon = styled.div`
+  position: absolute;
+  top: 170px;
+  left: 160px;
+`;
+
+const MainBlock = () => {
+  const parallaxFigure1 = useParallax({
+    translateY: [0, 60],
+    speed: 10
+  });
+  const parallaxFigure2 = useParallax({
+    translateY: [0, 60],
+    speed: 10
+  });
+
+  return(
+    <Container>
+      <Title>Antimatter Documents</Title>
+      <Description>Explore all information about our products in one place</Description>
+      <Button>Open Documentation</Button>
+
+      <InfoBlocks>
+        <BlockAntimatterB2Paper>
+          <BlockAntimatterB2PaperTitle>
+            Antimatter B2 Paper
+          </BlockAntimatterB2PaperTitle>
+          <BlockAntimatterB2PaperDescription>
+            This whitepaper expands the role of B2 in the Antimatter ecosystem, laying out the key advancements for B2 to power a suite of decentralized financial infrastructure for DeFi.
+          </BlockAntimatterB2PaperDescription>
+          <BlockButton>Download whitepaper</BlockButton>
+        </BlockAntimatterB2Paper>
 
 
-      <BlockOracleLessOptionResearchPaper>
-        <BlockOracleLessOptionResearchPaperTitle>
-          Oracle-less option research paper
-        </BlockOracleLessOptionResearchPaperTitle>
-        <BlockOracleLessOptionResearchPaperDescription>
-          This research paper goes in-depth on the mechanics allowing oracle-less options on Bull & Bear.
-        </BlockOracleLessOptionResearchPaperDescription>
-        <BlockButton>Download research paper</BlockButton>
-      </BlockOracleLessOptionResearchPaper>
-    </InfoBlocks>
-  </Container>
-)
+        <BlockOracleLessOptionResearchPaper>
+          <BlockOracleLessOptionResearchPaperTitle>
+            Oracle-less option research paper
+          </BlockOracleLessOptionResearchPaperTitle>
+          <BlockOracleLessOptionResearchPaperDescription>
+            This research paper goes in-depth on the mechanics allowing oracle-less options on Bull & Bear.
+          </BlockOracleLessOptionResearchPaperDescription>
+          <BlockButton>Download research paper</BlockButton>
+
+          <Figure1Icon ref={parallaxFigure1.ref}>
+            <Figure1/>
+          </Figure1Icon>
+        </BlockOracleLessOptionResearchPaper>
+      </InfoBlocks>
+
+
+
+      <Figure2Icon ref={parallaxFigure2.ref}>
+        <Figure2/>
+      </Figure2Icon>
+    </Container>
+  )
+}
 
 export default MainBlock

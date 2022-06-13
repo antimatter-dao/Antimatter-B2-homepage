@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+import Twitter from "../../../public/Networks/TwitterColor.svg";
+import Telegram from "../../../public/Networks/telegramColor.svg";
+import Medium from "../../../public/Networks/mediumColor.svg";
+import Discord from "../../../public/Networks/discord.svg";
+
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
@@ -67,24 +72,41 @@ const BlockDescription = styled.span`
   color: #1B1A1F;
 `
 
+const Icon = styled.div`
+  width: 50px;
+  height: 40px;
+`
+
 const StayWithUs = () => (
   <Wrapper>
     <Container>
       <Title>Stay with us</Title>
       <Content>
         <Block>
+          <Icon>
+            <Twitter />
+          </Icon>
           <BlockTitle>Twitter</BlockTitle>
           <BlockDescription>Announcements and updates</BlockDescription>
         </Block>
         <Block>
+          <Icon>
+            <Telegram />
+          </Icon>
           <BlockTitle>Telegram</BlockTitle>
           <BlockDescription>Support and discussion</BlockDescription>
         </Block>
         <Block>
+          <Icon>
+            <Medium />
+          </Icon>
           <BlockTitle>Medium</BlockTitle>
           <BlockDescription>Blogs and tutorials</BlockDescription>
         </Block>
         <Block>
+          <Icon>
+            <Discord />
+          </Icon>
           <BlockTitle>Discord</BlockTitle>
           <BlockDescription>Community, support, discussion</BlockDescription>
         </Block>
