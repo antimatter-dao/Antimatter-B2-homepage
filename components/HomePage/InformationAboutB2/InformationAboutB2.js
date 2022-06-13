@@ -7,6 +7,12 @@ import Polyhedron from "../../../public/polyhedron.svg";
 
 const Content = styled.div`
   display: flex;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
 `;
 
 const InfoBlock = styled.div`
@@ -21,6 +27,16 @@ const InfoBlock = styled.div`
   max-width: 285px;
   margin-right: 20px;
   position: relative;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    width: 100%;
+    margin-bottom: 12px;
+    max-width: 100%;
+    margin-right: 0;
+    padding: 32px 24px;
+    
+    min-height: 145px;
+  }
 `;
 
 const InfoBlockTitle = styled.span`
@@ -47,6 +63,11 @@ const Wrapper = styled.div`
   display: flex;
   padding: 0 120px;
   margin-top: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-top: 50px;
+    padding: 0 16px;
+  }
 `;
 
 const PolyhedronIcon = styled.div`
@@ -56,6 +77,10 @@ const PolyhedronIcon = styled.div`
   
   transition: 4s;
   transform: translate(${props => props?.isVisible ? "0, 17px": "0px 0px"});
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const LadderIcon = styled.div`
@@ -65,6 +90,10 @@ const LadderIcon = styled.div`
 
   transition: 4s;
   transform: translate(${props => props?.isVisible ? "0, 17px": "0px 0px"});
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const InformationAboutB2 = () => {

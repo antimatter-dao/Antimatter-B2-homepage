@@ -18,6 +18,10 @@ const Wrapper = styled.div`
   width: 100%;
   flex-direction: column;
   position: relative;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    overflow: hidden;
+  }
 `;
 
 export default function Home() {

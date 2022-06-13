@@ -13,6 +13,11 @@ const Wrapper = styled.div`
   background: #121212;
   min-height: 440px;
   flex-direction: column;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    min-height: 280px;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -26,6 +31,11 @@ const Title = styled.h1`
   margin-bottom: 120px;
   margin-top: 80px;
   margin-left: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+    margin: 52px 12px 28px;
+  }
 `;
 
 const Container  = styled.div`
@@ -42,8 +52,8 @@ const ImgContainer  = styled.div`
   padding-bottom: ${props => props?.paddingBottom ? props?.paddingBottom : '0px'};
 `;
 
-const Partners = () => {
-  return <Wrapper>
+const Partners = () => (
+  <Wrapper>
     <Title>Our strategic partners</Title>
     <Marquee gradient={false} speed={90}>
       <Container>
@@ -80,6 +90,6 @@ const Partners = () => {
       </Container>
     </Marquee>
   </Wrapper>
-}
+)
 
 export default Partners

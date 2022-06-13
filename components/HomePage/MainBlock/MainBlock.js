@@ -29,6 +29,10 @@ const IconLeft = styled.div`
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .4s;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const IconBottom = styled.div`
@@ -43,6 +47,10 @@ const IconBottom = styled.div`
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .1s;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const IconTop = styled.div`
@@ -57,6 +65,10 @@ const IconTop = styled.div`
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .3s;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const IconRight = styled.div`
@@ -71,6 +83,10 @@ const IconRight = styled.div`
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .2s;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const Content = styled.div`
@@ -80,6 +96,10 @@ const Content = styled.div`
   justify-content: flex-start;
   width: 100%;
   padding-top: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding: 140px 16px 16px;
+  }
 `;
 
 const ButtonsContainer = styled.div`
@@ -90,6 +110,22 @@ const ButtonsContainer = styled.div`
   button {
     &:first-child{
       margin-right: 20px;
+
+      @media (min-width: 360px) and (max-width: 992px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    width: 100%;
+
+
+    button {
+      &:last-child{
+        margin-top: 16px;
+      }
     }
   }
 `;
@@ -107,6 +143,12 @@ const Title = styled.h1`
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
+
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 40px;
+    padding-bottom: 23px;
+  }
 `;
 
 const Description = styled.h3`
@@ -118,6 +160,11 @@ const Description = styled.h3`
   line-height: 128%;
   color: #F3F3F3;
   opacity: 0.8;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 22px;
+    text-align: center;
+  }
 `;
 
 const MainBlock = () => (

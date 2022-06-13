@@ -16,6 +16,11 @@ const Content = styled.div`
   background: #121212;
   margin: 0 120px;
   border-radius: 30px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+   flex-direction: column;
+    margin: 0 16px;
+  }
 `;
 
 const ContentInfo = styled.div`
@@ -23,6 +28,10 @@ const ContentInfo = styled.div`
   flex-direction: column;
   padding: 82px 43px;
   box-sizing: border-box;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding: 44px 24px;
+  }
 `;
 
 const WrapperImg = styled.div`
@@ -34,6 +43,12 @@ const WrapperImg = styled.div`
 const ContainerImg = styled.div`
   width: 455px;
   height: 451px;
+
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    width: 218px;
+    height: 216px;
+  }
 `;
 
 const ContentInfoTitle = styled.h1`
@@ -45,6 +60,10 @@ const ContentInfoTitle = styled.h1`
   color: #FFFFFF;
   margin: 0;
   padding-bottom: 36px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+  }
 `;
 
 const ContentInfoDescription = styled.span`
@@ -56,10 +75,19 @@ const ContentInfoDescription = styled.span`
   color: #FFFFFF;
   opacity: 0.8;
   padding-bottom: 81px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 18px;
+    padding-bottom: 0;
+  }
 `;
 
 const CustomButton = styled.div`
   width: 320px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 

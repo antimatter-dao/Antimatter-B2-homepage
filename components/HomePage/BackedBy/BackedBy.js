@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import Lottie, {useLottie} from "lottie-react";
+import {useLottie} from "lottie-react";
+import { useEffect } from "react";
 
 import Guy1 from "../../../public/AnimationJson/guy1.json";
 import Guy2 from "../../../public/AnimationJson/guy2.json";
@@ -8,11 +9,15 @@ import Twitter from "../../../public/twitter.svg";
 import Partner1 from "../../../public/monday-capital.svg";
 import Partner2 from "../../../public/NGC.svg";
 import Partner3 from "../../../public/huobi.svg";
-import {useEffect, useRef} from "react";
+
 
 const Wrapper = styled.div`
   display: flex;
   margin-bottom: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const Content = styled.div`
@@ -20,6 +25,11 @@ const Content = styled.div`
   margin: 0 120px;
   flex-direction: column;
   width: 100%;
+  
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 0 16px;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -31,12 +41,21 @@ const Title = styled.h1`
   line-height: 120%;
   color: #000000;
   margin-bottom: 60px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 28px;
+    font-size: 28px;
+  }
 `;
 
 const Guys = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+   flex-direction: column;
+  }
 `
 
 const ContainerImg = styled.div`
@@ -49,6 +68,10 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding-bottom: 20px;
+  }
 `;
 
 const InfoGuy = styled.div`
@@ -57,6 +80,10 @@ const InfoGuy = styled.div`
   width: 100%;
   align-items: center;
   justify-content: center;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 const Partners = styled.div`
@@ -68,6 +95,21 @@ const Partners = styled.div`
   margin-top: 64px;
   justify-content: space-around;
   align-items: center;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    padding: 48px 10px;
+    margin-top: 32px;
+    min-height: max-content;
+    
+    svg{
+      margin-bottom: 36px;
+      
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
 `
 
 const Name = styled.span`

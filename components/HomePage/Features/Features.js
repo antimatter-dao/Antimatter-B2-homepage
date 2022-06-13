@@ -10,16 +10,29 @@ import Arc from "../../../public/arc.svg";
 const Wrapper = styled.div`
   display: flex;
   margin: 120px 0;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 50px 0;
+  }
 `;
 
 const Content = styled.div`
   display: flex;
   margin: 0 120px;
   flex-direction: column;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 0 16px;
+    align-items: center;
+  }
 `;
 
 const Blocks = styled.div`
   display: flex;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.h1`
@@ -31,6 +44,11 @@ const Title = styled.h1`
   line-height: 120%;
   color: #000000;
   margin-bottom: 60px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 28px;
+    font-size: 28px;
+  }
 `;
 
 const Block = styled.div`
@@ -47,7 +65,16 @@ const Block = styled.div`
   
   &:nth-child(2){
     margin: 0 20px;
+
+    @media (min-width: 360px) and (max-width: 992px) {
+      margin: 10px 0;
+    }
   }
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    min-height: 277px;
+  }
+ 
 `;
 
 const IconBlock = styled.div`
@@ -90,6 +117,10 @@ const AnimationBlock = styled.div`
   right: 20px;
   transition: 4s;
   transform: translate(${props => props?.isVisible ? "0px, 30px": "0px 0px"});
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const Features = () => {

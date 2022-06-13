@@ -19,16 +19,42 @@ const Container = styled.div`
   box-sizing: border-box;
   min-height: 420px;
   justify-content: space-between;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    height: 100vh;
+    padding: 50px 16px;
+    justify-content: flex-start;
+  }
 `
 
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+   flex-direction: column;
+  }
+`
+
+const ContentBottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column-reverse;
+    margin-top: 56px;
+  }
 `
 
 const BlockMenu = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-wrap: wrap;
+    padding-top: 48px;
+    align-items: flex-start;
+  }
 `
 
 const Column = styled.div`
@@ -37,6 +63,11 @@ const Column = styled.div`
 
   &:nth-child(2) {
     padding: 0 200px;
+
+    @media (min-width: 360px) and (max-width: 992px) {
+      padding: 0 74px;
+      margin-bottom: 32px;
+    }
   }
 `
 
@@ -75,11 +106,21 @@ const Privacy = styled.span`
 
 const SocialNetworkBlock = styled.div`
   display: flex;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+   margin-bottom: 36px;
+  }
 `;
 
 const SocialNetworkIcon = styled.div`
   padding-left: 40px;
   cursor: pointer;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    &:first-child{
+      padding-left: 0;
+    }
+  }
 `;
 
 const Footer = () => {
@@ -112,7 +153,7 @@ const Footer = () => {
             </Column>
           </BlockMenu>
         </Content>
-        <Content>
+        <ContentBottom>
           <Privacy>©2022 Antimatter dao Ltd. All rights reserved. / Notice and Disclaimer</Privacy>
           <SocialNetworkBlock>
             <SocialNetworkIcon>
@@ -128,7 +169,7 @@ const Footer = () => {
               <GitHub/>
             </SocialNetworkIcon>
           </SocialNetworkBlock>
-        </Content>
+        </ContentBottom>
       </Container>
     </Wrapper>
   )

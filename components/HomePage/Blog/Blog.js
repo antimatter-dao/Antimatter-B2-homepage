@@ -5,6 +5,11 @@ const Wrapper = styled.div`
   display: flex;
   margin-top: 120px;
   padding-bottom: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
 `;
 
 const Container = styled.div`
@@ -12,6 +17,10 @@ const Container = styled.div`
   margin: 0 120px;
   width: 100%;
   flex-direction: column;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 0 16px;
+  }
 `;
 
 const Content = styled.div`
@@ -20,6 +29,11 @@ const Content = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const BlogContainer = styled.div`
@@ -38,6 +52,15 @@ const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   padding-bottom: 76px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+   flex-direction: column;
+    padding-bottom: 30px;
+    
+    button{
+      width: 100%;
+    }
+  }
 `;
 
 const Title = styled.h1`
@@ -49,6 +72,11 @@ const Title = styled.h1`
   line-height: 120%;
   color: #000000;
   margin: 0;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 28px;
+    font-size: 28px;
+  }
 `;
 
 const SubTitle = styled.h3`

@@ -7,12 +7,21 @@ import Pig from "../../../public/AnimationJson/pig.json";
 const Wrapper = styled.div`
   display: flex;
   margin-bottom: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 50px;
+  }
 `;
 
 const Content = styled.div`
   display: flex;
   margin: 0 120px;
   flex-direction: column;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 0 16px;
+    align-items: center;
+  }
 `;
 
 const Blocks = styled.div`
@@ -21,6 +30,11 @@ const Blocks = styled.div`
   grid-template-rows: 233px 233px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const Title = styled.h1`
@@ -32,6 +46,11 @@ const Title = styled.h1`
   line-height: 120%;
   color: #000000;
   margin-bottom: 60px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 28px;
+    font-size: 28px;
+  }
 `;
 
 const Block = styled.div`
@@ -91,8 +110,8 @@ const Description = styled.span`
   opacity: 0.8;
 `;
 
-const AntimatterDapps = () => {
-  return (<Wrapper>
+const AntimatterDapps = () => (
+    <Wrapper>
     <Content>
       <Title>Built-in Antimatter DApps</Title>
       <Blocks>
@@ -142,7 +161,7 @@ const AntimatterDapps = () => {
         <Lottie animationData={Pig} autoplay={true} loop={true}/>
       </Blocks>
     </Content>
-  </Wrapper>)
-}
+  </Wrapper>
+)
 
 export default AntimatterDapps
