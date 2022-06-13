@@ -44,6 +44,11 @@ const BlogContainer = styled.div`
   border-radius: 30px;
 
   flex-direction: column;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    min-width: 100%;
+    min-height: max-content;
+  }
 `;
 
 const HeaderContainer = styled.div`

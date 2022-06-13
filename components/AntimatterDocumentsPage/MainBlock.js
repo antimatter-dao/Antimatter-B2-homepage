@@ -12,6 +12,11 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    height: max-content;
+  }
+  
 `
 
 const Title = styled.h1`
@@ -25,6 +30,10 @@ const Title = styled.h1`
   margin: 0;
   padding-bottom: 8px;
   padding-top: 132px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 40px;
+  }
 `
 
 const Description = styled.h3`
@@ -37,6 +46,10 @@ const Description = styled.h3`
   color: #000000;
   margin: 0;
   padding-bottom: 48px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 22px;
+  }
 `
 
 const Button = styled.button`
@@ -60,6 +73,15 @@ const InfoBlocks = styled.div`
   display: flex;
   justify-content: space-between;
   bottom: -180px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    margin: 72px 16px 0;
+  }
 `
 
 const BlockAntimatterB2Paper = styled.div`
@@ -72,6 +94,11 @@ const BlockAntimatterB2Paper = styled.div`
   padding: 60px 44px;
   box-sizing: border-box;
   margin-right: 16px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding: 44px 24px;
+    margin: 0 16px 24px;
+  }
 `
 
 const BlockAntimatterB2PaperTitle = styled.h3`
@@ -83,6 +110,10 @@ const BlockAntimatterB2PaperTitle = styled.h3`
   line-height: 120%;
   color: #FFFFFF;
   padding-bottom: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+  }
 `
 
 const BlockAntimatterB2PaperDescription = styled.span`
@@ -94,6 +125,10 @@ const BlockAntimatterB2PaperDescription = styled.span`
   line-height: 132%;
   color: #FFFFFF;
   padding-bottom: 60px;
+  
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 18px;
+  }
 `
 
 const BlockOracleLessOptionResearchPaper = styled.div`
@@ -108,6 +143,11 @@ const BlockOracleLessOptionResearchPaper = styled.div`
 
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 0 16px 24px;
+    padding: 44px 24px;
+  }
 `
 
 const BlockOracleLessOptionResearchPaperTitle = styled.h3`
@@ -119,6 +159,11 @@ const BlockOracleLessOptionResearchPaperTitle = styled.h3`
   line-height: 120%;
   color: #121212;
   padding-bottom: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+    padding-bottom: 0;
+  }
 `
 
 const BlockOracleLessOptionResearchPaperDescription = styled.span`
@@ -130,6 +175,10 @@ const BlockOracleLessOptionResearchPaperDescription = styled.span`
   line-height: 132%;
   color: #000000;
   padding-bottom: 34px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 18px;
+  }
 `
 
 const BlockButton = styled.button`
@@ -148,18 +197,31 @@ const BlockButton = styled.button`
 
   width: 70%;
   height: 64px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    width: 100%;
+    text-align: center;
+  }
 `
 
 const Figure1Icon = styled.div`
   position: absolute;
   top: -87px;
   right: 70px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const Figure2Icon = styled.div`
   position: absolute;
   top: 170px;
   left: 160px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `;
 
 const MainBlock = () => {
@@ -188,7 +250,6 @@ const MainBlock = () => {
           </BlockAntimatterB2PaperDescription>
           <BlockButton>Download whitepaper</BlockButton>
         </BlockAntimatterB2Paper>
-
 
         <BlockOracleLessOptionResearchPaper>
           <BlockOracleLessOptionResearchPaperTitle>

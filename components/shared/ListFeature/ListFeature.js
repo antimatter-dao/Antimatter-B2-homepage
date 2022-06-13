@@ -5,6 +5,10 @@ const FeaturesBlock = styled.ul`
   margin: 0;
   padding-left: 14px;
   padding-bottom: 52px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding-bottom: 28px;
+  }
 `
 
 const Feature = styled.li`
@@ -22,6 +26,10 @@ const Feature = styled.li`
     font-weight: bold;
     color: #F8D448;
   }
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 16px;
+  }
 `
 
 const Title = styled.span`
@@ -32,6 +40,11 @@ const Title = styled.span`
   line-height: 124%;
   color: ${props => props?.fill && props?.fill};
   padding-bottom: 16px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 20px;
+    margin-top: 28px;
+  }
 `
 
 const ListFeature = ({ listFeature, fill }) => {

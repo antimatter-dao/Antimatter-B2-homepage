@@ -16,6 +16,10 @@ const Wrapper = styled.div`
   position: relative;
   justify-content: space-between;
   overflow: hidden;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+  }
 `;
 
 const Content = styled.div`
@@ -24,6 +28,11 @@ const Content = styled.div`
   display: flex;
   justify-content: space-between;
   width: 50%;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    width: 100%;
+    padding: 44px 16px 0 16px;
+  }
 `
 
 const InfoBlock = styled.div`
@@ -41,6 +50,10 @@ const Title = styled.h1`
   line-height: 120%;
   color: ${props => props?.color && props?.color};
   padding-bottom: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+  }
 `
 
 const Description = styled.h3`
@@ -53,6 +66,11 @@ const Description = styled.h3`
   color: ${props => props?.color && props?.color};
   opacity: 0.8;
   padding-bottom: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding-bottom: 0;
+    font-size: 18px;
+  }
 `
 
 const Button = styled.button`
@@ -85,6 +103,10 @@ const ImgContainerSvg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    width: 100%;
+  }
 `
 
 const Img = styled.img`

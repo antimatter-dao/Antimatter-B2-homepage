@@ -65,7 +65,7 @@ const Column = styled.div`
     padding: 0 200px;
 
     @media (min-width: 360px) and (max-width: 992px) {
-      padding: 0 74px;
+      padding: 0 60px;
       margin-bottom: 32px;
     }
   }

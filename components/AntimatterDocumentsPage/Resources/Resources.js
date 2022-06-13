@@ -12,6 +12,10 @@ const Wrapper = styled.div`
   position: relative;
   padding-top: 170px;
   height: max-content;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding-top: 0;
+  }
 `;
 
 const Container = styled.div`
@@ -19,6 +23,12 @@ const Container = styled.div`
   margin: 0 120px;
   flex-direction: column;
   padding-top: 120px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding-top: 50px;
+    margin: 0 16px;
+    align-items: center;
+  }
 `;
 
 const Title = styled.h1`
@@ -30,6 +40,10 @@ const Title = styled.h1`
   line-height: 120%;
   color: #000000;
   margin: 0;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+  }
 `;
 
 const HeaderContainer = styled.div`
@@ -38,6 +52,12 @@ const HeaderContainer = styled.div`
   align-items: center;
   width: 100%;
   padding-bottom: 76px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding-bottom: 28px;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Content = styled.div`
@@ -45,6 +65,12 @@ const Content = styled.div`
   grid-template-columns: 386px 386px 386px;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 const Block = styled.div`
@@ -56,6 +82,11 @@ const Block = styled.div`
   padding: 32px 24px;
   min-height: 280px;
   max-height: 280px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    min-height: 100%;
+    max-height: 100%;
+  }
 `
 
 const BlockTitle = styled.h3`

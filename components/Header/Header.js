@@ -29,6 +29,10 @@ const Links = styled.div`
   a{
     color: ${props => props?.fill ? '#000000' : '#FFFFFF'} !important;
   }
+
+  @media (min-width: 360px) and (max-width: 992px) {
+   display: none;
+  }
 `;
 
 const Link = styled.a`

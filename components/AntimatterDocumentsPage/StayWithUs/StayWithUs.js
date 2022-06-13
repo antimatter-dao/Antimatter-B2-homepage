@@ -11,6 +11,12 @@ const Wrapper = styled.div`
   max-height: 542px;
   min-height: 542px;
   background: #121212;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    max-height: max-content;
+    min-height: max-content;
+    padding-bottom: 20px;
+  }
 `;
 
 const Container = styled.div`
@@ -19,6 +25,11 @@ const Container = styled.div`
   margin: 0 120px;
   padding-top: 80px;
   width: 100%;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin: 0 16px;
+    padding-top: 50px;
+  }
 `;
 
 const Title = styled.h1`
@@ -31,12 +42,22 @@ const Title = styled.h1`
   color: #FFFFFF;
   margin: 0;
   padding-bottom: 60px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 28px;
+    padding-bottom: 28px;
+  }
 `;
 
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 const Block = styled.div`
   background: #F0F1F3;
@@ -50,6 +71,10 @@ const Block = styled.div`
   
   min-height: 214px;
   max-height: 214px;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 10px;
+  }
 `
 
 const BlockTitle = styled.h3`

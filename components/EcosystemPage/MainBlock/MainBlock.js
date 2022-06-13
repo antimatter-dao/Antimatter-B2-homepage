@@ -44,7 +44,18 @@ const ButtonsContainer = styled.div`
   button {
     &:first-child {
       margin-right: 20px;
+
+      @media (min-width: 360px) and (max-width: 992px) {
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
     }
+  }
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 16px;
   }
 `;
 
@@ -57,6 +68,11 @@ const Title = styled.h1`
   line-height: 120%;
   text-align: center;
   color: #000000;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
 `;
 
 const Description = styled.h3`
@@ -68,6 +84,10 @@ const Description = styled.h3`
   line-height: 132%;
   text-align: center;
   color: #000000;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    font-size: 22px;
+  }
 `;
 
 const FirstColumn = styled.div`
@@ -76,6 +96,10 @@ const FirstColumn = styled.div`
   left: -20%;
 
   animation: promotionColumn 1.2s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const FirstColumnIcon = styled.div`
@@ -91,6 +115,10 @@ const SecondColumn = styled.div`
   z-index: 1;
 
   animation: promotionColumn 1s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const SecondColumnIcon = styled.div`
@@ -106,6 +134,10 @@ const ThirdColumn = styled.div`
   left: 18%;
 
   animation: promotionColumn 0.9s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const ThirdColumnIcon = styled.div`
@@ -123,6 +155,10 @@ const FourthColumn = styled.div`
   z-index: 2;
 
   animation: promotionColumn .8s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const FourthColumnIcon = styled.div`
@@ -138,6 +174,10 @@ const FifthColumn = styled.div`
   left: 0;
 
   animation: promotionColumn .7s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const FifthColumnIcon = styled.div`
@@ -153,6 +193,10 @@ const SixthColumn = styled.div`
   bottom: 74px;
 
   animation: promotionColumn 1.4s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const SeventhColumn = styled.div`
@@ -161,6 +205,10 @@ const SeventhColumn = styled.div`
   left: 530px;
 
   animation: promotionColumn 1.6s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const optionsColumnQuanto = {
