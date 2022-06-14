@@ -114,6 +114,7 @@ const Img = styled.img`
   transform: translate(${props => props?.translate && props?.translate});
   width: ${props => props?.width && props?.width};
   height: 100vh;
+  object-fit: cover;
 `
 
 const Slide = ({slide}) => {

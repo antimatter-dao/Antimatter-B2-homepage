@@ -44,7 +44,7 @@ export default function Ecosystem() {
       translate: `20px, -13px`,
       minHeight: "100vh",
       marginTopButton: '32px',
-      widthImg: "57vw"
+      widthImg: "63vw"
     },
     {
       title: 'Sharkfin',
@@ -62,7 +62,7 @@ export default function Ecosystem() {
       id: 3,
       translate: `30px, -20px`,
       minHeight: "100vh",
-      widthImg: "63vw"
+      widthImg: "70vw"
     },
     {
       title: 'Dual Investment',
@@ -80,7 +80,7 @@ export default function Ecosystem() {
       id: 4,
       translate: `20px, -12px`,
       minHeight: "100vh",
-      widthImg: "63vw"
+      widthImg: "57vw"
     },
     {
       title: 'BULL & BEAR',
@@ -98,7 +98,7 @@ export default function Ecosystem() {
       id: 5,
       translate: `20px, -16px`,
       minHeight: "100vh",
-      widthImg: "76vw"
+      widthImg: "82vw"
     },
     {
       title: 'Nonfungible Finance',
@@ -116,7 +116,7 @@ export default function Ecosystem() {
       id: 6,
       translate: `20px, -14px`,
       minHeight: "100vh",
-      widthImg: "66vw"
+      widthImg: "61vw"
     },
     {
       title: 'Antimatter DAO',
