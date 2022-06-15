@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import Link from "next/link";
 
-import Logo from '../../public/logo.svg'
+import Logo from "../../public/logo.svg";
 import BurgerMenu from "../shared/BurgerMenu";
-import {useState} from "react";
+import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 
 const Wrapper = styled.div`
@@ -24,26 +25,26 @@ const IconWrapper = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
- svg{
-   path{
-     fill: ${props => props?.fill ? '#000000' : '#F8D448'};
-   }
- }
+
+  svg {
+    path {
+      fill: ${(props) => (props?.fill ? "#000000" : "#F8D448")};
+    }
+  }
 `;
 
 const Links = styled.div`
-  a{
-    color: ${props => props?.fill ? '#000000' : '#FFFFFF'} !important;
+  a {
+    color: ${(props) => (props?.fill ? "#000000" : "#FFFFFF")} !important;
   }
 
   @media (min-width: 360px) and (max-width: 992px) {
-   display: none;
+    display: none;
   }
 `;
 
-const Link = styled.a`
-  font-family: 'Inter', sans-serif;
+const LinkA = styled.a`
+  font-family: "Inter", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -51,40 +52,41 @@ const Link = styled.a`
   opacity: 0.8;
   padding-right: 40px;
   cursor: pointer;
-  
-  &:last-child{
+
+  &:last-child {
     padding-right: 0;
   }
 `;
 
-
 const Header = (props) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const onMenuClick = () =>{
-    setIsMenuOpen(!isMenuOpen)
-  }
+  const onMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-  return(
+  return (
     <>
-      {isMenuOpen && (
-        <MobileMenu />
-      )}
+      {isMenuOpen && <MobileMenu />}
       <Wrapper>
         <IconWrapper fill={props.fill}>
           <Logo />
         </IconWrapper>
         <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} />
         <Links fill={props.fill}>
-          <Link href={'/ecosystem'}>Ecosystem</Link>
-          <Link>Resources</Link>
-          <Link href='http://bas-node.antimatter.finance:4000'>Explorer</Link>
-          <Link href='http://bas-node.antimatter.finance:5000'>Faucet</Link>
-          <Link>Contact</Link>
+          <Link href="/ecosystem" passHref>
+            <LinkA>Ecosystem</LinkA>
+          </Link>
+          <Link href="/resources" passHref>
+            <LinkA>Ecosystem</LinkA>
+          </Link>
+          <LinkA href="http://bas-node.antimatter.finance:4000">Explorer</LinkA>
+          <LinkA href="http://bas-node.antimatter.finance:5000">Faucet</LinkA>
+          <LinkA>Contact</LinkA>
         </Links>
       </Wrapper>
     </>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

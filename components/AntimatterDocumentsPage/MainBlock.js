@@ -162,7 +162,6 @@ const BlockOracleLessOptionResearchPaperTitle = styled.h3`
 
   @media (min-width: 360px) and (max-width: 992px) {
     font-size: 28px;
-    padding-bottom: 0;
   }
 `
 

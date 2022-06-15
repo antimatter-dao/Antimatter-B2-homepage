@@ -76,7 +76,7 @@ const Container = styled.div`
 
 const InfoGuy = styled.div`
   display: flex;
-  margin-top: 31px;
+  margin-top: 14px;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -127,17 +127,17 @@ const IconSocial = styled.a``
 
 const optionsGuy1 = {
   animationData: Guy1,
-  autoplay: false
+  autoplay: false,
 };
 
 const optionsGuy2 = {
   animationData: Guy2,
-  autoplay: false
+  autoplay: false,
 };
 
 const optionsGuy3 = {
   animationData: Guy3,
-  autoplay: false
+  autoplay: false,
 };
 
 const BackedBy = () => {
@@ -147,9 +147,26 @@ const BackedBy = () => {
 
 
   useEffect(()=>{
-    setTimeout(()=> animationGuy1.play(), 500)
-    setTimeout(()=> animationGuy2.play(), 100)
-    setTimeout(()=> animationGuy3.play(), 1000)
+    const interval1 = setInterval(()=> {
+      animationGuy1.stop();
+      animationGuy1.play();
+    }, 7000)
+    const interval2 = setInterval(()=> {
+      animationGuy2.stop();
+      animationGuy2.play();
+    }, 5000)
+    const interval3 = setInterval(()=> {
+      animationGuy3.stop()
+      animationGuy3.play()
+    }, 4000)
+
+
+    return () => {
+      clearInterval(interval1);
+      clearInterval(interval2);
+      clearInterval(interval3);
+    }
+
   },[])
 
   return (

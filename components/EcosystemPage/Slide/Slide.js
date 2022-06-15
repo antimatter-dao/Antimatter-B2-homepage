@@ -89,6 +89,10 @@ const Button = styled.button`
   background: ${props => props?.background ? props?.background : "#F8D448"};
   border: ${props => props?.border ? props?.border : "none"};
   color: ${props => props?.color ? props?.color : "#000000"};
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    max-width: 100%;
+  }
 `
 
 const ImgContainer = styled.div`

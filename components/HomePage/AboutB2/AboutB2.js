@@ -46,8 +46,8 @@ const ContainerImg = styled.div`
 
 
   @media (min-width: 360px) and (max-width: 992px) {
-    width: 218px;
-    height: 216px;
+    width: 300px;
+    height: 300px;
   }
 `;
 
@@ -114,7 +114,7 @@ const AboutB2 = () => {
         </ContentInfo>
         <WrapperImg>
           <ContainerImg>
-            <Lottie animationData={Chart} autoplay={true} loop={true}/>;
+            <Lottie animationData={Chart} autoplay={true} loop={true}/>
           </ContainerImg>
         </WrapperImg>
       </Content>

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const FeaturesBlock = styled.ul`
   margin: 0;
-  padding-left: 14px;
+  padding-left: 20px;
   padding-bottom: 52px;
 
   @media (min-width: 360px) and (max-width: 992px) {

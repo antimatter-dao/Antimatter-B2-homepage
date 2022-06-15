@@ -34,12 +34,12 @@ const Container = styled.div`
 
 const Title = styled.h1`
   display: flex;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   margin: 0;
   padding-bottom: 60px;
 
@@ -58,9 +58,9 @@ const Content = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-`
+`;
 const Block = styled.div`
-  background: #F0F1F3;
+  background: #f0f1f3;
   border-radius: 30px;
   box-sizing: border-box;
   padding: 24px;
@@ -68,39 +68,45 @@ const Block = styled.div`
   flex-direction: column;
   max-width: 285px;
   min-width: 285px;
-  
+
   min-height: 214px;
   max-height: 214px;
 
   @media (min-width: 360px) and (max-width: 992px) {
     margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: initial;
+
+    min-height: initial;
+    max-height: 100%;
   }
-`
+`;
 
 const BlockTitle = styled.h3`
   margin: 0;
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 124%;
   color: #121212;
   padding-top: 30px;
-`
+`;
 
 const BlockDescription = styled.span`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 145%;
-  color: #1B1A1F;
-`
+  color: #1b1a1f;
+`;
 
 const Icon = styled.div`
   width: 50px;
   height: 40px;
-`
+`;
 
 const StayWithUs = () => (
   <Wrapper>
@@ -138,6 +144,6 @@ const StayWithUs = () => (
       </Content>
     </Container>
   </Wrapper>
-)
+);
 
-export default StayWithUs
+export default StayWithUs;

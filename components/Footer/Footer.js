@@ -9,7 +9,7 @@ import Social from "../../public/Networks/social.svg";
 const Wrapper = styled.div`
   background: #121212;
   width: 100%;
-  border-top: 1px solid #FFFFFF;
+  border-top: 1px solid #ffffff;
 `;
 
 const Container = styled.div`
@@ -25,16 +25,16 @@ const Container = styled.div`
     padding: 50px 16px;
     justify-content: flex-start;
   }
-`
+`;
 
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
 
   @media (min-width: 360px) and (max-width: 992px) {
-   flex-direction: column;
+    flex-direction: column;
   }
-`
+`;
 
 const ContentBottom = styled.div`
   display: flex;
@@ -44,7 +44,7 @@ const ContentBottom = styled.div`
     flex-direction: column-reverse;
     margin-top: 56px;
   }
-`
+`;
 
 const BlockMenu = styled.div`
   display: flex;
@@ -55,7 +55,7 @@ const BlockMenu = styled.div`
     padding-top: 48px;
     align-items: flex-start;
   }
-`
+`;
 
 const Column = styled.div`
   display: flex;
@@ -69,38 +69,38 @@ const Column = styled.div`
       margin-bottom: 32px;
     }
   }
-`
+`;
 
 const ColumnTitle = styled.h3`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   padding-bottom: 25px;
   margin: 0;
-`
+`;
 
-const Link = styled.span`
-  font-family: 'SF Pro Display', sans-serif;
+const Link = styled.a`
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.6;
   padding-bottom: 17px;
   cursor: pointer;
-`
+`;
 
 const Privacy = styled.span`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 120%;
-  color: #FFFFFF;
+  color: #ffffff;
   opacity: 0.7;
 `;
 
@@ -108,7 +108,7 @@ const SocialNetworkBlock = styled.div`
   display: flex;
 
   @media (min-width: 360px) and (max-width: 992px) {
-   margin-bottom: 36px;
+    margin-bottom: 36px;
   }
 `;
 
@@ -117,7 +117,7 @@ const SocialNetworkIcon = styled.div`
   cursor: pointer;
 
   @media (min-width: 360px) and (max-width: 992px) {
-    &:first-child{
+    &:first-child {
       padding-left: 0;
     }
   }
@@ -128,16 +128,16 @@ const Footer = () => {
     <Wrapper>
       <Container>
         <Content>
-          <Logo/>
+          <Logo />
           <BlockMenu>
             <Column>
               <ColumnTitle>DApps</ColumnTitle>
 
               <Link>Quanto</Link>
-              <Link>Bull & Bear</Link>
-              <Link>Structured</Link>
-              <Link>Nonfungible</Link>
-              <Link>DAO</Link>
+              <Link href="https://app.antimatter.finance">Bull & Bear</Link>
+              <Link href="https://invest.antimatter.finance">Structured</Link>
+              <Link href="https://nonfungible.finance">Nonfungible</Link>
+              <Link href="https://dao.antimatter.finance">DAO</Link>
             </Column>
             <Column>
               <ColumnTitle>Developers</ColumnTitle>
@@ -157,22 +157,28 @@ const Footer = () => {
           <Privacy>©2022 Antimatter dao Ltd. All rights reserved. / Notice and Disclaimer</Privacy>
           <SocialNetworkBlock>
             <SocialNetworkIcon>
-              <Social/>
+              <a>
+                <Social />
+              </a>
             </SocialNetworkIcon>
             <SocialNetworkIcon>
-              <Twitter/>
+              <a href="https://twitter.com/antimatterdefi">
+                <Twitter />
+              </a>
             </SocialNetworkIcon>
             <SocialNetworkIcon>
-              <Telegram/>
+              <a href="t.me/antimatterdefi">
+                <Telegram />
+              </a>
             </SocialNetworkIcon>
             <SocialNetworkIcon>
-              <GitHub/>
+              <GitHub />
             </SocialNetworkIcon>
           </SocialNetworkBlock>
         </ContentBottom>
       </Container>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
