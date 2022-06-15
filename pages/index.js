@@ -23,9 +23,9 @@ const Wrapper = styled.div`
     overflow: hidden;
   }
 `;
+const sliderContent = ['Scalability', 'icon', 'Financial Infrastructure', 'icon', 'Security', 'icon', 'Ecosystem', 'icon', 'Financial support', 'icon']
 
 export default function Home() {
-  const sliderContent = ['Scalability', 'icon', 'Financial Infrastructure', 'icon', 'Security', 'icon', 'Ecosystem', 'icon', 'Financial support', 'icon']
 
   return (
     <ParallaxProvider>

@@ -1,14 +1,15 @@
+import { memo } from "react";
 import styled from "styled-components";
-import {Swiper, SwiperSlide} from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Navigation, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import Button from "../../shared/Button/Button";
 import useWideSize from "../../../hook/useWideSize";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 const Wrapper = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  display: flex;
+  /* display: flex; */
   margin: 0 120px;
   width: 100%;
   flex-direction: column;
@@ -50,6 +51,7 @@ const BlogContainer = styled.div`
   display: flex;
   min-width: 387px;
   min-height: 480px;
+  width: 300px;
   border: 1px solid #121212;
   border-radius: 30px;
 
@@ -57,6 +59,8 @@ const BlogContainer = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     max-width: 390px;
+    min-width: initial;
+    width: 100%;
   }
 `;
 
@@ -79,7 +83,7 @@ const HeaderContainer = styled.div`
 
 const Title = styled.h1`
   display: flex;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -94,7 +98,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.h3`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -108,11 +112,11 @@ const BlogImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: ${props => props?.backgroundImg ? `url(./${props?.backgroundImg})` : null};
+  background-image: ${(props) => (props?.backgroundImg ? `url(./${props?.backgroundImg})` : null)};
   height: 181px;
   width: 100%;
   border-radius: 30px 30px 0 0;
-`
+`;
 
 const BlogInfo = styled.div`
   display: flex;
@@ -122,12 +126,12 @@ const BlogInfo = styled.div`
 `;
 
 const Description = styled.span`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 145%;
-  color: #1B1A1F;
+  color: #1b1a1f;
   padding-top: 12px;
 `;
 
@@ -136,112 +140,120 @@ const BlogWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: 35px;
-`
+`;
 
 const BlogDateContainer = styled.div`
   display: flex;
   flex-direction: column;
-`
+`;
 
 const BlogDate = styled.span`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 145%;
-  color: #1B1A1F;
+  color: #1b1a1f;
   padding-bottom: 10px;
-`
+`;
 
 const BlogButton = styled.button`
   background: #000000;
   border-radius: 16px;
   padding: 14px 32px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
   text-align: center;
-  color: #FFFFFF;
+  color: #ffffff;
   border: none;
 
   &:hover {
-    background: #F8D448;
+    background: #f8d448;
     color: #121212;
-    transition: .7s;
+    transition: 0.7s;
   }
-`
+`;
 
 const BlogDateImg = styled.img`
   width: 96px;
   height: 15px;
-`
+`;
+
+const blogs = [
+  {
+    img: "blog1.jpg",
+    title: "All Ye Faithful",
+    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
+    date: "Oct 14, 2021",
+    id: 1,
+  },
+  {
+    img: "blog2.jpg",
+    title: "All Ye Faithful",
+    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master.",
+    date: "Oct 14, 2021",
+    id: 2,
+  },
+  {
+    img: "blog3.jpg",
+    title: "All Ye Faithful",
+    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
+    date: "Oct 14, 2021",
+    id: 3,
+  },
+  {
+    img: "blog1.jpg",
+    title: "All Ye Faithful",
+    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
+    date: "Oct 14, 2021",
+    id: 4,
+  },
+  {
+    img: "blog2.jpg",
+    title: "All Ye Faithful",
+    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
+    date: "Oct 14, 2021",
+    id: 5,
+  },
+  {
+    img: "blog3.jpg",
+    title: "All Ye Faithful",
+    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
+    date: "Oct 14, 2021",
+    id: 6,
+  },
+];
+
+const modules = [Navigation, Pagination];
 
 const Blog = () => {
   const isMobile = useWideSize(770);
-  const blogs = [
-    {
-      img: 'blog1.jpg',
-      title: 'All Ye Faithful',
-      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
-      date: 'Oct 14, 2021',
-      id: 1
-    }, {
-      img: 'blog2.jpg',
-      title: 'All Ye Faithful',
-      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master.',
-      date: 'Oct 14, 2021',
-      id: 2
-    }, {
-      img: 'blog3.jpg',
-      title: 'All Ye Faithful',
-      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
-      date: 'Oct 14, 2021',
-      id: 3
-    }, {
-      img: 'blog1.jpg',
-      title: 'All Ye Faithful',
-      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
-      date: 'Oct 14, 2021',
-      id: 4
-    }, {
-      img: 'blog2.jpg',
-      title: 'All Ye Faithful',
-      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
-      date: 'Oct 14, 2021',
-      id: 5
-    }, {
-      img: 'blog3.jpg',
-      title: 'All Ye Faithful',
-      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
-      date: 'Oct 14, 2021',
-      id: 6
-    }
-  ]
 
   return (
     <Wrapper>
       <Container>
         <HeaderContainer>
           <Title>Our Blog</Title>
-          {
-            !isMobile && (
-              <Button>Open All Articles</Button>
-            )
-          }
+          {!isMobile && <Button>Open All Articles</Button>}
         </HeaderContainer>
-        {
-          isMobile ? (
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y]}
-              spaceBetween={50}
-              slidesPerView={blogs.length}
-            >
-              {blogs.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <BlogContainer >
-                  <BlogImg backgroundImg={item.img}/>
+        {isMobile ? (
+          <Swiper
+            modules={modules}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true
+            }}
+            slidesPerView={1.1}
+            spaceBetween={10}
+            slidesOffsetBefore={0}
+          >
+            {blogs.map((item) => (
+              <SwiperSlide key={item.id}>
+                <BlogContainer>
+                  <BlogImg backgroundImg={item.img} />
                   <BlogInfo>
                     <SubTitle>{item.title}</SubTitle>
                     <Description>{item.description}</Description>
@@ -249,38 +261,37 @@ const Blog = () => {
                       <BlogButton>Read More</BlogButton>
                       <BlogDateContainer>
                         <BlogDate>{item.date}</BlogDate>
-                        <BlogDateImg src='./bitmex.jpg'/>
+                        <BlogDateImg src="./bitmex.jpg" />
                       </BlogDateContainer>
                     </BlogWrap>
                   </BlogInfo>
                 </BlogContainer>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          ) : (
-            <Content>
-              {blogs.map((item) => (
-                <BlogContainer key={item.id}>
-                  <BlogImg backgroundImg={item.img}/>
-                  <BlogInfo>
-                    <SubTitle>{item.title}</SubTitle>
-                    <Description>{item.description}</Description>
-                    <BlogWrap>
-                      <BlogButton>Read More</BlogButton>
-                      <BlogDateContainer>
-                        <BlogDate>{item.date}</BlogDate>
-                        <BlogDateImg src='./bitmex.jpg'/>
-                      </BlogDateContainer>
-                    </BlogWrap>
-                  </BlogInfo>
-                </BlogContainer>
-              ))}
-            </Content>
-          )
-        }
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <Content>
+            {blogs.map((item) => (
+              <BlogContainer key={item.id}>
+                <BlogImg backgroundImg={item.img} />
+                <BlogInfo>
+                  <SubTitle>{item.title}</SubTitle>
+                  <Description>{item.description}</Description>
+                  <BlogWrap>
+                    <BlogButton>Read More</BlogButton>
+                    <BlogDateContainer>
+                      <BlogDate>{item.date}</BlogDate>
+                      <BlogDateImg src="./bitmex.jpg" />
+                    </BlogDateContainer>
+                  </BlogWrap>
+                </BlogInfo>
+              </BlogContainer>
+            ))}
+          </Content>
+        )}
       </Container>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Blog
+export default memo(Blog);
