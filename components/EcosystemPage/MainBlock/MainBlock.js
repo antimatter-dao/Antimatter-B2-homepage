@@ -95,7 +95,7 @@ const FirstColumn = styled.div`
   bottom: -40px;
   left: -20%;
 
-  animation: promotionColumn 1.2s ease-in-out;
+  animation: promotionColumn 1.1s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
@@ -114,7 +114,7 @@ const SecondColumn = styled.div`
   right: 7%;
   z-index: 1;
 
-  animation: promotionColumn 1s ease-in-out;
+  animation: promotionColumn 1.3s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
@@ -133,7 +133,7 @@ const ThirdColumn = styled.div`
   bottom: -254px;
   left: 18%;
 
-  animation: promotionColumn 0.9s ease-in-out;
+  animation: promotionColumn 1.6s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
@@ -154,7 +154,7 @@ const FourthColumn = styled.div`
   right: 27%;
   z-index: 2;
 
-  animation: promotionColumn .8s ease-in-out;
+  animation: promotionColumn 1.4s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
@@ -173,7 +173,7 @@ const FifthColumn = styled.div`
   bottom: -150px;
   left: 0;
 
-  animation: promotionColumn .7s ease-in-out;
+  animation: promotionColumn 1.2s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
@@ -254,24 +254,24 @@ const MainBlock = () => {
   const [displayNonfung, setDisplayNonfung] = useState(false)
 
   useEffect(()=> {
-    setTimeout(()=> animationQuanto.play(), 1200)
+    setTimeout(()=> animationQuanto.play(), 1300)
 
     setTimeout(()=> {
       animationBull.play()
       setDisplayBull(true)
-    }, 900)
+    }, 1400)
 
     setTimeout(()=> {
       animationDao.play()
       setDisplayDao(true)
-    }, 1000)
+    }, 1500)
 
-    setTimeout(()=> animationMeta.play(), 900)
+    setTimeout(()=> animationMeta.play(), 1600)
 
     setTimeout(()=> {
       animationNonfung.play()
       setDisplayNonfung(true)
-    }, 900)
+    }, 1500)
 
   },[animationQuanto, animationBull, animationNonfung])
 

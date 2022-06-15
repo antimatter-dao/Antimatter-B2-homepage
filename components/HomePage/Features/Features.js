@@ -73,6 +73,8 @@ const Block = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     min-height: 277px;
+    min-width: 100%;
+    max-width: 100%;
   }
  
 `;
