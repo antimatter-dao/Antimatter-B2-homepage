@@ -82,7 +82,7 @@ const InfoGuy = styled.div`
   justify-content: center;
 
   @media (min-width: 360px) and (max-width: 992px) {
-    flex-direction: column;
+    flex-direction: row;
   }
 `;
 
@@ -127,19 +127,16 @@ const IconSocial = styled.a``
 
 const optionsGuy1 = {
   animationData: Guy1,
-  // loop: true,
   autoplay: false
 };
 
 const optionsGuy2 = {
   animationData: Guy2,
-  // loop: true,
   autoplay: false
 };
 
 const optionsGuy3 = {
   animationData: Guy3,
-  // loop: true,
   autoplay: false
 };
 

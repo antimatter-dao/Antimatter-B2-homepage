@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 import Logo from '../../public/logo.svg'
+import BurgerMenu from "../shared/BurgerMenu";
+import {useState} from "react";
+import MobileMenu from "./MobileMenu";
 
 const Wrapper = styled.div`
   display: flex;
@@ -11,6 +14,10 @@ const Wrapper = styled.div`
   padding: 26px 60px;
   width: 100%;
   align-items: center;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    padding: 16px 22px;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -50,20 +57,33 @@ const Link = styled.a`
   }
 `;
 
+
 const Header = (props) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  const onMenuClick = () =>{
+    setIsMenuOpen(!isMenuOpen)
+  }
+
   return(
-    <Wrapper>
-      <IconWrapper fill={props.fill}>
-        <Logo />
-      </IconWrapper>
-      <Links fill={props.fill}>
-        <Link href={'/ecosystem'}>Ecosystem</Link>
-        <Link>Resources</Link>
-        <Link>Explorer</Link>
-        <Link>Faucet</Link>
-        <Link>Contact</Link>
-      </Links>
-    </Wrapper>
+    <>
+      {isMenuOpen && (
+        <MobileMenu />
+      )}
+      <Wrapper>
+        <IconWrapper fill={props.fill}>
+          <Logo />
+        </IconWrapper>
+        <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} />
+        <Links fill={props.fill}>
+          <Link href={'/ecosystem'}>Ecosystem</Link>
+          <Link>Resources</Link>
+          <Link href='http://bas-node.antimatter.finance:4000'>Explorer</Link>
+          <Link href='http://bas-node.antimatter.finance:5000'>Faucet</Link>
+          <Link>Contact</Link>
+        </Links>
+      </Wrapper>
+    </>
   )
 }
 
