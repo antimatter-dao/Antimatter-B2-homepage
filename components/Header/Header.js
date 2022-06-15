@@ -78,7 +78,7 @@ const Header = (props) => {
             <LinkA>Ecosystem</LinkA>
           </Link>
           <Link href="/resources" passHref>
-            <LinkA>Ecosystem</LinkA>
+            <LinkA>Resources</LinkA>
           </Link>
           <LinkA href="http://bas-node.antimatter.finance:4000">Explorer</LinkA>
           <LinkA href="http://bas-node.antimatter.finance:5000">Faucet</LinkA>

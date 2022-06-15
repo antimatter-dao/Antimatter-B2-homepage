@@ -19,6 +19,7 @@ const Wrapper = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     flex-direction: column;
+    height: max-content;
   }
 `;
 
@@ -100,6 +101,12 @@ const ImgContainer = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    width: 100%;
+    padding-top: 72px;
+    height: ${props => props?.mobileMinHeight && props?.mobileMinHeight};
+  }
 `
 
 const ImgContainerSvg = styled.div`
@@ -110,6 +117,7 @@ const ImgContainerSvg = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     width: 100%;
+    height: 100vh;
   }
 `
 
@@ -119,6 +127,12 @@ const Img = styled.img`
   width: ${props => props?.width && props?.width};
   height: 100vh;
   object-fit: cover;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    transform: translate(${props => props?.mobileTranslate && props?.mobileTranslate});
+    width: ${props => props?.mobileWidth && props?.mobileWidth};
+    height: ${props => props?.mobileMinHeight && props?.mobileMinHeight};
+  }
 `
 
 const Slide = ({slide}) => {
@@ -129,7 +143,7 @@ const Slide = ({slide}) => {
   return (
     <>
       <WithScrollFreezing>
-        <Wrapper background={slide.backgroundFill} minHeight={slide.minHeight} ref={ref}>
+        <Wrapper mobileMinHeight={slide.mobileMinHeight} background={slide.backgroundFill} minHeight={slide.minHeight} ref={ref}>
           <Content>
             <InfoBlock>
               <Title color={slide.colorText}>{slide.title}</Title>
@@ -155,9 +169,16 @@ const Slide = ({slide}) => {
                 {slide.imgSvg}
               </ImgContainerSvg>
             ) : (
-              <ImgContainer>
+              <ImgContainer mobileMinHeight={slide.mobileMinHeight}>
                 <FadeInUp active={isVisible}>
-                  <Img src={slide.imgUrl} width={slide.widthImg} translate={slide.translate}/>
+                  <Img
+                    src={slide.imgUrl}
+                    width={slide.widthImg}
+                    translate={slide.translate}
+                    mobileWidth={slide.mobile.widthImg}
+                    mobileMinHeight={slide.mobile.minHeight}
+                    mobileTranslate={slide.mobile.translate}
+                  />
                 </FadeInUp>
               </ImgContainer>
             )

@@ -1,4 +1,11 @@
 import styled from "styled-components";
+import {Swiper, SwiperSlide} from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 import Button from "../../shared/Button/Button";
 import useWideSize from "../../../hook/useWideSize";
@@ -22,6 +29,7 @@ const Container = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     margin: 0 16px;
+    width: 100%;
   }
 `;
 
@@ -48,8 +56,7 @@ const BlogContainer = styled.div`
   flex-direction: column;
 
   @media (min-width: 360px) and (max-width: 992px) {
-    min-width: 100%;
-    min-height: max-content;
+    max-width: 390px;
   }
 `;
 
@@ -61,10 +68,10 @@ const HeaderContainer = styled.div`
   padding-bottom: 76px;
 
   @media (min-width: 360px) and (max-width: 992px) {
-   flex-direction: column;
+    flex-direction: column;
     padding-bottom: 30px;
-    
-    button{
+
+    button {
       width: 100%;
     }
   }
@@ -158,8 +165,8 @@ const BlogButton = styled.button`
   text-align: center;
   color: #FFFFFF;
   border: none;
-  
-  &:hover{
+
+  &:hover {
     background: #F8D448;
     color: #121212;
     transition: .7s;
@@ -173,6 +180,45 @@ const BlogDateImg = styled.img`
 
 const Blog = () => {
   const isMobile = useWideSize(770);
+  const blogs = [
+    {
+      img: 'blog1.jpg',
+      title: 'All Ye Faithful',
+      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
+      date: 'Oct 14, 2021',
+      id: 1
+    }, {
+      img: 'blog2.jpg',
+      title: 'All Ye Faithful',
+      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master.',
+      date: 'Oct 14, 2021',
+      id: 2
+    }, {
+      img: 'blog3.jpg',
+      title: 'All Ye Faithful',
+      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
+      date: 'Oct 14, 2021',
+      id: 3
+    }, {
+      img: 'blog1.jpg',
+      title: 'All Ye Faithful',
+      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
+      date: 'Oct 14, 2021',
+      id: 4
+    }, {
+      img: 'blog2.jpg',
+      title: 'All Ye Faithful',
+      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
+      date: 'Oct 14, 2021',
+      id: 5
+    }, {
+      img: 'blog3.jpg',
+      title: 'All Ye Faithful',
+      description: ' Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...',
+      date: 'Oct 14, 2021',
+      id: 6
+    }
+  ]
 
   return (
     <Wrapper>
@@ -187,111 +233,48 @@ const Blog = () => {
         </HeaderContainer>
         {
           isMobile ? (
-           <div></div>
-          ): (
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y]}
+              spaceBetween={50}
+              slidesPerView={blogs.length}
+            >
+              {blogs.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <BlogContainer >
+                  <BlogImg backgroundImg={item.img}/>
+                  <BlogInfo>
+                    <SubTitle>{item.title}</SubTitle>
+                    <Description>{item.description}</Description>
+                    <BlogWrap>
+                      <BlogButton>Read More</BlogButton>
+                      <BlogDateContainer>
+                        <BlogDate>{item.date}</BlogDate>
+                        <BlogDateImg src='./bitmex.jpg'/>
+                      </BlogDateContainer>
+                    </BlogWrap>
+                  </BlogInfo>
+                </BlogContainer>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          ) : (
             <Content>
-              <BlogContainer>
-                <BlogImg backgroundImg={'blog1.jpg'}/>
-                <BlogInfo>
-                  <SubTitle>All Ye Faithful</SubTitle>
-                  <Description>
-                    Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
-                    faithful with FUD in service to their master...
-                  </Description>
-                  <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
-                    <BlogDateContainer>
-                      <BlogDate>Oct 14, 2021</BlogDate>
-                      <BlogDateImg src='./bitmex.jpg' />
-                    </BlogDateContainer>
-                  </BlogWrap>
-                </BlogInfo>
-              </BlogContainer>
-              <BlogContainer>
-                <BlogImg backgroundImg={'blog2.jpg'}/>
-                <BlogInfo>
-                  <SubTitle>All Ye Faithful</SubTitle>
-                  <Description>
-                    Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
-                    faithful with FUD in service to their master.
-                  </Description>
-                  <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
-                    <BlogDateContainer>
-                      <BlogDate>Oct 14, 2021</BlogDate>
-                      <BlogDateImg src='./bitmex.jpg' />
-                    </BlogDateContainer>
-                  </BlogWrap>
-                </BlogInfo>
-              </BlogContainer>
-              <BlogContainer>
-                <BlogImg backgroundImg={'blog3.jpg'}/>
-                <BlogInfo>
-                  <SubTitle>All Ye Faithful</SubTitle>
-                  <Description>
-                    Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
-                    faithful with FUD in service to their master.
-                  </Description>
-                  <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
-                    <BlogDateContainer>
-                      <BlogDate>Oct 14, 2021</BlogDate>
-                      <BlogDateImg src='./bitmex.jpg' />
-                    </BlogDateContainer>
-                  </BlogWrap>
-                </BlogInfo>
-              </BlogContainer>
-              <BlogContainer>
-                <BlogImg backgroundImg={'blog1.jpg'}/>
-                <BlogInfo>
-                  <SubTitle>All Ye Faithful</SubTitle>
-                  <Description>
-                    Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
-                    faithful with FUD in service to their master...
-                  </Description>
-                  <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
-                    <BlogDateContainer>
-                      <BlogDate>Oct 14, 2021</BlogDate>
-                      <BlogDateImg src='./bitmex.jpg' />
-                    </BlogDateContainer>
-                  </BlogWrap>
-                </BlogInfo>
-              </BlogContainer>
-              <BlogContainer>
-                <BlogImg backgroundImg={'blog2.jpg'}/>
-                <BlogInfo>
-                  <SubTitle>All Ye Faithful</SubTitle>
-                  <Description>
-                    Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
-                    faithful with FUD in service to their master.
-                  </Description>
-                  <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
-                    <BlogDateContainer>
-                      <BlogDate>Oct 14, 2021</BlogDate>
-                      <BlogDateImg src='./bitmex.jpg' />
-                    </BlogDateContainer>
-                  </BlogWrap>
-                </BlogInfo>
-              </BlogContainer>
-              <BlogContainer>
-                <BlogImg backgroundImg={'blog3.jpg'}/>
-                <BlogInfo>
-                  <SubTitle>All Ye Faithful</SubTitle>
-                  <Description>
-                    Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the
-                    faithful with FUD in service to their master.
-                  </Description>
-                  <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
-                    <BlogDateContainer>
-                      <BlogDate>Oct 14, 2021</BlogDate>
-                      <BlogDateImg src='./bitmex.jpg' />
-                    </BlogDateContainer>
-                  </BlogWrap>
-                </BlogInfo>
-              </BlogContainer>
+              {blogs.map((item) => (
+                <BlogContainer key={item.id}>
+                  <BlogImg backgroundImg={item.img}/>
+                  <BlogInfo>
+                    <SubTitle>{item.title}</SubTitle>
+                    <Description>{item.description}</Description>
+                    <BlogWrap>
+                      <BlogButton>Read More</BlogButton>
+                      <BlogDateContainer>
+                        <BlogDate>{item.date}</BlogDate>
+                        <BlogDateImg src='./bitmex.jpg'/>
+                      </BlogDateContainer>
+                    </BlogWrap>
+                  </BlogInfo>
+                </BlogContainer>
+              ))}
             </Content>
           )
         }

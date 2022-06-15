@@ -28,6 +28,7 @@ export default function Ecosystem() {
       imgSvg: <Candles/>,
       id: 1,
       minHeight: "100vh",
+      mobileMinHeight: "max-content",
       marginTopButton: '32px',
       buttonBackground: 'transparent',
       buttonBorder: '1px solid #F8D448',
@@ -43,8 +44,14 @@ export default function Ecosystem() {
       id: 2,
       translate: `20px, -13px`,
       minHeight: "100vh",
+      mobileMinHeight: "62vh",
       marginTopButton: '32px',
-      widthImg: "63vw"
+      widthImg: "63vw",
+      mobile:{
+        translate: `0px,-13px`,
+        widthImg: "100%",
+        minHeight: "61vh"
+      }
     },
     {
       title: 'Sharkfin',
@@ -62,7 +69,13 @@ export default function Ecosystem() {
       id: 3,
       translate: `30px, -20px`,
       minHeight: "100vh",
-      widthImg: "70vw"
+      mobileMinHeight: "60vh",
+      widthImg: "70vw",
+      mobile:{
+        translate: `0px,-13px`,
+        widthImg: "100%",
+        minHeight: "61vh"
+      }
     },
     {
       title: 'Dual Investment',
@@ -80,7 +93,13 @@ export default function Ecosystem() {
       id: 4,
       translate: `20px, -12px`,
       minHeight: "100vh",
-      widthImg: "57vw"
+      mobileMinHeight: "62vh",
+      widthImg: "57vw",
+      mobile:{
+        translate: `0px,-13px`,
+        widthImg: "100%",
+        minHeight: "66vh"
+      }
     },
     {
       title: 'BULL & BEAR',
@@ -98,7 +117,13 @@ export default function Ecosystem() {
       id: 5,
       translate: `20px, -16px`,
       minHeight: "100vh",
-      widthImg: "82vw"
+      mobileMinHeight: "59",
+      widthImg: "82vw",
+      mobile:{
+        translate: `0px,-13px`,
+        widthImg: "100%",
+        minHeight: "56"
+      }
     },
     {
       title: 'Nonfungible Finance',
@@ -116,7 +141,13 @@ export default function Ecosystem() {
       id: 6,
       translate: `20px, -14px`,
       minHeight: "100vh",
-      widthImg: "61vw"
+      mobileMinHeight: "60vh",
+      widthImg: "61vw",
+      mobile:{
+        translate: `0px,-13px`,
+        widthImg: "100%",
+        minHeight: "62vh"
+      }
     },
     {
       title: 'Antimatter DAO',
@@ -134,7 +165,13 @@ export default function Ecosystem() {
       id: 7,
       translate: `20px, 0px`,
       minHeight: "100vh",
-      widthImg: "63vw"
+      mobileMinHeight: "60vh",
+      widthImg: "63vw",
+      mobile:{
+        translate: `0px,-13px`,
+        widthImg: "100%",
+        minHeight: "56vh"
+      }
     }
     ]
 
