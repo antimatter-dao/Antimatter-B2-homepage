@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   padding: 26px 60px;
   width: 100%;
   align-items: center;
+  z-index: 102;
 
   @media (min-width: 360px) and (max-width: 992px) {
     padding: 16px 22px;

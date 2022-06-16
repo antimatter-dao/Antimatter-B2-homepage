@@ -9,7 +9,7 @@ const BurgerMenuWrap = styled.button`
   background: transparent;
   cursor: pointer;
   padding: 0;
-  z-index: 10;
+  z-index: 102;
   width: 40px;
   height: 40px;
   align-self: ${props => props.isMenuOpen ? "auto" : "center"};
