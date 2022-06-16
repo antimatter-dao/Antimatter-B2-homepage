@@ -17,6 +17,8 @@ const Wrapper = styled.div`
   margin: 120px auto 0;
 
   @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    margin: 0;
     margin-top: 50px;
     padding-bottom: 50px;
   }
@@ -74,7 +76,7 @@ const HeaderContainer = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     flex-direction: column;
     padding-bottom: 30px;
-    
+
     max-width: 390px;
     min-width: initial;
     width: 100%;
@@ -189,78 +191,33 @@ const BlogDateImg = styled.img`
   height: 15px;
 `;
 
-const SlideContainer = styled.div``
+const SlideContainer = styled.div``;
 
 const MobileButton = styled.button`
   max-width: 390px;
   min-width: initial;
   width: 100%;
   height: 59px;
-  
+
   margin-top: 66px !important;
-  
-  background: linear-gradient(90deg, #F8D448 0%, #F8D448 100%);
+
+  background: linear-gradient(90deg, #f8d448 0%, #f8d448 100%);
   border-radius: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   text-align: center;
-  color: #1B1A1F;
+  color: #1b1a1f;
   border: none;
-  
+
   &:hover {
-    animation: change-color .7s ease-in-out infinite;
+    animation: change-color 0.7s ease-in-out infinite;
     animation-direction: alternate;
     animation-fill-mode: both;
   }
-`
-
-const blogs = [
-  {
-    img: "blog1.jpg",
-    title: "All Ye Faithful",
-    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
-    date: "Oct 14, 2021",
-    id: 1,
-  },
-  {
-    img: "blog2.jpg",
-    title: "All Ye Faithful",
-    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master.",
-    date: "Oct 14, 2021",
-    id: 2,
-  },
-  {
-    img: "blog3.jpg",
-    title: "All Ye Faithful",
-    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
-    date: "Oct 14, 2021",
-    id: 3,
-  },
-  {
-    img: "blog1.jpg",
-    title: "All Ye Faithful",
-    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
-    date: "Oct 14, 2021",
-    id: 4,
-  },
-  {
-    img: "blog2.jpg",
-    title: "All Ye Faithful",
-    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
-    date: "Oct 14, 2021",
-    id: 5,
-  },
-  {
-    img: "blog3.jpg",
-    title: "All Ye Faithful",
-    description: " Do not be led astray by the siren songs of capricious harpies – for these creatures wish to infect the faithful with FUD in service to their master...",
-    date: "Oct 14, 2021",
-    id: 6,
-  },
-];
+`;
 
 const modules = [Navigation, Pagination];
 
@@ -288,7 +245,7 @@ const Blog = ({ posts }) => {
             }}
             slidesPerView={1.1}
             spaceBetween={10}
-            slidesOffsetBefore={0}
+            // slidesOffsetBefore={0}
           >
             {posts.map((item) => (
               <SwiperSlide key={item.id}>
