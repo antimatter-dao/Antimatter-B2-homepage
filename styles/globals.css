@@ -1,114 +1,122 @@
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
-  font-family: 'SF Pro Display', sans-serif;
+    box-sizing: border-box;
+    font-family: 'SF Pro Display', sans-serif;
 
+}
+
+.swiper-pagination-bullets-dynamic  {
+  transform: translate(-93%, 40px) !important;
+}
+
+.swiper  {
+  overflow: unset !important;
 }
 
 @keyframes bounce-and-scale {
-  from {
-    transform: translate3d(0, 0, 0) scale(1, 1);
-  }
-  to {
-    transform: translate3d(0, 80px, 0) scale(1.1, 1);
-  }
+    from {
+        transform: translate3d(0, 0, 0) scale(1, 1);
+    }
+    to {
+        transform: translate3d(0, 80px, 0) scale(1.1, 1);
+    }
 }
 
 @keyframes promotionColumn {
-  0% {
-    transform: translate(0, 700px);
-  }
-  100% {
-    transform:  translate(0, 0px);
-  }
+    0% {
+        transform: translate(0, 700px);
+    }
+    100% {
+        transform: translate(0, 0px);
+    }
 }
 
 @keyframes iconColumn {
-  from {
-    transform: translate3d(0, 0, 0) scale(1, 1);
-  }
-  to {
-    transform: translate3d(0, 80px, 0) scale(1.1, 1);
-  }
+    from {
+        transform: translate3d(0, 0, 0) scale(1, 1);
+    }
+    to {
+        transform: translate3d(0, 80px, 0) scale(1.1, 1);
+    }
 }
 
 @keyframes slide {
-  0% {
-    left: 0;
-    top: 0;
-  }
-  50% {
-    left: 244px;
-    top: 100px;
-  }
-  100% {
-    left: 488px;
-    top: 0;
-  }
+    0% {
+        left: 0;
+        top: 0;
+    }
+    50% {
+        left: 244px;
+        top: 100px;
+    }
+    100% {
+        left: 488px;
+        top: 0;
+    }
 }
 
 @keyframes showScreenshots {
-  0% {
-    top: -100%;
-  }
-  50% {
-    top: 50%;
-  }
-  100% {
-    top: 100%;
-  }
+    0% {
+        top: -100%;
+    }
+    50% {
+        top: 50%;
+    }
+    100% {
+        top: 100%;
+    }
 }
 
 @keyframes change-icon-color {
-  0% {
-    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 0.01%, #31B047 100%), #F8D448;
-  }
-  25% {
-    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 31.77%, #31B047 100%), #F8D448;
-  }
-  50%{
-    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 47.92%, #31B047 100%), #F8D448;
-  }
-  75%{
-    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 70.83%, #31B047 100%), #F8D448;
-  }
-  100% {
-    background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 99.99%, #31B047 100%), #F8D448;
-  }
+    0% {
+        background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 0.01%, #31B047 100%), #F8D448;
+    }
+    25% {
+        background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 31.77%, #31B047 100%), #F8D448;
+    }
+    50% {
+        background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 47.92%, #31B047 100%), #F8D448;
+    }
+    75% {
+        background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 70.83%, #31B047 100%), #F8D448;
+    }
+    100% {
+        background: linear-gradient(90deg, #74BC47 0%, rgba(248, 212, 72, 0.1) 99.99%, #31B047 100%), #F8D448;
+    }
 }
 
 @keyframes change-color {
-  0% {
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 50%, #F8D448 99.99%, #31B047 100%);
-  }
-  20%{
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 84.9%, #31B047 100%);
-  }
-  40%{
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 69.79%, #31B047 100%);
-  }
-  50%{
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 24.48%, #F8D448 53.13%, #31B047 100%);
-  }
-  60%{
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 10.42%, #F8D448 34.9%, #31B047 100%);
-  }
-  80%{
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 19.79%, #31B047 100%);
-  }
-  100% {
-    background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 0.03%, #31B047 100%);
-  }
+    0% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 50%, #F8D448 99.99%, #31B047 100%);
+    }
+    20% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 84.9%, #31B047 100%);
+    }
+    40% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 69.79%, #31B047 100%);
+    }
+    50% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 24.48%, #F8D448 53.13%, #31B047 100%);
+    }
+    60% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 10.42%, #F8D448 34.9%, #31B047 100%);
+    }
+    80% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 19.79%, #31B047 100%);
+    }
+    100% {
+        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 0.03%, #31B047 100%);
+    }
 }

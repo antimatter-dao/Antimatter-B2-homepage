@@ -74,10 +74,10 @@ const HeaderContainer = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     flex-direction: column;
     padding-bottom: 30px;
-
-    button {
-      width: 100%;
-    }
+    
+    max-width: 390px;
+    min-width: initial;
+    width: 100%;
   }
 `;
 
@@ -92,7 +92,7 @@ const Title = styled.h1`
   margin: 0;
 
   @media (min-width: 360px) and (max-width: 992px) {
-    margin-bottom: 28px;
+    margin-bottom: 0;
     font-size: 28px;
   }
 `;
@@ -182,6 +182,34 @@ const BlogDateImg = styled.img`
   height: 15px;
 `;
 
+const SlideContainer = styled.div``
+
+const MobileButton = styled.button`
+  max-width: 390px;
+  min-width: initial;
+  width: 100%;
+  height: 59px;
+  
+  margin-top: 66px !important;
+  
+  background: linear-gradient(90deg, #F8D448 0%, #F8D448 100%);
+  border-radius: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  text-align: center;
+  color: #1B1A1F;
+  border: none;
+  
+  &:hover {
+    animation: change-color .7s ease-in-out infinite;
+    animation-direction: alternate;
+    animation-fill-mode: both;
+  }
+`
+
 const blogs = [
   {
     img: "blog1.jpg",
@@ -231,7 +259,6 @@ const modules = [Navigation, Pagination];
 
 const Blog = () => {
   const isMobile = useWideSize(770);
-
   return (
     <Wrapper>
       <Container>
@@ -240,35 +267,40 @@ const Blog = () => {
           {!isMobile && <Button>Open All Articles</Button>}
         </HeaderContainer>
         {isMobile ? (
-          <Swiper
-            modules={modules}
-            pagination={{
-              clickable: true,
-              dynamicBullets: true
-            }}
-            slidesPerView={1.1}
-            spaceBetween={10}
-            slidesOffsetBefore={0}
-          >
-            {blogs.map((item) => (
-              <SwiperSlide key={item.id}>
-                <BlogContainer>
-                  <BlogImg backgroundImg={item.img} />
-                  <BlogInfo>
-                    <SubTitle>{item.title}</SubTitle>
-                    <Description>{item.description}</Description>
-                    <BlogWrap>
-                      <BlogButton>Read More</BlogButton>
-                      <BlogDateContainer>
-                        <BlogDate>{item.date}</BlogDate>
-                        <BlogDateImg src="./bitmex.jpg" />
-                      </BlogDateContainer>
-                    </BlogWrap>
-                  </BlogInfo>
-                </BlogContainer>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <>
+            <Swiper
+              modules={modules}
+              pagination={{
+                clickable: true,
+                dynamicBullets: true
+              }}
+              slidesPerView={1.1}
+              spaceBetween={10}
+              slidesOffsetBefore={0}
+            >
+              {blogs.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <SlideContainer>
+                    <BlogContainer>
+                      <BlogImg backgroundImg={item.img} />
+                      <BlogInfo>
+                        <SubTitle>{item.title}</SubTitle>
+                        <Description>{item.description}</Description>
+                        <BlogWrap>
+                          <BlogButton>Read More</BlogButton>
+                          <BlogDateContainer>
+                            <BlogDate>{item.date}</BlogDate>
+                            <BlogDateImg src="./bitmex.jpg" />
+                          </BlogDateContainer>
+                        </BlogWrap>
+                      </BlogInfo>
+                    </BlogContainer>
+                  </SlideContainer>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <MobileButton>Open All Articles</MobileButton>
+          </>
         ) : (
           <Content>
             {blogs.map((item) => (
