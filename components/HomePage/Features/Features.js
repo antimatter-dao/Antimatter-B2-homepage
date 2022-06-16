@@ -151,7 +151,7 @@ const Features = () => {
             </IconBlock>
             <SubTitle>On-chain Governance</SubTitle>
             <Description>
-              A governance system let's B2 validator owners in the chain create new proposals and vote for them. Voting power is distributed based on the total delegated amount to the validator.
+              A governance system let&apos;s B2 validator owners in the chain create new proposals and vote for them. Voting power is distributed based on the total delegated amount to the validator.
             </Description>
           </Block>
           <Block>

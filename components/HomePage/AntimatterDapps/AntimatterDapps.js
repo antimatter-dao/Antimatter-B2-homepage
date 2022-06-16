@@ -120,7 +120,7 @@ const AntimatterDapps = () => (
     <Content>
       <Title>Built-in Antimatter DApps</Title>
       <Blocks>
-        <a href="" target="_blank">
+        <a href="" target="_blank" rel="noreferrer">
           <Block>
             <SubTitle>Quanto Trading <Vector /></SubTitle>
             <Description>
@@ -128,7 +128,7 @@ const AntimatterDapps = () => (
             </Description>
           </Block>
         </a>
-        <a href="https://app.antimatter.finance" target="_blank">
+        <a href="https://app.antimatter.finance" target="_blank" rel="noreferrer">
           <Block>
             <SubTitle>
               Bull & Bear <Vector />
@@ -139,7 +139,7 @@ const AntimatterDapps = () => (
             </Description>
           </Block>
         </a>
-        <a href="https://dao.antimatter.finance" target="_blank">
+        <a href="https://dao.antimatter.finance" target="_blank" rel="noreferrer">
           <Block>
             <SubTitle>DAO <Vector /></SubTitle>
             <Description>
@@ -147,7 +147,7 @@ const AntimatterDapps = () => (
             </Description>
           </Block>
         </a>
-        <a href="https://invest.antimatter.finance" target="_blank">
+        <a href="https://invest.antimatter.finance" target="_blank" rel="noreferrer">
           <Block>
             <SubTitle>Structured <Vector /></SubTitle>
             <Description>
@@ -155,7 +155,7 @@ const AntimatterDapps = () => (
             </Description>
           </Block>
         </a>
-        <a href="https://nonfungible.finance" target="_blank">
+        <a href="https://nonfungible.finance" target="_blank" rel="noreferrer">
           <Block>
             <SubTitle>Nonfungible <Vector /></SubTitle>
             <Description>

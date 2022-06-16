@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
 
 import Partner2 from "../../../public/partners/partners2.svg";
 import Partner3 from "../../../public/partners/partners3.svg";
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   display: flex;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -38,19 +39,21 @@ const Title = styled.h1`
   }
 `;
 
-const Container  = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
 `;
 
-const ImgContainer  = styled.div`
+const ImgContainer = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin-left: 75px;
-  padding-bottom: ${props => props?.paddingBottom ? props?.paddingBottom : '0px'};
+  padding-bottom: ${(props) => (props?.paddingBottom ? props?.paddingBottom : "0px")};
 `;
+
+const Img = styled.img``;
 
 const Partners = () => (
   <Wrapper>
@@ -58,7 +61,7 @@ const Partners = () => (
     <Marquee gradient={false} speed={90}>
       <Container>
         <ImgContainer>
-          <img src="./partners/partners-1.svg" alt="partners"/>
+          <Img src="./partners/partners-1.svg" alt="partners" />
         </ImgContainer>
         <ImgContainer>
           <Partner2 />
@@ -78,18 +81,18 @@ const Partners = () => (
         <ImgContainer>
           <Partner9 />
         </ImgContainer>
-        <ImgContainer paddingBottom={'18px'}>
-          <img src="./partners/partners-6.svg" alt="partners"/>
+        <ImgContainer paddingBottom={"18px"}>
+          <Img src="./partners/partners-6.svg" alt="partners" />
         </ImgContainer>
         <ImgContainer>
-          <img src="./partners/partners8.svg" alt="partners"/>
+          <Img src="./partners/partners8.svg" alt="partners" />
         </ImgContainer>
         <ImgContainer>
-          <img src="./partners/partners10.svg" alt="partners"/>
+          <Img src="./partners/partners10.svg" alt="partners" />
         </ImgContainer>
       </Container>
     </Marquee>
   </Wrapper>
-)
+);
 
-export default Partners
+export default Partners;

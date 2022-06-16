@@ -4,7 +4,6 @@ import { CSSTransition, transit } from 'react-css-transition';
 const easeOutQuart = 'cubic-bezier(0.165, 0.84, 0.44, 1)';
 
 function FadeInUp({ distance = '700px', duration = 5000, children, active, ...props }) {
-  console.log(active)
   const transitionStyles = {
     defaultStyle: {
       opacity: 0,

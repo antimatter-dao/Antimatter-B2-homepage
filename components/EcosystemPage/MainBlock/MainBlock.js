@@ -273,7 +273,7 @@ const MainBlock = () => {
       setDisplayNonfung(true)
     }, 1500)
 
-  },[animationQuanto, animationBull, animationNonfung])
+  },[animationQuanto, animationBull, animationNonfung, animationDao, animationMeta])
 
   return(
     <Wrapper>

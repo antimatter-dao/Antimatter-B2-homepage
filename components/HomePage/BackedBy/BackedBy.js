@@ -167,7 +167,7 @@ const BackedBy = () => {
       clearInterval(interval3);
     }
 
-  },[])
+  },[animationGuy1, animationGuy2, animationGuy3])
 
   return (
     <Wrapper>
