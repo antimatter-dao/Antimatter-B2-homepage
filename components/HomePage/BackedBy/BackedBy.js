@@ -13,7 +13,8 @@ import Partner3 from "../../../public/huobi.svg";
 
 const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 120px;
+  min-width: 1200px;
+  margin: 120px auto 120px;
 
   @media (min-width: 360px) and (max-width: 992px) {
     margin-bottom: 50px;
@@ -22,7 +23,6 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   display: flex;
-  margin: 0 120px;
   flex-direction: column;
   width: 100%;
   

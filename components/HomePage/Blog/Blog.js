@@ -13,8 +13,8 @@ import "swiper/css/scrollbar";
 
 const Wrapper = styled.div`
   display: flex;
-  margin-top: 120px;
   padding-bottom: 120px;
+  margin: 120px auto 0;
 
   @media (min-width: 360px) and (max-width: 992px) {
     margin-top: 50px;
@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const Container = styled.div`
   /* display: flex; */
-  margin: 0 120px;
+  padding: 0 120px;
   width: 100%;
   flex-direction: column;
 

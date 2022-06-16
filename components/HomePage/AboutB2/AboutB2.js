@@ -8,14 +8,14 @@ import {useRouter} from "next/router";
 const Wrapper = styled.div`
   display: flex;
   margin-top: 120px;
-
 `;
 
 const Content = styled.div`
   display: flex;
   background: #121212;
-  margin: 0 120px;
+  margin: 0 auto;
   border-radius: 30px;
+  max-width: 1200px;
 
   @media (min-width: 360px) and (max-width: 992px) {
    flex-direction: column;

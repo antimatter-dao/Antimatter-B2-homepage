@@ -101,6 +101,18 @@ const Content = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     padding: 140px 16px 16px;
   }
+
+  @media (min-width: 1080px){
+    padding-top: 120px;
+  } 
+  
+  @media (min-width: 1440px){
+    padding-top: 180px;
+  }
+
+  @media (min-width: 1920px){
+    padding-top: 180px;
+  }
 `;
 
 const ButtonsContainer = styled.div`

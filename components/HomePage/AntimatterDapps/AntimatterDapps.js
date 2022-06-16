@@ -6,7 +6,7 @@ import Pig from "../../../public/AnimationJson/pig.json";
 
 const Wrapper = styled.div`
   display: flex;
-  margin-bottom: 120px;
+  margin: 120px auto 0;
 
   @media (min-width: 360px) and (max-width: 992px) {
     margin-bottom: 50px;

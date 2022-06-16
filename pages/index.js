@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   width: 100%;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 
   @media (min-width: 360px) and (max-width: 992px) {
     overflow: hidden;
