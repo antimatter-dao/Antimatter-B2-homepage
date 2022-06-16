@@ -1,4 +1,4 @@
-import styled, {createGlobalStyle} from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -59,7 +59,6 @@ const LinkA = styled.a`
   }
 `;
 
-
 const GlobalStyle = createGlobalStyle`
   body {
     overflow: ${(props) => (props?.isMenuOpen ? "hidden" : "auto")}
@@ -73,16 +72,21 @@ const Header = (props) => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const isInversionColor = props.fill !== "white"
+  const isInversionColor = props.fill !== "white";
 
   return (
     <>
       {isMenuOpen && <MobileMenu />}
       <Wrapper>
-        <IconWrapper fill={props.fill}>
-          <Logo />
-        </IconWrapper>
-        <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick}   isInversionColor={isInversionColor}/>
+        <Link href="/">
+          <a>
+            <IconWrapper fill={props.fill}>
+              <Logo />
+            </IconWrapper>
+          </a>
+        </Link>
+
+        <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} isInversionColor={isInversionColor} />
         <Links fill={props.fill}>
           <Link href="/ecosystem" passHref>
             <LinkA>Ecosystem</LinkA>
