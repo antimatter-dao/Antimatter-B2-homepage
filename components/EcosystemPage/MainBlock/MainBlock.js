@@ -31,6 +31,11 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 1;
   overflow: hidden;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    height: max-content;
+  }
 `;
 
 const Content = styled.div`
@@ -273,6 +278,16 @@ const MobileNonfung = styled.div`
   }
 `
 
+const MobileContainer = styled.div`
+  display: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    position: relative;
+    height: 47vh;
+  }
+`
+
 
 
 const optionsColumnQuanto = {
@@ -393,26 +408,23 @@ const MainBlock = () => {
         <Column7 />
       </SeventhColumn>
 
-
-      <MobileQuanto>
-        <QuantoIcon />
-      </MobileQuanto>
-
-      <MobileBull>
-        <BullIcon />
-      </MobileBull>
-
-      <MobileDao>
-        <DaoIcon />
-      </MobileDao>
-
-      <MobileMeta>
-        <MetaIcon />
-      </MobileMeta>
-
-      <MobileNonfung>
-        <NonfungIcon />
-      </MobileNonfung>
+      <MobileContainer>
+        <MobileQuanto>
+          <QuantoIcon />
+        </MobileQuanto>
+        <MobileBull>
+          <BullIcon />
+        </MobileBull>
+        <MobileDao>
+          <DaoIcon />
+        </MobileDao>
+        <MobileMeta>
+          <MetaIcon />
+        </MobileMeta>
+        <MobileNonfung>
+          <NonfungIcon />
+        </MobileNonfung>
+      </MobileContainer>
 
     </Wrapper>
   )
