@@ -69,12 +69,12 @@ export default function Ecosystem() {
       id: 3,
       translate: `30px, -20px`,
       minHeight: "100vh",
-      mobileMinHeight: "60vh",
+      mobileMinHeight: "50vh",
       widthImg: "70vw",
       mobile:{
         translate: `0px,-13px`,
         widthImg: "100%",
-        minHeight: "61vh"
+        minHeight: "49vh"
       }
     },
     {
@@ -117,12 +117,12 @@ export default function Ecosystem() {
       id: 5,
       translate: `20px, -16px`,
       minHeight: "100vh",
-      mobileMinHeight: "59",
+      mobileMinHeight: "45vh",
       widthImg: "82vw",
       mobile:{
         translate: `0px,-13px`,
         widthImg: "100%",
-        minHeight: "56"
+        minHeight: "46vh"
       }
     },
     {
@@ -141,12 +141,12 @@ export default function Ecosystem() {
       id: 6,
       translate: `20px, -14px`,
       minHeight: "100vh",
-      mobileMinHeight: "60vh",
+      mobileMinHeight: "52vh",
       widthImg: "61vw",
       mobile:{
         translate: `0px,-13px`,
         widthImg: "100%",
-        minHeight: "62vh"
+        minHeight: "51vh"
       }
     },
     {

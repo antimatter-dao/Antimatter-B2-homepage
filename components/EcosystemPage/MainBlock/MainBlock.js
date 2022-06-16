@@ -17,6 +17,12 @@ import Dao from "../../../public/AnimationJson/Dao.json";
 import Meta from "../../../public/AnimationJson/Meta.json";
 import Nonfung from "../../../public/AnimationJson/Non.json";
 
+import QuantoIcon from "../../../public/Quanto.svg";
+import BullIcon from "../../../public/Bull.svg";
+import DaoIcon from "../../../public/Dao.svg";
+import MetaIcon from "../../../public/Meta.svg";
+import NonfungIcon from "../../../public/Nonfung.svg";
+
 
 const Wrapper = styled.div`
   display: flex;
@@ -211,6 +217,64 @@ const SeventhColumn = styled.div`
   }
 `
 
+const MobileQuanto = styled.div`
+  display: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    position: absolute;
+    bottom: 180px;
+    left: 30px;
+
+  }
+`
+
+const MobileBull = styled.div`
+  display: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    position: absolute;
+    bottom: 29px;
+    left: 14%;
+  }
+`
+
+const MobileDao = styled.div`
+  display: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    position: absolute;
+    bottom: 30px;
+    right: 12%;
+  }
+`
+
+const MobileMeta = styled.div`
+  display: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    position: absolute;
+    bottom: 140px;
+    left: 38%;
+  }
+`
+
+const MobileNonfung = styled.div`
+  display: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: block;
+    position: absolute;
+    bottom: 190px;
+    right: 10%;
+  }
+`
+
+
+
 const optionsColumnQuanto = {
   animationData: Quanto,
   loop: true,
@@ -321,7 +385,6 @@ const MainBlock = () => {
         </SecondColumnIcon>
       </SecondColumn>
 
-
       <SixthColumn>
         <Column6 />
       </SixthColumn>
@@ -330,8 +393,29 @@ const MainBlock = () => {
         <Column7 />
       </SeventhColumn>
 
+
+      <MobileQuanto>
+        <QuantoIcon />
+      </MobileQuanto>
+
+      <MobileBull>
+        <BullIcon />
+      </MobileBull>
+
+      <MobileDao>
+        <DaoIcon />
+      </MobileDao>
+
+      <MobileMeta>
+        <MetaIcon />
+      </MobileMeta>
+
+      <MobileNonfung>
+        <NonfungIcon />
+      </MobileNonfung>
+
     </Wrapper>
-    )
+  )
 }
 
 export default MainBlock
