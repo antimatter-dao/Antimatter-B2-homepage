@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled, {createGlobalStyle} from "styled-components";
 import Link from "next/link";
+import { useState } from "react";
 
 import Logo from "../../public/logo.svg";
 import BurgerMenu from "../shared/BurgerMenu";
-import { useState } from "react";
 import MobileMenu from "./MobileMenu";
 
 const Wrapper = styled.div`
@@ -59,12 +59,21 @@ const LinkA = styled.a`
   }
 `;
 
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    overflow: ${(props) => (props?.isMenuOpen ? "hidden" : "auto")}
+  }
+`;
+
 const Header = (props) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const onMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const isInversionColor = props.fill !== "white"
 
   return (
     <>
@@ -73,7 +82,7 @@ const Header = (props) => {
         <IconWrapper fill={props.fill}>
           <Logo />
         </IconWrapper>
-        <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} />
+        <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick}   isInversionColor={isInversionColor}/>
         <Links fill={props.fill}>
           <Link href="/ecosystem" passHref>
             <LinkA>Ecosystem</LinkA>
@@ -86,6 +95,8 @@ const Header = (props) => {
           <LinkA>Contact</LinkA>
         </Links>
       </Wrapper>
+
+      <GlobalStyle isMenuOpen={isMenuOpen} />
     </>
   );
 };

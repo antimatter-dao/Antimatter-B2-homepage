@@ -49,7 +49,8 @@ const IconBottom = styled.div`
   animation-delay: .1s;
 
   @media (min-width: 360px) and (max-width: 992px) {
-    display: none;
+    bottom: 140px;
+    left: 41%;
   }
 `
 

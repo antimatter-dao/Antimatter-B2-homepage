@@ -13,7 +13,7 @@ const BurgerMenuWrap = styled.button`
   width: 40px;
   height: 40px;
   align-self: ${props => props.isMenuOpen ? "auto" : "center"};
-  border: 1px solid #F0F1F3;
+  border: ${props => props.isInversionColor ? '1px solid #F0F1F3' : '1px solid #000000'}; 
   border-radius: 10px;
 
   &:focus {
@@ -49,7 +49,7 @@ const BurgerMenuWrap = styled.button`
 const BurgerMenu = ({ isMenuOpen, onMenuClick, isInversionColor = true  }) => {
   return (
     <BurgerMenuWrap
-      isInversionColor={isInversionColor}
+      isInversionColor={isMenuOpen ? isMenuOpen : isInversionColor}
       isMenuOpen={isMenuOpen}
       onClick={onMenuClick}
     >
