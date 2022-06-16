@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import { ParallaxProvider } from 'react-scroll-parallax';
-
+import { format } from "date-fns";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { parse } from "rss-to-json";
+import { parse as htmlParse } from "node-html-parser";
 import Slider from "../components/Slider";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -24,27 +26,56 @@ const Wrapper = styled.div`
     overflow: hidden;
   }
 `;
-const sliderContent = ['Scalability', 'icon', 'Financial Infrastructure', 'icon', 'Security', 'icon', 'Ecosystem', 'icon', 'Financial support', 'icon']
+const sliderContent = ["Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon", "Financial support", "icon"];
 
-export default function Home() {
-
+export default function Home({ posts }) {
   return (
     <ParallaxProvider>
       <Wrapper>
-        <Header/>
-        <MainBlock/>
-        <Slider sliderContent={sliderContent}/>
-        <InformationAboutB2/>
-        <AboutB2/>
-        <Features/>
-        <AntimatterDapps/>
-        <BackedBy/>
-        <Partners/>
-        <Blog/>
-        <Footer/>
+        <Header />
+        <MainBlock />
+        <Slider sliderContent={sliderContent} />
+        <InformationAboutB2 />
+        <AboutB2 />
+        <Features />
+        <AntimatterDapps />
+        <BackedBy />
+        <Partners />
+        <Blog posts={posts} />
+        <Footer />
       </Wrapper>
     </ParallaxProvider>
   );
 }
 
+const mapRss = (posts) => {
+  return posts.map((post) => {
+    return {
+      title: post.title,
+      date: format(new Date(post.published), "LLL d, yyyy"),
+    };
+  });
+};
 
+export async function getServerSideProps(context) {
+  const rss = await parse("https://medium.com/feed/@antimatterdefi");
+  const posts = rss.items.slice(0, 6);
+  const mappedPosts = posts.map((post) => {
+    const html = htmlParse(post.content);
+    const img = html.querySelector("img").getAttribute("src");
+    const description = html.querySelector("p").textContent;
+
+    return {
+      title: post.title,
+      date: format(new Date(post.published), "LLL d, yyyy"),
+      img,
+      link: post.link,
+      description
+    };
+  });
+  return {
+    props: {
+      posts: JSON.parse(JSON.stringify(mappedPosts)),
+    },
+  };
+}

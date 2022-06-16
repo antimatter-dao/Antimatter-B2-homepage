@@ -1,8 +1,8 @@
 import { memo } from "react";
+import Link from "next/link";
 import styled from "styled-components";
 import { Navigation, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import Button from "../../shared/Button/Button";
 import useWideSize from "../../../hook/useWideSize";
 
@@ -23,8 +23,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  /* display: flex; */
-  padding: 0 120px;
+  margin: 0 120px;
   width: 100%;
   flex-direction: column;
 
@@ -61,6 +60,7 @@ const BlogContainer = styled.div`
     max-width: 390px;
     min-width: initial;
     width: 100%;
+    height: 555px;
   }
 `;
 
@@ -112,7 +112,7 @@ const BlogImg = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: ${(props) => (props?.backgroundImg ? `url(./${props?.backgroundImg})` : null)};
+  background-image: ${(props) => (props?.backgroundImg ? `url(${props?.backgroundImg})` : null)};
   height: 181px;
   width: 100%;
   border-radius: 30px 30px 0 0;
@@ -123,6 +123,7 @@ const BlogInfo = styled.div`
   flex-direction: column;
   padding: 24px 20px;
   box-sizing: border-box;
+  height: 100%;
 `;
 
 const Description = styled.span`
@@ -133,6 +134,10 @@ const Description = styled.span`
   line-height: 145%;
   color: #1b1a1f;
   padding-top: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 const BlogWrap = styled.div`
@@ -140,6 +145,7 @@ const BlogWrap = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: 35px;
+  margin-top: auto;
 `;
 
 const BlogDateContainer = styled.div`
@@ -169,6 +175,7 @@ const BlogButton = styled.button`
   text-align: center;
   color: #ffffff;
   border: none;
+  cursor: pointer;
 
   &:hover {
     background: #f8d448;
@@ -257,60 +264,65 @@ const blogs = [
 
 const modules = [Navigation, Pagination];
 
-const Blog = () => {
+const Blog = ({ posts }) => {
   const isMobile = useWideSize(770);
   return (
     <Wrapper>
       <Container>
         <HeaderContainer>
           <Title>Our Blog</Title>
-          {!isMobile && <Button>Open All Articles</Button>}
+          {!isMobile && (
+            <Link href={"https://antimatterdefi.medium.com/"}>
+              <a>
+                <Button>Open All Articles</Button>
+              </a>
+            </Link>
+          )}
         </HeaderContainer>
         {isMobile ? (
-          <>
-            <Swiper
-              modules={modules}
-              pagination={{
-                clickable: true,
-                dynamicBullets: true
-              }}
-              slidesPerView={1.1}
-              spaceBetween={10}
-              slidesOffsetBefore={0}
-            >
-              {blogs.map((item) => (
-                <SwiperSlide key={item.id}>
-                  <SlideContainer>
-                    <BlogContainer>
-                      <BlogImg backgroundImg={item.img} />
-                      <BlogInfo>
-                        <SubTitle>{item.title}</SubTitle>
-                        <Description>{item.description}</Description>
-                        <BlogWrap>
-                          <BlogButton>Read More</BlogButton>
-                          <BlogDateContainer>
-                            <BlogDate>{item.date}</BlogDate>
-                            <BlogDateImg src="./bitmex.jpg" />
-                          </BlogDateContainer>
-                        </BlogWrap>
-                      </BlogInfo>
-                    </BlogContainer>
-                  </SlideContainer>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            <MobileButton>Open All Articles</MobileButton>
-          </>
+          <Swiper
+            modules={modules}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
+            slidesPerView={1.1}
+            spaceBetween={10}
+            slidesOffsetBefore={0}
+          >
+            {posts.map((item) => (
+              <SwiperSlide key={item.id}>
+                <BlogContainer>
+                  <BlogImg backgroundImg={item.img} />
+                  <BlogInfo>
+                    <SubTitle>{item.title}</SubTitle>
+                    <Description>{item.description}</Description>
+                    <BlogWrap>
+                      <BlogButton>Read More</BlogButton>
+                      <BlogDateContainer>
+                        <BlogDate>{item.date}</BlogDate>
+                        <BlogDateImg src="./bitmex.jpg" />
+                      </BlogDateContainer>
+                    </BlogWrap>
+                  </BlogInfo>
+                </BlogContainer>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         ) : (
           <Content>
-            {blogs.map((item) => (
+            {posts.map((item) => (
               <BlogContainer key={item.id}>
                 <BlogImg backgroundImg={item.img} />
                 <BlogInfo>
                   <SubTitle>{item.title}</SubTitle>
                   <Description>{item.description}</Description>
                   <BlogWrap>
-                    <BlogButton>Read More</BlogButton>
+                    <Link href={item.link}>
+                      <a>
+                        <BlogButton>Read More</BlogButton>
+                      </a>
+                    </Link>
                     <BlogDateContainer>
                       <BlogDate>{item.date}</BlogDate>
                       <BlogDateImg src="./bitmex.jpg" />
