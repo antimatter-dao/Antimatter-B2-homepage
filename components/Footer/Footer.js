@@ -143,7 +143,7 @@ const Footer = () => {
               <ColumnTitle>Developers</ColumnTitle>
 
               <Link>GitHub</Link>
-              <Link href="https://docs.antimatter.finance/introduction/antimatter-overview ">Documentation</Link>
+              <Link href="https://docs.antimatter.finance/introduction/antimatter-overview">Documentation</Link>
             </Column>
             <Column>
               <ColumnTitle>B2</ColumnTitle>
