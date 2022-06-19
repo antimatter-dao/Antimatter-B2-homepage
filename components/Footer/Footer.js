@@ -13,12 +13,14 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
-  padding: 60px 70px 40px 60px;
+  padding: 60px 0 40px 0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   min-height: 420px;
   justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (min-width: 360px) and (max-width: 992px) {
     height: 100vh;

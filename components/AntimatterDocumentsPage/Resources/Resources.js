@@ -12,15 +12,18 @@ const Wrapper = styled.div`
   position: relative;
   padding-top: 170px;
   height: max-content;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (min-width: 360px) and (max-width: 992px) {
     padding-top: 0;
+    
   }
 `;
 
 const Container = styled.div`
   display: flex;
-  margin: 0 120px;
+  margin: 0 auto;
   flex-direction: column;
   padding-top: 120px;
 

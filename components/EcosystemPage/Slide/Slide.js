@@ -114,6 +114,7 @@ const ImgContainerSvg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: contain;
 
   @media (min-width: 360px) and (max-width: 992px) {
     width: 100%;
@@ -128,10 +129,14 @@ const Img = styled.img`
   height: 100vh;
   object-fit: cover;
 
-  @media (min-width: 360px) and (max-width: 992px) {
+  @media (min-width: 360px) and (max-width: 1020px) {
     transform: translate(${props => props?.mobileTranslate && props?.mobileTranslate});
     width: ${props => props?.mobileWidth && props?.mobileWidth};
     height: ${props => props?.mobileMinHeight && props?.mobileMinHeight};
+  }
+
+  @media (min-width: 1401px) and (max-width: 2020px) {
+    width: ${props => props?.desktopWidth && props?.desktopWidth};
   }
 `
 
@@ -178,6 +183,7 @@ const Slide = ({slide}) => {
                     mobileWidth={slide.mobile.widthImg}
                     mobileMinHeight={slide.mobile.minHeight}
                     mobileTranslate={slide.mobile.translate}
+                    desktopWidth={slide.desktopWidth}
                   />
                 </FadeInUp>
               </ImgContainer>

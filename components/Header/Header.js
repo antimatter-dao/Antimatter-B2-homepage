@@ -5,6 +5,7 @@ import { useState } from "react";
 import Logo from "../../public/logo.svg";
 import BurgerMenu from "../shared/BurgerMenu";
 import MobileMenu from "./MobileMenu";
+import {LoadingBar} from "react-redux-loading-bar";
 
 const Wrapper = styled.div`
   display: flex;
@@ -76,6 +77,9 @@ const Header = (props) => {
 
   return (
     <>
+      <LoadingBar
+        style={{ zIndex: 5, backgroundColor: "#000000", position: "fixed" }}
+      />
       {isMenuOpen && <MobileMenu />}
       <Wrapper>
         <Link href="/">

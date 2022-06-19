@@ -9,57 +9,50 @@ import Icon4 from "../../../public/animationIcon4.svg";
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+
+  width: 100%;
   height: 100vh;
+
   background-image: url("./backgroundImg.jpg");
-  background-position: center;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  background-attachment: fixed;
 `;
 
 const IconLeft = styled.div`
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  bottom: 220px;
-  left: 183px;
-  
+  position: fixed;
+  left: 13%;
+  bottom: 29%;
+
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .4s;
 
-  @media (min-width: 360px) and (max-width: 992px) {
+  @media (min-width: 300px) and (max-width: 1020px) {
     display: none;
   }
 `
 
 const IconBottom = styled.div`
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  bottom: 100px;
-  left: 674px;
+  position: fixed;
+  bottom: 14%;
+  left: 47%;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .1s;
-
-  @media (min-width: 360px) and (max-width: 992px) {
-    bottom: 140px;
-    left: 41%;
-  }
 `
 
 const IconTop = styled.div`
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  right: 295px;
-  bottom: 181px;
+  position: fixed;
+  right: 20.5%;
+  bottom: 23.5%;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
@@ -73,11 +66,9 @@ const IconTop = styled.div`
 `
 
 const IconRight = styled.div`
-  position: absolute;
-  width: 72px;
-  height: 72px;
-  right: 78px;
-  top: 230px;
+  position: fixed;
+  right: 5.5%;
+  top: 33%;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
@@ -99,18 +90,18 @@ const Content = styled.div`
   padding-top: 120px;
 
   @media (min-width: 360px) and (max-width: 992px) {
-    padding: 140px 16px 16px;
+    padding: 120px 16px 16px;
   }
 
-  @media (min-width: 1080px){
+  @media (min-width: 1080px) {
+    padding-top: 100px;
+  }
+
+  @media (min-width: 1440px) {
     padding-top: 120px;
-  } 
-  
-  @media (min-width: 1440px){
-    padding-top: 180px;
   }
 
-  @media (min-width: 1920px){
+  @media (min-width: 1920px) {
     padding-top: 180px;
   }
 `;
@@ -118,10 +109,10 @@ const Content = styled.div`
 const ButtonsContainer = styled.div`
   display: flex;
   margin-top: 48px;
-  
-  
+
+
   button {
-    &:first-child{
+    &:first-child {
       margin-right: 20px;
 
       @media (min-width: 360px) and (max-width: 992px) {
@@ -136,7 +127,7 @@ const ButtonsContainer = styled.div`
 
 
     button {
-      &:last-child{
+      &:last-child {
         margin-top: 16px;
       }
     }
@@ -180,6 +171,14 @@ const Description = styled.h3`
   }
 `;
 
+const Icons = styled.div`
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 0;
+  width: 1700px;
+`
+
 const MainBlock = () => (
   <Wrapper>
     <Content>
@@ -190,18 +189,21 @@ const MainBlock = () => (
         <Button theme={BUTTON_THEME.BORDER} size={BUTTON_SIZE.LARGE}>Join Community</Button>
       </ButtonsContainer>
     </Content>
-    <IconLeft>
-      <Icon1 />
-    </IconLeft>
-    <IconBottom>
-      <Icon2 />
-    </IconBottom>
-    <IconTop>
-      <Icon3 />
-    </IconTop>
-    <IconRight>
-      <Icon4 />
-    </IconRight>
+
+    <Icons>
+      <IconLeft>
+        <Icon1/>
+      </IconLeft>
+      <IconBottom>
+        <Icon2 />
+      </IconBottom>
+      <IconTop>
+        <Icon3 />
+      </IconTop>
+      <IconRight>
+        <Icon4 />
+      </IconRight>
+    </Icons>
   </Wrapper>
 )
 

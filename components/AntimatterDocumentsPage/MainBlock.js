@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Figure1 from "../../public/figure.svg";
 import Figure2 from "../../public/figure2.svg";
 import {useParallax} from "react-scroll-parallax";
-import Polyhedron from "../../public/polyhedron.svg";
 
 const Container = styled.div`
   background: #F0F1F3;
@@ -73,6 +72,8 @@ const InfoBlocks = styled.div`
   display: flex;
   justify-content: space-between;
   bottom: -180px;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (min-width: 360px) and (max-width: 992px) {
     position: relative;

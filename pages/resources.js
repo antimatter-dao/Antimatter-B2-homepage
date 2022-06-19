@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   width: 100%;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 `;
 
 export default function AntimatterDocuments({ posts }) {

@@ -22,9 +22,10 @@ const Wrapper = styled.div`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 120px;
   padding-top: 80px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @media (min-width: 360px) and (max-width: 992px) {
     margin: 0 16px;

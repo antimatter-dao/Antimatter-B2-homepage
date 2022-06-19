@@ -31,6 +31,9 @@ const Wrapper = styled.div`
   position: relative;
   z-index: 1;
   overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   @media (min-width: 360px) and (max-width: 992px) {
     flex-direction: column;
@@ -104,7 +107,7 @@ const Description = styled.h3`
 const FirstColumn = styled.div`
   position: absolute;
   bottom: -40px;
-  left: -20%;
+  left: -28%;
 
   animation: promotionColumn 1.1s ease-in-out;
 
@@ -114,15 +117,16 @@ const FirstColumn = styled.div`
 `
 
 const FirstColumnIcon = styled.div`
-  position: fixed;
-  bottom: 267px;
-  left: 119px;
+  position: absolute;
+  bottom: 307px;
+  left: 76%;
+  z-index: 5555;
 `
 
 const SecondColumn = styled.div`
   position: absolute;
   bottom: -40px;
-  right: 7%;
+  right: 0;
   z-index: 1;
 
   animation: promotionColumn 1.3s ease-in-out;
@@ -134,15 +138,15 @@ const SecondColumn = styled.div`
 
 const SecondColumnIcon = styled.div`
   display: ${props => props?.display ? 'block': 'none'};
-  position: fixed;
-  bottom: 265px;
-  right: 121px;
+  position: absolute;
+  top: -31%;
+  right: 4%;
 `
 
 const ThirdColumn = styled.div`
   position: absolute;
   bottom: -254px;
-  left: 18%;
+  left: 17%;
 
   animation: promotionColumn 1.6s ease-in-out;
 
@@ -152,9 +156,9 @@ const ThirdColumn = styled.div`
 `
 
 const ThirdColumnIcon = styled.div`
-  position: fixed;
-  bottom: 53px;
-  left: 657px;
+  position: absolute;
+  bottom: 94%;
+  left: 75.5%;
   z-index: 3;
   transition: 1s;
 `
@@ -162,7 +166,7 @@ const ThirdColumnIcon = styled.div`
 const FourthColumn = styled.div`
   position: absolute;
   bottom: -150px;
-  right: 27%;
+  right: 21%;
   z-index: 2;
 
   animation: promotionColumn 1.4s ease-in-out;
@@ -174,15 +178,15 @@ const FourthColumn = styled.div`
 
 const FourthColumnIcon = styled.div`
   display: ${props => props?.display ? 'block': 'none'};
-  position: fixed;
-  bottom: 157px;
-  right: 403px;
+  position: absolute;
+  bottom: 94%;
+  right: 3%;
 `
 
 const FifthColumn = styled.div`
   position: absolute;
   bottom: -150px;
-  left: 0;
+  left: -5%;
 
   animation: promotionColumn 1.2s ease-in-out;
 
@@ -193,15 +197,15 @@ const FifthColumn = styled.div`
 
 const FifthColumnIcon = styled.div`
   display: ${props => props?.display ? 'block': 'none'};
-  position: fixed;
-  bottom: 157px;
-  left: 403px;
+  position: absolute;
+  bottom: 93%;
+  left: 76%;
 `
 
 const SixthColumn = styled.div`
   position: absolute;
-  right: 580px;
-  bottom: 74px;
+  right: 36%;
+  bottom: 22%;
 
   animation: promotionColumn 1.4s ease-in-out;
 
@@ -212,9 +216,9 @@ const SixthColumn = styled.div`
 
 const SeventhColumn = styled.div`
   position: absolute;
-  bottom: 170px;
-  left: 530px;
-
+  bottom: 48%;
+  left: 36%;
+  
   animation: promotionColumn 1.6s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
@@ -281,14 +285,22 @@ const MobileNonfung = styled.div`
 const MobileContainer = styled.div`
   display: none;
 
-  @media (min-width: 360px) and (max-width: 992px) {
+  @media (min-width: 360px) and (max-width: 596px) {
     display: block;
     position: relative;
     height: 47vh;
+    width: 400px;
+    margin-top: 30px;
+  }
+  
+  @media (min-width: 598px) and (max-width: 1020px) {
+    display: block;
+    position: relative;
+    height: 53vh;
+    width: 400px;
+    margin-top: 30px;
   }
 `
-
-
 
 const optionsColumnQuanto = {
   animationData: Quanto,
@@ -320,6 +332,16 @@ const optionsColumnNonfung = {
   autoplay: true
 };
 
+const Columns = styled.div`
+  position: relative;
+  width: 1300px;
+  height: 100%;
+  z-index: 1;
+
+  @media (min-width: 360px) and (max-width: 1020px) {
+    display: none;
+  }
+`
 
 const MainBlock = () => {
   const animationQuanto = useLottie(optionsColumnQuanto);
@@ -364,49 +386,51 @@ const MainBlock = () => {
           <Button theme={BUTTON_THEME.BLACK_BORDER} size={BUTTON_SIZE.LARGE}>Join Community</Button>
         </ButtonsContainer>
       </Content>
+      
+      <Columns>
+        <FirstColumn>
+          <Column1 />
+          <FirstColumnIcon>
+            {animationQuanto.View}
+          </FirstColumnIcon>
+        </FirstColumn>
 
-      <FirstColumn>
-        <Column1 />
-        <FirstColumnIcon>
-          {animationQuanto.View}
-        </FirstColumnIcon>
-      </FirstColumn>
+        <FifthColumn>
+          <Column5 />
+          <FifthColumnIcon display={displayBull}>
+            {animationBull.View}
+          </FifthColumnIcon>
+        </FifthColumn>
 
-      <FifthColumn>
-        <Column5 />
-        <FifthColumnIcon display={displayBull}>
-          {animationBull.View}
-        </FifthColumnIcon>
-      </FifthColumn>
+        <ThirdColumn>
+          <Column3 />
+          <ThirdColumnIcon>
+            {animationMeta.View}
+          </ThirdColumnIcon>
+        </ThirdColumn>
 
-      <ThirdColumn>
-        <Column3 />
-        <ThirdColumnIcon>
-          {animationMeta.View}
-        </ThirdColumnIcon>
-      </ThirdColumn>
+        <FourthColumn>
+          <Column4 />
+          <FourthColumnIcon display={displayNonfung}>
+            {animationNonfung.View}
+          </FourthColumnIcon>
+        </FourthColumn>
 
-      <FourthColumn>
-        <Column4 />
-        <FourthColumnIcon display={displayNonfung}>
-          {animationNonfung.View}
-        </FourthColumnIcon>
-      </FourthColumn>
+        <SecondColumn>
+          <Column2 />
+          <SecondColumnIcon display={displayDao}>
+            {animationDao.View}
+          </SecondColumnIcon>
+        </SecondColumn>
 
-      <SecondColumn>
-        <Column2 />
-        <SecondColumnIcon display={displayDao}>
-          {animationDao.View}
-        </SecondColumnIcon>
-      </SecondColumn>
+        <SixthColumn>
+          <Column6 />
+        </SixthColumn>
 
-      <SixthColumn>
-        <Column6 />
-      </SixthColumn>
-
-      <SeventhColumn>
-        <Column7 />
-      </SeventhColumn>
+        <SeventhColumn>
+          <Column7 />
+        </SeventhColumn>
+      </Columns>
 
       <MobileContainer>
         <MobileQuanto>
@@ -425,7 +449,6 @@ const MainBlock = () => {
           <NonfungIcon />
         </MobileNonfung>
       </MobileContainer>
-
     </Wrapper>
   )
 }
