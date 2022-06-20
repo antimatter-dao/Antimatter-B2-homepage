@@ -120,7 +120,7 @@ const Icons = styled.div`
 const IconLeft = styled(Icon1)`
   position: absolute;
   right: 450px;
-  bottom: 64%;
+  bottom: 220px;
   z-index: 1;
 
   animation: bounce-and-scale 0.8s;
@@ -128,16 +128,12 @@ const IconLeft = styled(Icon1)`
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .4s;
-
-  @media (min-width: 300px) and (max-width: 1020px) {
-    display: none;
-  }
 `
 
 const IconBottom = styled(Icon2)`
   position: absolute;
-  bottom: 30%;
-  right: -36px;
+  bottom: 100px;
+  right: -35px;
 
   z-index: 1;
 
@@ -151,18 +147,14 @@ const IconBottom = styled(Icon2)`
 const IconTop = styled(Icon3)`
   position: absolute;
   left: 340px;
-  bottom: 53%;
-  z-index: 1;
+  bottom: 180px;
+  z-index: 1; 
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .3s;
-
-  @media (min-width: 360px) and (max-width: 992px) {
-    display: none;
-  }
 `
 
 const IconRight = styled(Icon4)`
@@ -176,10 +168,6 @@ const IconRight = styled(Icon4)`
   animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
   animation-iteration-count: infinite;
   animation-delay: .2s;
-
-  @media (min-width: 360px) and (max-width: 992px) {
-    display: none;
-  }
 `
 
 const MainBlock = () => (
