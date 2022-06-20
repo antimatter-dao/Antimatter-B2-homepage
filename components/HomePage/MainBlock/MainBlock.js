@@ -1,23 +1,15 @@
 import styled from "styled-components";
-
-import Button, { BUTTON_SIZE, BUTTON_THEME } from "../../shared/Button/Button";
-
-import Icon1 from "../../../public/animationIcon1.svg";
-import Icon2 from "../../../public/animationIcon2.svg";
-import Icon3 from "../../../public/animationIcon3.svg";
-import Icon4 from "../../../public/animationIcon4.svg";
+import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
+import Icon from "../../../public/frame.svg";
 
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
 
   width: 100%;
   height: 100vh;
-
-  background-image: url("./backgroundImg.jpg");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
 `;
 
 const Content = styled.div`
@@ -27,6 +19,8 @@ const Content = styled.div`
   justify-content: flex-start;
   width: 100%;
   padding-top: 120px;
+  position: relative;
+  z-index: 23;
 
   @media (min-width: 360px) and (max-width: 992px) {
     padding: 120px 16px 16px;
@@ -108,68 +102,18 @@ const Description = styled.h3`
   }
 `;
 
-const Icons = styled.div`
-  height: 100%;
-  margin: 0 auto;
-  position: relative;
+const BackImg = styled(Icon)`
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
-`;
-
-const IconLeft = styled(Icon1)`
-  position: absolute;
-  right: 450px;
-  bottom: 220px;
-  z-index: 1;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-iteration-count: infinite;
-  animation-delay: 0.4s;
-`;
-
-const IconBottom = styled(Icon2)`
-  position: absolute;
-  bottom: 100px;
-  right: -35px;
-
-  z-index: 1;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-iteration-count: infinite;
-  animation-delay: 0.1s;
-`;
-
-const IconTop = styled(Icon3)`
-  position: absolute;
-  left: 340px;
-  bottom: 180px;
-  z-index: 1;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-iteration-count: infinite;
-  animation-delay: 0.3s;
-`;
-
-const IconRight = styled(Icon4)`
-  position: absolute;
-  left: 560px;
-  top: -150px;
-  z-index: 1;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
-  animation-iteration-count: infinite;
-  animation-delay: 0.2s;
-`;
+  top: -74px;
+`
 
 const MainBlock = () => (
   <Wrapper>
+    <BackImg />
+
     <Content>
       <Title>Antimatter - B2</Title>
       <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>
@@ -184,13 +128,6 @@ const MainBlock = () => (
         </a>
       </ButtonsContainer>
     </Content>
-
-    <Icons>
-      <IconLeft />
-      <IconBottom />
-      <IconTop />
-      <IconRight />
-    </Icons>
   </Wrapper>
 );
 
