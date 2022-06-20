@@ -61,6 +61,7 @@ const ButtonsContainer = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     flex-direction: column;
+    align-items: center;
     width: 100%;
 
     button {
@@ -177,7 +178,7 @@ const MainBlock = () => (
           <Button>Build on B2</Button>
         </a>
         <a href="https://t.me/antimatterchat">
-          <Button theme={BUTTON_THEME.BLACK_BORDER} size={BUTTON_SIZE.LARGE}>
+          <Button theme={BUTTON_THEME.BORDER} size={BUTTON_SIZE.LARGE}>
             Join Community
           </Button>
         </a>

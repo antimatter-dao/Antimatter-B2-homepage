@@ -66,6 +66,7 @@ const ButtonsContainer = styled.div`
 
   @media (min-width: 360px) and (max-width: 992px) {
     flex-direction: column;
+    align-items: center;
     width: 100%;
     padding: 0 16px;
   }
