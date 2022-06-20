@@ -18,7 +18,6 @@ const Wrapper = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
 `;
 
 const Content = styled.div`
