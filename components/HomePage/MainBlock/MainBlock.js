@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
+import Button, { BUTTON_SIZE, BUTTON_THEME } from "../../shared/Button/Button";
 
 import Icon1 from "../../../public/animationIcon1.svg";
 import Icon2 from "../../../public/animationIcon2.svg";
@@ -49,7 +49,6 @@ const ButtonsContainer = styled.div`
   display: flex;
   margin-top: 48px;
 
-
   button {
     &:first-child {
       margin-right: 20px;
@@ -64,7 +63,6 @@ const ButtonsContainer = styled.div`
     flex-direction: column;
     width: 100%;
 
-
     button {
       &:last-child {
         margin-top: 16px;
@@ -75,18 +73,17 @@ const ButtonsContainer = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 90px;
   line-height: 120%;
   text-align: center;
-  background: linear-gradient(90deg, #F8D448 0%, #31B047 100%);
+  background: linear-gradient(90deg, #f8d448 0%, #31b047 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-
 
   @media (min-width: 360px) and (max-width: 992px) {
     font-size: 40px;
@@ -96,12 +93,12 @@ const Title = styled.h1`
 
 const Description = styled.h3`
   margin: 0;
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
   line-height: 128%;
-  color: #F3F3F3;
+  color: #f3f3f3;
   opacity: 0.8;
 
   @media (min-width: 360px) and (max-width: 992px) {
@@ -115,7 +112,7 @@ const Icons = styled.div`
   margin: 0 auto;
   position: relative;
   bottom: 0;
-`
+`;
 
 const IconLeft = styled(Icon1)`
   position: absolute;
@@ -125,10 +122,10 @@ const IconLeft = styled(Icon1)`
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-iteration-count: infinite;
-  animation-delay: .4s;
-`
+  animation-delay: 0.4s;
+`;
 
 const IconBottom = styled(Icon2)`
   position: absolute;
@@ -139,23 +136,23 @@ const IconBottom = styled(Icon2)`
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-iteration-count: infinite;
-  animation-delay: .1s;
-`
+  animation-delay: 0.1s;
+`;
 
 const IconTop = styled(Icon3)`
   position: absolute;
   left: 340px;
   bottom: 180px;
-  z-index: 1; 
+  z-index: 1;
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-iteration-count: infinite;
-  animation-delay: .3s;
-`
+  animation-delay: 0.3s;
+`;
 
 const IconRight = styled(Icon4)`
   position: absolute;
@@ -165,10 +162,10 @@ const IconRight = styled(Icon4)`
 
   animation: bounce-and-scale 0.8s;
   animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
   animation-iteration-count: infinite;
-  animation-delay: .2s;
-`
+  animation-delay: 0.2s;
+`;
 
 const MainBlock = () => (
   <Wrapper>
@@ -176,8 +173,14 @@ const MainBlock = () => (
       <Title>Antimatter - B2</Title>
       <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>
       <ButtonsContainer>
-        <Button>Build on B2</Button>
-        <Button theme={BUTTON_THEME.BORDER} size={BUTTON_SIZE.LARGE}>Join Community</Button>
+        <a href="https://docs.antimatter.finance/b2/notice-and-disclaimer">
+          <Button>Build on B2</Button>
+        </a>
+        <a href="https://t.me/antimatterchat">
+          <Button theme={BUTTON_THEME.BLACK_BORDER} size={BUTTON_SIZE.LARGE}>
+            Join Community
+          </Button>
+        </a>
       </ButtonsContainer>
     </Content>
 
@@ -188,6 +191,6 @@ const MainBlock = () => (
       <IconRight />
     </Icons>
   </Wrapper>
-)
+);
 
-export default MainBlock
+export default MainBlock;

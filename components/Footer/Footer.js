@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Logo from "../../public/antimatterLogo.svg";
+import Link from "next/link";
 
 import Twitter from "../../public/Networks/twitter.svg";
 import GitHub from "../../public/Networks/gitHub.svg";
@@ -84,7 +85,7 @@ const ColumnTitle = styled.h3`
   margin: 0;
 `;
 
-const Link = styled.a`
+const LinkA = styled.a`
   font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -135,23 +136,25 @@ const Footer = () => {
             <Column>
               <ColumnTitle>DApps</ColumnTitle>
 
-              <Link>Quanto</Link>
-              <Link href="https://app.antimatter.finance">Bull & Bear</Link>
-              <Link href="https://invest.antimatter.finance">Structured</Link>
-              <Link href="https://nonfungible.finance">Nonfungible</Link>
-              <Link href="https://dao.antimatter.finance">DAO</Link>
+              <LinkA>Quanto</LinkA>
+              <LinkA href="https://app.antimatter.finance">Bull & Bear</LinkA>
+              <LinkA href="https://invest.antimatter.finance">Structured</LinkA>
+              <LinkA href="https://nonfungible.finance">Nonfungible</LinkA>
+              <LinkA href="https://dao.antimatter.finance">DAO</LinkA>
             </Column>
             <Column>
               <ColumnTitle>Developers</ColumnTitle>
 
-              <Link>GitHub</Link>
-              <Link href="https://docs.antimatter.finance/introduction/antimatter-overview">Documentation</Link>
+              <LinkA href="https://github.com/antimatter-dao">GitHub</LinkA>
+              <LinkA href="https://docs.antimatter.finance/introduction/antimatter-overview">Documentation</LinkA>
             </Column>
             <Column>
               <ColumnTitle>B2</ColumnTitle>
 
-              <Link>Whitepaper</Link>
-              <Link>Resources</Link>
+              <LinkA href="https://github.com/antimatter-dao/antimatter-assets/blob/main/B2%20Whitepaper.pdf ">Whitepaper</LinkA>
+              <Link href="/resources" passHref>
+                <LinkA>Resources</LinkA>
+              </Link>
             </Column>
           </BlockMenu>
         </Content>
@@ -159,7 +162,7 @@ const Footer = () => {
           <Privacy>©2022 Antimatter dao Ltd. All rights reserved. / Notice and Disclaimer</Privacy>
           <SocialNetworkBlock>
             <SocialNetworkIcon>
-              <a>
+              <a href="https://antimatterdefi.medium.com/">
                 <Social />
               </a>
             </SocialNetworkIcon>
@@ -174,7 +177,9 @@ const Footer = () => {
               </a>
             </SocialNetworkIcon>
             <SocialNetworkIcon>
-              <GitHub />
+              <a href="https://github.com/antimatter-dao">
+                <GitHub />
+              </a>
             </SocialNetworkIcon>
           </SocialNetworkBlock>
         </ContentBottom>

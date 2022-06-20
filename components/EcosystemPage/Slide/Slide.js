@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
 import ListFeature from "../../shared/ListFeature/ListFeature";
-import {WithScrollFreezing} from "../../../hook/withScrollFreezingProps";
+import { WithScrollFreezing } from "../../../hook/withScrollFreezingProps";
 import Footer from "../../Footer/Footer";
 import FadeInUp from "../../../utils/fade-in-up";
-import {useRef, useState} from "react";
+import { useRef, useState } from "react";
 import useIntersectionObserver from "../../../hook/useIntersectionObserver";
-
 
 const Wrapper = styled.div`
   display: flex;
-  height: ${props => props?.minHeight && props?.minHeight};
-  background: ${props => props?.background && props?.background};
+  height: ${(props) => props?.minHeight && props?.minHeight};
+  background: ${(props) => props?.background && props?.background};
   border-radius: 30px 30px 0 0;
   position: relative;
   justify-content: space-between;
@@ -34,37 +33,37 @@ const Content = styled.div`
     width: 100%;
     padding: 44px 16px 0 16px;
   }
-`
+`;
 
 const InfoBlock = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-`
+`;
 
 const Title = styled.h1`
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
   line-height: 120%;
-  color: ${props => props?.color && props?.color};
+  color: ${(props) => props?.color && props?.color};
   padding-bottom: 20px;
 
   @media (min-width: 360px) and (max-width: 992px) {
     font-size: 28px;
   }
-`
+`;
 
 const Description = styled.h3`
   margin: 0;
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
   line-height: 132%;
-  color: ${props => props?.color && props?.color};
+  color: ${(props) => props?.color && props?.color};
   opacity: 0.8;
   padding-bottom: 20px;
 
@@ -72,29 +71,31 @@ const Description = styled.h3`
     padding-bottom: 0;
     font-size: 18px;
   }
-`
+`;
 
 const Button = styled.button`
   border-radius: 20px;
   padding: 20px 30px;
   max-width: 344px;
+  cursor: pointer;
 
-  font-family: 'Poppins', sans-serif;
+
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   text-align: center;
 
-  margin-top: ${props => props?.marginTop ? props?.marginTop : "0px"};
-  background: ${props => props?.background ? props?.background : "#F8D448"};
-  border: ${props => props?.border ? props?.border : "none"};
-  color: ${props => props?.color ? props?.color : "#000000"};
+  margin-top: ${(props) => (props?.marginTop ? props?.marginTop : "0px")};
+  background: ${(props) => (props?.background ? props?.background : "#F8D448")};
+  border: ${(props) => (props?.border ? props?.border : "none")};
+  color: ${(props) => (props?.color ? props?.color : "#000000")};
 
   @media (min-width: 360px) and (max-width: 992px) {
     max-width: 100%;
   }
-`
+`;
 
 const ImgContainer = styled.div`
   padding-top: 140px;
@@ -105,9 +106,9 @@ const ImgContainer = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     width: 100%;
     padding-top: 72px;
-    height: ${props => props?.mobileMinHeight && props?.mobileMinHeight};
+    height: ${(props) => props?.mobileMinHeight && props?.mobileMinHeight};
   }
-`
+`;
 
 const ImgContainerSvg = styled.div`
   width: 40%;
@@ -120,29 +121,33 @@ const ImgContainerSvg = styled.div`
     width: 100%;
     height: 100vh;
   }
-`
+`;
 
 const Img = styled.img`
   position: absolute;
-  transform: translate(${props => props?.translate && props?.translate});
-  width: ${props => props?.width && props?.width};
+  transform: translate(${(props) => props?.translate && props?.translate});
+  width: ${(props) => props?.width && props?.width};
   height: 100vh;
   object-fit: cover;
 
   @media (min-width: 360px) and (max-width: 1020px) {
-    transform: translate(${props => props?.mobileTranslate && props?.mobileTranslate});
-    width: ${props => props?.mobileWidth && props?.mobileWidth};
-    height: ${props => props?.mobileMinHeight && props?.mobileMinHeight};
+    transform: translate(${(props) => props?.mobileTranslate && props?.mobileTranslate});
+    width: ${(props) => props?.mobileWidth && props?.mobileWidth};
+    height: ${(props) => props?.mobileMinHeight && props?.mobileMinHeight};
   }
 
   @media (min-width: 1401px) and (max-width: 2020px) {
-    width: ${props => props?.desktopWidth && props?.desktopWidth};
+    width: ${(props) => props?.desktopWidth && props?.desktopWidth};
   }
-`
+`;
 
-const Slide = ({slide}) => {
-  const ref = useRef(null)
-  const entry = useIntersectionObserver(ref, {})
+const Link = styled.a`
+  width: fit-content;
+`;
+
+const Slide = ({ slide }) => {
+  const ref = useRef(null);
+  const entry = useIntersectionObserver(ref, {});
   const isVisible = !!entry?.isIntersecting;
 
   return (
@@ -153,51 +158,28 @@ const Slide = ({slide}) => {
             <InfoBlock>
               <Title color={slide.colorText}>{slide.title}</Title>
               <Description color={slide.colorText}>{slide.description}</Description>
-              {
-                slide.list && (
-                  <ListFeature listFeature={slide.list} fill={slide.fill}/>
-                )
-              }
-              <Button
-                border={slide.buttonBorder}
-                background={slide.buttonBackground}
-                marginTop={slide.marginTopButton}
-                color={slide.buttonColor}
-              >
-                {slide.buttonTitle}
-              </Button>
+              {slide.list && <ListFeature listFeature={slide.list} fill={slide.fill} />}
+              <Link href={slide.href}>
+                <Button border={slide.buttonBorder} background={slide.buttonBackground} marginTop={slide.marginTopButton} color={slide.buttonColor}>
+                  {slide.buttonTitle}
+                </Button>
+              </Link>
             </InfoBlock>
           </Content>
-          {
-            slide.imgSvg ? (
-              <ImgContainerSvg>
-                {slide.imgSvg}
-              </ImgContainerSvg>
-            ) : (
-              <ImgContainer mobileMinHeight={slide.mobileMinHeight}>
-                <FadeInUp active={isVisible}>
-                  <Img
-                    src={slide.imgUrl}
-                    width={slide.widthImg}
-                    translate={slide.translate}
-                    mobileWidth={slide.mobile.widthImg}
-                    mobileMinHeight={slide.mobile.minHeight}
-                    mobileTranslate={slide.mobile.translate}
-                    desktopWidth={slide.desktopWidth}
-                  />
-                </FadeInUp>
-              </ImgContainer>
-            )
-          }
+          {slide.imgSvg ? (
+            <ImgContainerSvg>{slide.imgSvg}</ImgContainerSvg>
+          ) : (
+            <ImgContainer mobileMinHeight={slide.mobileMinHeight}>
+              <FadeInUp active={isVisible}>
+                <Img src={slide.imgUrl} width={slide.widthImg} translate={slide.translate} mobileWidth={slide.mobile.widthImg} mobileMinHeight={slide.mobile.minHeight} mobileTranslate={slide.mobile.translate} desktopWidth={slide.desktopWidth} />
+              </FadeInUp>
+            </ImgContainer>
+          )}
         </Wrapper>
-        {
-          slide.id === 7 && (
-            <Footer/>
-          )
-        }
+        {slide.id === 7 && <Footer />}
       </WithScrollFreezing>
     </>
-  )
-}
+  );
+};
 
-export default Slide
+export default Slide;

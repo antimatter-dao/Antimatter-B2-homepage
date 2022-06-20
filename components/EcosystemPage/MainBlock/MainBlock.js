@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useLottie } from "lottie-react";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
-import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
+import Button, { BUTTON_SIZE, BUTTON_THEME } from "../../shared/Button/Button";
 import Column1 from "../../../public/Columns/firstСolumn.svg";
 import Column2 from "../../../public/Columns/secondСolumn.svg";
 import Column3 from "../../../public/Columns/thirdСolumn.svg";
@@ -22,7 +22,6 @@ import BullIcon from "../../../public/Bull.svg";
 import DaoIcon from "../../../public/Dao.svg";
 import MetaIcon from "../../../public/Meta.svg";
 import NonfungIcon from "../../../public/Nonfung.svg";
-
 
 const Wrapper = styled.div`
   display: flex;
@@ -54,7 +53,6 @@ const ButtonsContainer = styled.div`
   display: flex;
   margin-top: 48px;
 
-
   button {
     &:first-child {
       margin-right: 20px;
@@ -75,7 +73,7 @@ const ButtonsContainer = styled.div`
 
 const Title = styled.h1`
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 72px;
@@ -91,7 +89,7 @@ const Title = styled.h1`
 
 const Description = styled.h3`
   margin: 0;
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 28px;
@@ -114,14 +112,14 @@ const FirstColumn = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const FirstColumnIcon = styled.div`
   position: absolute;
   bottom: 307px;
   left: 76%;
   z-index: 5555;
-`
+`;
 
 const SecondColumn = styled.div`
   position: absolute;
@@ -134,14 +132,14 @@ const SecondColumn = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const SecondColumnIcon = styled.div`
-  display: ${props => props?.display ? 'block': 'none'};
+  display: ${(props) => (props?.display ? "block" : "none")};
   position: absolute;
   top: -31%;
   right: 4%;
-`
+`;
 
 const ThirdColumn = styled.div`
   position: absolute;
@@ -153,7 +151,7 @@ const ThirdColumn = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const ThirdColumnIcon = styled.div`
   position: absolute;
@@ -161,7 +159,7 @@ const ThirdColumnIcon = styled.div`
   left: 75.5%;
   z-index: 3;
   transition: 1s;
-`
+`;
 
 const FourthColumn = styled.div`
   position: absolute;
@@ -174,14 +172,14 @@ const FourthColumn = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const FourthColumnIcon = styled.div`
-  display: ${props => props?.display ? 'block': 'none'};
+  display: ${(props) => (props?.display ? "block" : "none")};
   position: absolute;
   bottom: 94%;
   right: 3%;
-`
+`;
 
 const FifthColumn = styled.div`
   position: absolute;
@@ -193,14 +191,14 @@ const FifthColumn = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const FifthColumnIcon = styled.div`
-  display: ${props => props?.display ? 'block': 'none'};
+  display: ${(props) => (props?.display ? "block" : "none")};
   position: absolute;
   bottom: 93%;
   left: 76%;
-`
+`;
 
 const SixthColumn = styled.div`
   position: absolute;
@@ -212,19 +210,19 @@ const SixthColumn = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const SeventhColumn = styled.div`
   position: absolute;
   bottom: 48%;
   left: 36%;
-  
+
   animation: promotionColumn 1.6s ease-in-out;
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const MobileQuanto = styled.div`
   display: none;
@@ -234,9 +232,8 @@ const MobileQuanto = styled.div`
     position: absolute;
     bottom: 180px;
     left: 30px;
-
   }
-`
+`;
 
 const MobileBull = styled.div`
   display: none;
@@ -247,7 +244,7 @@ const MobileBull = styled.div`
     bottom: 29px;
     left: 14%;
   }
-`
+`;
 
 const MobileDao = styled.div`
   display: none;
@@ -258,7 +255,7 @@ const MobileDao = styled.div`
     bottom: 30px;
     right: 12%;
   }
-`
+`;
 
 const MobileMeta = styled.div`
   display: none;
@@ -269,7 +266,7 @@ const MobileMeta = styled.div`
     bottom: 140px;
     left: 38%;
   }
-`
+`;
 
 const MobileNonfung = styled.div`
   display: none;
@@ -280,7 +277,7 @@ const MobileNonfung = styled.div`
     bottom: 190px;
     right: 10%;
   }
-`
+`;
 
 const MobileContainer = styled.div`
   display: none;
@@ -292,7 +289,7 @@ const MobileContainer = styled.div`
     width: 400px;
     margin-top: 30px;
   }
-  
+
   @media (min-width: 598px) and (max-width: 1020px) {
     display: block;
     position: relative;
@@ -300,36 +297,36 @@ const MobileContainer = styled.div`
     width: 400px;
     margin-top: 30px;
   }
-`
+`;
 
 const optionsColumnQuanto = {
   animationData: Quanto,
   loop: true,
-  autoplay: true
+  autoplay: true,
 };
 
 const optionsColumnBull = {
   animationData: Bull,
   loop: true,
-  autoplay: true
+  autoplay: true,
 };
 
 const optionsColumnDao = {
   animationData: Dao,
   loop: true,
-  autoplay: true
+  autoplay: true,
 };
 
 const optionsColumnMeta = {
   animationData: Meta,
   loop: true,
-  autoplay: true
+  autoplay: true,
 };
 
 const optionsColumnNonfung = {
   animationData: Nonfung,
   loop: true,
-  autoplay: true
+  autoplay: true,
 };
 
 const Columns = styled.div`
@@ -341,7 +338,7 @@ const Columns = styled.div`
   @media (min-width: 360px) and (max-width: 1020px) {
     display: none;
   }
-`
+`;
 
 const MainBlock = () => {
   const animationQuanto = useLottie(optionsColumnQuanto);
@@ -350,77 +347,72 @@ const MainBlock = () => {
   const animationMeta = useLottie(optionsColumnMeta);
   const animationNonfung = useLottie(optionsColumnNonfung);
 
-  const [displayBull, setDisplayBull] = useState(false)
-  const [displayDao, setDisplayDao] = useState(false)
-  const [displayNonfung, setDisplayNonfung] = useState(false)
+  const [displayBull, setDisplayBull] = useState(false);
+  const [displayDao, setDisplayDao] = useState(false);
+  const [displayNonfung, setDisplayNonfung] = useState(false);
 
-  useEffect(()=> {
-    setTimeout(()=> animationQuanto.play(), 1300)
+  useEffect(() => {
+    setTimeout(() => animationQuanto.play(), 1300);
 
-    setTimeout(()=> {
-      animationBull.play()
-      setDisplayBull(true)
-    }, 1400)
+    setTimeout(() => {
+      animationBull.play();
+      setDisplayBull(true);
+    }, 1400);
 
-    setTimeout(()=> {
-      animationDao.play()
-      setDisplayDao(true)
-    }, 1500)
+    setTimeout(() => {
+      animationDao.play();
+      setDisplayDao(true);
+    }, 1500);
 
-    setTimeout(()=> animationMeta.play(), 1600)
+    setTimeout(() => animationMeta.play(), 1600);
 
-    setTimeout(()=> {
-      animationNonfung.play()
-      setDisplayNonfung(true)
-    }, 1500)
+    setTimeout(() => {
+      animationNonfung.play();
+      setDisplayNonfung(true);
+    }, 1500);
+  }, [animationQuanto, animationBull, animationNonfung, animationDao, animationMeta]);
 
-  },[animationQuanto, animationBull, animationNonfung, animationDao, animationMeta])
-
-  return(
+  return (
     <Wrapper>
       <Content>
         <Title>Antimatter - B2 Ecosystem</Title>
         <Description>Antimatter powers an ecosystem of applications on top of B2.</Description>
         <ButtonsContainer>
-          <Button>Build on B2</Button>
-          <Button theme={BUTTON_THEME.BLACK_BORDER} size={BUTTON_SIZE.LARGE}>Join Community</Button>
+          <a href="https://docs.antimatter.finance/b2/notice-and-disclaimer">
+            <Button>Build on B2</Button>
+          </a>
+          <a href="https://t.me/antimatterchat">
+            <Button theme={BUTTON_THEME.BLACK_BORDER} size={BUTTON_SIZE.LARGE}>
+              Join Community
+            </Button>
+          </a>
         </ButtonsContainer>
       </Content>
-      
+
       <Columns>
         <FirstColumn>
           <Column1 />
-          <FirstColumnIcon>
-            {animationQuanto.View}
-          </FirstColumnIcon>
+          <FirstColumnIcon>{animationQuanto.View}</FirstColumnIcon>
         </FirstColumn>
 
         <FifthColumn>
           <Column5 />
-          <FifthColumnIcon display={displayBull}>
-            {animationBull.View}
-          </FifthColumnIcon>
+          <FifthColumnIcon display={displayBull}>{animationBull.View}</FifthColumnIcon>
         </FifthColumn>
 
         <ThirdColumn>
           <Column3 />
-          <ThirdColumnIcon>
-            {animationMeta.View}
-          </ThirdColumnIcon>
+          <ThirdColumnIcon>{animationMeta.View}</ThirdColumnIcon>
         </ThirdColumn>
 
         <FourthColumn>
           <Column4 />
-          <FourthColumnIcon display={displayNonfung}>
-            {animationNonfung.View}
-          </FourthColumnIcon>
+          <FourthColumnIcon display={displayNonfung}>{animationNonfung.View}</FourthColumnIcon>
         </FourthColumn>
 
         <SecondColumn>
           <Column2 />
-          <SecondColumnIcon display={displayDao}>
-            {animationDao.View}
-          </SecondColumnIcon>
+          <SecondColumnIcon display={displayDao}>{animationDao.View}</SecondColumnIcon>
         </SecondColumn>
 
         <SixthColumn>
@@ -450,7 +442,7 @@ const MainBlock = () => {
         </MobileNonfung>
       </MobileContainer>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default MainBlock
+export default MainBlock;
