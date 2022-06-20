@@ -116,13 +116,12 @@ const Icons = styled.div`
   margin: 0 auto;
   position: relative;
   bottom: 0;
-  width: 1400px;
 `
 
 const IconLeft = styled(Icon1)`
   position: absolute;
-  left: 136px;
-  bottom: 47%;
+  right: 450px;
+  bottom: 64%;
   z-index: 1;
 
   animation: bounce-and-scale 0.8s;
@@ -138,8 +137,9 @@ const IconLeft = styled(Icon1)`
 
 const IconBottom = styled(Icon2)`
   position: absolute;
-  bottom: 20%;
-  left: 47.5%;
+  bottom: 30%;
+  right: -36px;
+
   z-index: 1;
 
   animation: bounce-and-scale 0.8s;
@@ -151,8 +151,8 @@ const IconBottom = styled(Icon2)`
 
 const IconTop = styled(Icon3)`
   position: absolute;
-  right: 18%;
-  bottom: 38.5%;
+  left: 340px;
+  bottom: 53%;
   z-index: 1;
 
   animation: bounce-and-scale 0.8s;
@@ -168,8 +168,8 @@ const IconTop = styled(Icon3)`
 
 const IconRight = styled(Icon4)`
   position: absolute;
-  right: 1.5%;
-  top: -10%;
+  left: 560px;
+  top: -150px;
   z-index: 1;
 
   animation: bounce-and-scale 0.8s;
