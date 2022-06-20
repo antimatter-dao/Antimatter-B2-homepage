@@ -52,8 +52,8 @@ const MobileMenu = () => (
       <Link href="/resources" passHref>
         <LinkA>Resources <Arrow /></LinkA>
       </Link>
-      <LinkA href="http://bas-node.antimatter.finance:4000">Explorer <Arrow /></LinkA>
-      <LinkA href="http://bas-node.antimatter.finance:5000">Faucet <Arrow /></LinkA>
+      <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank">Explorer <Arrow /></LinkA>
+      <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank">Faucet <Arrow /></LinkA>
       <LinkA>Contact <Arrow /></LinkA>
     </Links>
   </MobileMenuWrapper>

@@ -98,8 +98,8 @@ const Header = (props) => {
           <Link href="/resources" passHref>
             <LinkA>Resources</LinkA>
           </Link>
-          <LinkA href="http://bas-node.antimatter.finance:4000">Explorer</LinkA>
-          <LinkA href="http://bas-node.antimatter.finance:5000">Faucet</LinkA>
+          <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank">Explorer</LinkA>
+          <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank">Faucet</LinkA>
           <LinkA>Contact</LinkA>
         </Links>
       </Wrapper>

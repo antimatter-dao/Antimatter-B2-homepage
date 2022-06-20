@@ -56,7 +56,7 @@ export default function Ecosystem() {
       href: "https://sharkfin.antimatter.finance",
       title: "Sharkfin",
       description: "Earn varying yield based on a specified price range of the underlying asset.",
-      buttonTitle: "Launch Sharfin",
+      buttonTitle: "Launch Sharfkin",
       backgroundFill: "#FFFFFF",
       colorText: "#121212",
       fill: "black",

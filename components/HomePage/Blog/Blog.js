@@ -258,7 +258,6 @@ const Blog = ({ posts }) => {
                       <BlogButton>Read More</BlogButton>
                       <BlogDateContainer>
                         <BlogDate>{item.date}</BlogDate>
-                        <BlogDateImg src="./bitmex.jpg" />
                       </BlogDateContainer>
                     </BlogWrap>
                   </BlogInfo>
@@ -282,7 +281,6 @@ const Blog = ({ posts }) => {
                     </Link>
                     <BlogDateContainer>
                       <BlogDate>{item.date}</BlogDate>
-                      <BlogDateImg src="./bitmex.jpg" />
                     </BlogDateContainer>
                   </BlogWrap>
                 </BlogInfo>

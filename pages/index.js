@@ -26,7 +26,7 @@ const Wrapper = styled.div`
     overflow: hidden;
   }
 `;
-const sliderContent = ["Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon", "Financial support", "icon"];
+const sliderContent = ["Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon", "Financial support", "icon", "Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon"];
 
 export default function Home({ posts }) {
   return (

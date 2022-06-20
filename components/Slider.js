@@ -38,11 +38,11 @@ const SliderIconBlock = styled.div`
 
 const Slider = ({sliderContent}) => {
   return (
-    <Marquee gradient={false} speed={90} style={{ background: '#000'}}>
+    <Marquee gradient={false} speed={90} style={{ background: "#F5DA5B"}}>
       <SliderBlock>
         {sliderContent.map(item => {
           if (item === 'icon') {
-            return <SliderIconBlock ket={item}><SliderIcon/></SliderIconBlock>
+            return <SliderIconBlock key={item}><SliderIcon/></SliderIconBlock>
           }
           return <SliderTitle key={item}>{item}</SliderTitle>
         })}

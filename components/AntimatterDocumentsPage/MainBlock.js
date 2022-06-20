@@ -67,13 +67,11 @@ const Button = styled.button`
 `
 
 const InfoBlocks = styled.div`
-  position: absolute;
   width: 86%;
   display: flex;
   justify-content: space-between;
-  bottom: -180px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 108px auto 0 auto;
 
   @media (min-width: 360px) and (max-width: 992px) {
     position: relative;

@@ -109,39 +109,52 @@ const Icon = styled.div`
   height: 40px;
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+`;
+
 const StayWithUs = () => (
   <Wrapper>
     <Container>
       <Title>Stay with us</Title>
       <Content>
-        <Block>
-          <Icon>
-            <Twitter />
-          </Icon>
-          <BlockTitle>Twitter</BlockTitle>
-          <BlockDescription>Announcements and updates</BlockDescription>
-        </Block>
-        <Block>
-          <Icon>
-            <Telegram />
-          </Icon>
-          <BlockTitle>Telegram</BlockTitle>
-          <BlockDescription>Support and discussion</BlockDescription>
-        </Block>
-        <Block>
-          <Icon>
-            <Medium />
-          </Icon>
-          <BlockTitle>Medium</BlockTitle>
-          <BlockDescription>Blogs and tutorials</BlockDescription>
-        </Block>
-        <Block>
-          <Icon>
-            <Discord />
-          </Icon>
-          <BlockTitle>Discord</BlockTitle>
-          <BlockDescription>Community, support, discussion</BlockDescription>
-        </Block>
+        <Link href="https://twitter.com/antimatterdefi">
+          <Block>
+            <Icon>
+              <Twitter />
+            </Icon>
+            <BlockTitle>Twitter</BlockTitle>
+            <BlockDescription>Announcements and updates</BlockDescription>
+          </Block>
+        </Link>
+        <Link href='https://t.me/antimatterchat'>
+          <Block>
+            <Icon>
+              <Telegram />
+            </Icon>
+            <BlockTitle>Telegram</BlockTitle>
+            <BlockDescription>Support and discussion</BlockDescription>
+          </Block>
+        </Link>
+        <Link href="https://medium.com/@antimatterdefi">
+          <Block>
+            <Icon>
+              <Medium />
+            </Icon>
+            <BlockTitle>Medium</BlockTitle>
+            <BlockDescription>Blogs and tutorials</BlockDescription>
+          </Block>
+        </Link>
+
+        <Link href="https://discord.gg/P8DHHpdJTe">
+          <Block>
+            <Icon>
+              <Discord />
+            </Icon>
+            <BlockTitle>Discord</BlockTitle>
+            <BlockDescription>Community, support, discussion</BlockDescription>
+          </Block>
+        </Link>
       </Content>
     </Container>
   </Wrapper>
