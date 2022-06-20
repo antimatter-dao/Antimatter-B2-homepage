@@ -21,66 +21,6 @@ const Wrapper = styled.div`
   background-attachment: fixed;
 `;
 
-const IconLeft = styled.div`
-  position: fixed;
-  left: 13%;
-  bottom: 29%;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
-  animation-delay: .4s;
-
-  @media (min-width: 300px) and (max-width: 1020px) {
-    display: none;
-  }
-`
-
-const IconBottom = styled.div`
-  position: fixed;
-  bottom: 14%;
-  left: 47%;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
-  animation-delay: .1s;
-`
-
-const IconTop = styled.div`
-  position: fixed;
-  right: 20.5%;
-  bottom: 23.5%;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
-  animation-delay: .3s;
-
-  @media (min-width: 360px) and (max-width: 992px) {
-    display: none;
-  }
-`
-
-const IconRight = styled.div`
-  position: fixed;
-  right: 5.5%;
-  top: 33%;
-
-  animation: bounce-and-scale 0.8s;
-  animation-direction: alternate;
-  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
-  animation-iteration-count: infinite;
-  animation-delay: .2s;
-
-  @media (min-width: 360px) and (max-width: 992px) {
-    display: none;
-  }
-`
-
 const Content = styled.div`
   display: flex;
   flex-direction: column;
@@ -176,7 +116,71 @@ const Icons = styled.div`
   margin: 0 auto;
   position: relative;
   bottom: 0;
-  width: 1700px;
+  width: 1400px;
+`
+
+const IconLeft = styled(Icon1)`
+  position: absolute;
+  left: 136px;
+  bottom: 47%;
+  z-index: 1;
+
+  animation: bounce-and-scale 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+  animation-delay: .4s;
+
+  @media (min-width: 300px) and (max-width: 1020px) {
+    display: none;
+  }
+`
+
+const IconBottom = styled(Icon2)`
+  position: absolute;
+  bottom: 20%;
+  left: 47.5%;
+  z-index: 1;
+
+  animation: bounce-and-scale 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+  animation-delay: .1s;
+`
+
+const IconTop = styled(Icon3)`
+  position: absolute;
+  right: 18%;
+  bottom: 38.5%;
+  z-index: 1;
+
+  animation: bounce-and-scale 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+  animation-delay: .3s;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
+`
+
+const IconRight = styled(Icon4)`
+  position: absolute;
+  right: 1.5%;
+  top: -10%;
+  z-index: 1;
+
+  animation: bounce-and-scale 0.8s;
+  animation-direction: alternate;
+  animation-timing-function: cubic-bezier(.5, 0.05, 1, .5);
+  animation-iteration-count: infinite;
+  animation-delay: .2s;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
 `
 
 const MainBlock = () => (
@@ -191,18 +195,10 @@ const MainBlock = () => (
     </Content>
 
     <Icons>
-      <IconLeft>
-        <Icon1/>
-      </IconLeft>
-      <IconBottom>
-        <Icon2 />
-      </IconBottom>
-      <IconTop>
-        <Icon3 />
-      </IconTop>
-      <IconRight>
-        <Icon4 />
-      </IconRight>
+      <IconLeft />
+      <IconBottom />
+      <IconTop />
+      <IconRight />
     </Icons>
   </Wrapper>
 )
