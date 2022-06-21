@@ -130,24 +130,24 @@ a {
 
 @keyframes change-color {
     0% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 50%, #F8D448 99.99%, #31B047 100%);
+        background: linear-gradient(90deg, #5BB847 50%, #F8D448 99.99%);
     }
     20% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 84.9%, #31B047 100%);
+        background: linear-gradient(90deg, #5BB847 19.27%, #F8D448 89.58%);
     }
     40% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 32.81%, #F8D448 69.79%, #31B047 100%);
+        background: linear-gradient(90deg, #5BB847 0%, #F8D448 71.35%);
     }
     50% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 24.48%, #F8D448 53.13%, #31B047 100%);
+        background: linear-gradient(90deg, #5BB847 0%, #F8D448 46.35%);
     }
     60% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 10.42%, #F8D448 34.9%, #31B047 100%);
+        background: linear-gradient(90deg, #5BB847 -10%, #F8D448 32.39%);
     }
     80% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 19.79%, #31B047 100%);
+        background: linear-gradient(90deg, #5BB847 -13.91%, #F8D448 20.48%);
     }
     100% {
-        background: linear-gradient(90deg, #8FC147 0%, #74BC47 0.01%, #5BB847 0.02%, #F8D448 0.03%, #31B047 100%);
+        background: linear-gradient(0deg, #F8D448, #F8D448);
     }
 }

@@ -86,6 +86,15 @@ const Block = styled.div`
   min-height: 280px;
   max-height: 280px;
   cursor: pointer;
+  
+  &:hover{
+    
+    div{
+      animation: change-icon-color .5s ease-in-out infinite;
+      animation-direction: alternate;
+      animation-fill-mode: both;
+    }
+  }
 
   @media (min-width: 360px) and (max-width: 992px) {
     min-height: 100%;
@@ -122,12 +131,6 @@ const IconBlock = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 28px;
-
-  &:hover {
-    animation: change-icon-color .5s ease-in-out infinite;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-  }
 `;
 
 const Resources = () => (

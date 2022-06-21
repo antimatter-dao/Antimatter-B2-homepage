@@ -10,6 +10,8 @@ import Column4 from "../../../public/Columns/fourthСolumn.svg";
 import Column5 from "../../../public/Columns/fifthСolumn.svg";
 import Column6 from "../../../public/Columns/column6.svg";
 import Column7 from "../../../public/Columns/column7.svg";
+import Column8 from "../../../public/Columns/column8.svg";
+import Column9 from "../../../public/Columns/column9.svg";
 
 import Quanto from "../../../public/AnimationJson/Quanto.json";
 import Bull from "../../../public/AnimationJson/Bull.json";
@@ -106,7 +108,7 @@ const Description = styled.h3`
 const FirstColumn = styled.div`
   position: absolute;
   bottom: -40px;
-  left: -28%;
+  left: -55px;
 
   animation: promotionColumn 1.1s ease-in-out;
 
@@ -125,7 +127,7 @@ const FirstColumnIcon = styled.div`
 const SecondColumn = styled.div`
   position: absolute;
   bottom: -40px;
-  right: 0;
+  right: 300px;
   z-index: 1;
 
   animation: promotionColumn 1.3s ease-in-out;
@@ -145,7 +147,7 @@ const SecondColumnIcon = styled.div`
 const ThirdColumn = styled.div`
   position: absolute;
   bottom: -254px;
-  left: 17%;
+  left: 26%;
 
   animation: promotionColumn 1.6s ease-in-out;
 
@@ -165,7 +167,7 @@ const ThirdColumnIcon = styled.div`
 const FourthColumn = styled.div`
   position: absolute;
   bottom: -150px;
-  right: 21%;
+  right: 29%;
   z-index: 2;
 
   animation: promotionColumn 1.4s ease-in-out;
@@ -185,7 +187,7 @@ const FourthColumnIcon = styled.div`
 const FifthColumn = styled.div`
   position: absolute;
   bottom: -150px;
-  left: -5%;
+  left: 12%;
 
   animation: promotionColumn 1.2s ease-in-out;
 
@@ -203,7 +205,7 @@ const FifthColumnIcon = styled.div`
 
 const SixthColumn = styled.div`
   position: absolute;
-  right: 36%;
+  right: 42%;
   bottom: 22%;
 
   animation: promotionColumn 1.4s ease-in-out;
@@ -215,8 +217,32 @@ const SixthColumn = styled.div`
 
 const SeventhColumn = styled.div`
   position: absolute;
-  bottom: 48%;
-  left: 36%;
+  bottom: 32%;
+  left: 40%;
+
+  animation: promotionColumn 1.6s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
+`;
+
+const EighthColumn = styled.div`
+  position: absolute;
+  bottom: 12%;
+  left: 77%;
+
+  animation: promotionColumn 1.6s ease-in-out;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    display: none;
+  }
+`;
+
+const NinthColumn = styled.div`
+  position: absolute;
+  bottom: 16%;
+  left: 3%;
 
   animation: promotionColumn 1.6s ease-in-out;
 
@@ -332,7 +358,7 @@ const optionsColumnNonfung = {
 
 const Columns = styled.div`
   position: relative;
-  width: 1300px;
+  width: 1920px;
   height: 100%;
   z-index: 1;
 
@@ -423,6 +449,14 @@ const MainBlock = () => {
         <SeventhColumn>
           <Column7 />
         </SeventhColumn>
+
+        <EighthColumn>
+          <Column8 />
+        </EighthColumn>
+
+        <NinthColumn>
+          <Column9 />
+        </NinthColumn>
       </Columns>
 
       <MobileContainer>

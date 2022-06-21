@@ -43,9 +43,7 @@ const themesMap = {
     
 
     &:hover {
-      animation: change-color .7s ease-in-out infinite;
-      animation-direction: alternate;
-      animation-fill-mode: both;
+      animation: change-color 1s ease-in-out 1;
     }
   `,
 
