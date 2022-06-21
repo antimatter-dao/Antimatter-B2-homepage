@@ -102,6 +102,7 @@ const ImgContainer = styled.div`
   width: 50%;
   height: 100%;
   position: relative;
+  object-fit: cover;
 
   @media (min-width: 360px) and (max-width: 992px) {
     width: 100%;
@@ -115,7 +116,7 @@ const ImgContainerSvg = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  object-fit: contain;
+  object-fit: cover;
 
   @media (min-width: 360px) and (max-width: 992px) {
     width: 100%;
@@ -126,18 +127,12 @@ const ImgContainerSvg = styled.div`
 const Img = styled.img`
   position: absolute;
   transform: translate(${(props) => props?.translate && props?.translate});
-  width: ${(props) => props?.width && props?.width};
-  height: 100vh;
-  object-fit: cover;
+  width: 100%;
+  object-fit: contain;
 
-  @media (min-width: 360px) and (max-width: 1020px) {
-    transform: translate(${(props) => props?.mobileTranslate && props?.mobileTranslate});
-    width: ${(props) => props?.mobileWidth && props?.mobileWidth};
-    height: ${(props) => props?.mobileMinHeight && props?.mobileMinHeight};
-  }
-
-  @media (min-width: 1401px) and (max-width: 2020px) {
-    width: ${(props) => props?.desktopWidth && props?.desktopWidth};
+  @media (min-width: 1400px) and (max-width: 2500px) {
+    width: 70vw;
+    object-fit: contain;
   }
 `;
 
