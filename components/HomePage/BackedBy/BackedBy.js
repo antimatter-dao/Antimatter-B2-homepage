@@ -12,7 +12,8 @@ import Partner3 from "../../../public/huobi.svg";
 
 const Wrapper = styled.div`
   display: flex;
-  min-width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   margin: 120px auto 120px;
 
   @media (min-width: 360px) and (max-width: 992px) {

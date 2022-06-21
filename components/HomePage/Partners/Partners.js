@@ -29,12 +29,12 @@ const Title = styled.h1`
   font-size: 48px;
   line-height: 120%;
   color: #ffffff;
-  margin-bottom: 120px;
+  /* margin-bottom: 120px;
   margin-top: 80px;
-  margin-left: 120px;
+  margin-left: 120px; */
   width: 100%;
   max-width: 1200px;
-  margin-left: 80px auto auto 120px;
+  margin: 80px auto 120px auto;
 
   @media (min-width: 360px) and (max-width: 992px) {
     width: auto;
