@@ -130,6 +130,10 @@ const Img = styled.img`
   width: 100%;
   object-fit: contain;
 
+  @media (min-width: 300px) and (max-width: 1020px) {
+    transform: translate(0px, 12px);
+  }
+
   @media (min-width: 1400px) and (max-width: 2500px) {
     width: 70vw;
     object-fit: contain;
