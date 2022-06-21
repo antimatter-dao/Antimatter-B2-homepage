@@ -131,6 +131,7 @@ const BlockAntimatterB2PaperDescription = styled.span`
 `
 
 const BlockOracleLessOptionResearchPaper = styled.div`
+  position: relative;
   max-height: 442px;
   max-width: 584px;
   background: #FFFFFF;

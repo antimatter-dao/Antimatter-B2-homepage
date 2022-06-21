@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 70px);
 `;
 
 const Content = styled.div`
@@ -22,8 +22,8 @@ const Content = styled.div`
   position: relative;
   z-index: 23;
 
-  @media (min-width: 360px) and (max-width: 992px) {
-    padding: 120px 16px 16px;
+  @media (min-width: 300px) and (max-width: 992px) {
+    padding: 110px 16px 16px;
   }
 
   @media (min-width: 1080px) {
@@ -31,7 +31,7 @@ const Content = styled.div`
   }
 
   @media (min-width: 1440px) {
-    padding-top: 120px;
+    padding-top: 110px;
   }
 
   @media (min-width: 1920px) {
@@ -43,24 +43,30 @@ const ButtonsContainer = styled.div`
   display: flex;
   margin-top: 48px;
 
-  button {
-    &:first-child {
-      margin-right: 20px;
+  a {
+    button{
+      &:first-child {
+        margin-right: 20px;
 
-      @media (min-width: 360px) and (max-width: 992px) {
-        margin-right: 0;
+        @media (min-width: 360px) and (max-width: 992px) {
+          margin-right: 0;
+        }
       }
     }
   }
 
-  @media (min-width: 360px) and (max-width: 992px) {
+  @media (min-width: 300px) and (max-width: 1020px) {
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-    button {
-      &:last-child {
-        margin-top: 16px;
+    
+    a {
+      width: 100%;
+      button {
+        width: 100%;
+        &:last-child {
+          margin-top: 16px;
+        }
       }
     }
   }
@@ -80,7 +86,7 @@ const Title = styled.h1`
   background-clip: text;
   text-fill-color: transparent;
 
-  @media (min-width: 360px) and (max-width: 992px) {
+  @media (min-width: 300px) and (max-width: 992px) {
     font-size: 40px;
     padding-bottom: 23px;
   }
@@ -96,7 +102,7 @@ const Description = styled.h3`
   color: #f3f3f3;
   opacity: 0.8;
 
-  @media (min-width: 360px) and (max-width: 992px) {
+  @media (min-width: 300px) and (max-width: 992px) {
     font-size: 22px;
     text-align: center;
   }
@@ -107,7 +113,15 @@ const BackImg = styled(Icon)`
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  top: -74px;
+  top: -100px;
+
+  @media (min-width: 300px) and (max-width: 1020px) {
+    top: 0;
+  }
+
+  @media (min-width: 1920px) {
+    top: 0;
+  }
 `
 
 const MainBlock = () => (

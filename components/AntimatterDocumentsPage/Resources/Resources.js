@@ -85,6 +85,7 @@ const Block = styled.div`
   padding: 32px 24px;
   min-height: 280px;
   max-height: 280px;
+  cursor: pointer;
 
   @media (min-width: 360px) and (max-width: 992px) {
     min-height: 100%;

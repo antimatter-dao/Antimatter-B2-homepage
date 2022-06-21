@@ -14,21 +14,20 @@ a {
 * {
     box-sizing: border-box;
     font-family: 'SF Pro Display', sans-serif;
-
 }
 
 .icon-1 {
-    animation: bounce-and-scale 0.8s;
+    animation: bounce-and-scale .9s ease-in-out;
     animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-timing-function: cubic-bezier(0,.85,.6,.99);
     animation-iteration-count: infinite;
     animation-delay: 0.4s;
 }
 
 .icon-2 {
-    animation: bounce-and-scale 0.8s;
+    animation: bounce-and-scale .8s ease-in-out;
     animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-timing-function: cubic-bezier(0,.85,.6,.99);
     animation-iteration-count: infinite;
     animation-delay: 0.1s;
 }
@@ -36,7 +35,7 @@ a {
 .icon-3 {
     animation: bounce-and-scale 0.8s;
     animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-timing-function: cubic-bezier(0,.85,.6,.99);
     animation-iteration-count: infinite;
     animation-delay: 0.3s;
 }
@@ -44,7 +43,7 @@ a {
 .icon-4 {
     animation: bounce-and-scale 0.8s;
     animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0.5, 0.05, 1, 0.5);
+    animation-timing-function: cubic-bezier(0,.85,.6,.99);
     animation-iteration-count: infinite;
     animation-delay: 0.2s;
 }
@@ -58,11 +57,11 @@ a {
 }
 
 @keyframes bounce-and-scale {
-    from {
-        transform: translate(0, 0) scale(1, 1);
+    0% {
+        transform: translateY(0);
     }
-    to {
-        transform: translate(0, -60px) scale(1.1, 1);
+    100% {
+        transform: translateY(-60px);
     }
 }
 

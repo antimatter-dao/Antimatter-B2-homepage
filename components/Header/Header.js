@@ -60,6 +60,18 @@ const LinkA = styled.a`
   }
 `;
 
+const Container = styled.div`
+  min-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 300px) and (max-width: 1300px) {
+    min-width: 100%;
+  }
+`
+
 const GlobalStyle = createGlobalStyle`
   body {
     overflow: ${(props) => (props?.isMenuOpen ? "hidden" : "auto")}
@@ -82,26 +94,28 @@ const Header = (props) => {
       />
       {isMenuOpen && <MobileMenu />}
       <Wrapper>
-        <Link href="/">
-          <a>
-            <IconWrapper fill={props.fill}>
-              <Logo />
-            </IconWrapper>
-          </a>
-        </Link>
+        <Container>
+          <Link href="/">
+            <a>
+              <IconWrapper fill={props.fill}>
+                <Logo />
+              </IconWrapper>
+            </a>
+          </Link>
 
-        <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} isInversionColor={isInversionColor} />
-        <Links fill={props.fill}>
-          <Link href="/ecosystem" passHref>
-            <LinkA>Ecosystem</LinkA>
-          </Link>
-          <Link href="/resources" passHref>
-            <LinkA>Resources</LinkA>
-          </Link>
-          <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank">Explorer</LinkA>
-          <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank">Faucet</LinkA>
-          <LinkA>Contact</LinkA>
-        </Links>
+          <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} isInversionColor={isInversionColor} />
+          <Links fill={props.fill}>
+            <Link href="/ecosystem" passHref>
+              <LinkA>Ecosystem</LinkA>
+            </Link>
+            <Link href="/resources" passHref>
+              <LinkA>Resources</LinkA>
+            </Link>
+            <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank">Explorer</LinkA>
+            <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank">Faucet</LinkA>
+            <LinkA>Contact</LinkA>
+          </Links>
+        </Container>
       </Wrapper>
 
       <GlobalStyle isMenuOpen={isMenuOpen} />
