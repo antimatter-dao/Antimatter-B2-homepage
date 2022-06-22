@@ -13,6 +13,8 @@ const Content = styled.div`
     align-items: center;
     width: 100%;
   }
+
+
 `;
 
 const InfoBlock = styled.div`
@@ -36,6 +38,10 @@ const InfoBlock = styled.div`
     padding: 32px 24px;
     
     min-height: 145px;
+  }
+
+  &:last-child {
+    margin-right: 0;
   }
 `;
 
@@ -61,7 +67,9 @@ const InfoBlockDescription = styled.span`
 
 const Wrapper = styled.div`
   display: flex;
-  padding: 0 120px;
+  /* padding: 0 120px; */
+  width: 100%;
+  max-width: 1200px;
   margin: 120px auto 0;
 
   @media (min-width: 360px) and (max-width: 992px) {

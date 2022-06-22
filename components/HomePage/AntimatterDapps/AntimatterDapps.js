@@ -15,7 +15,6 @@ const Wrapper = styled.div`
 
 const Content = styled.div`
   display: flex;
-  margin: 0 120px;
   flex-direction: column;
 
   @media (min-width: 360px) and (max-width: 992px) {
