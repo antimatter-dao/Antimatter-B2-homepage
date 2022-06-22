@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
-import Icon from "../../../public/frame.svg";
+import Icon from "../../../public/backgraundImg.svg";
 
 const Wrapper = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   width: 100%;
-  height: calc(100vh - 70px);
+  height: 800px
 `;
 
 const Content = styled.div`
@@ -113,21 +113,12 @@ const BackImg = styled(Icon)`
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
-  top: -100px;
-
-  @media (min-width: 300px) and (max-width: 1020px) {
-    top: 0;
-  }
-
-  @media (min-width: 1920px) {
-    top: 0;
-  }
+  top: 0;
 `
 
 const MainBlock = () => (
   <Wrapper>
     <BackImg />
-
     <Content>
       <Title>Antimatter - B2</Title>
       <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>
