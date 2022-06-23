@@ -2,6 +2,48 @@
 <svg height="800" width="3840" viewBox="0 0 3840 800" enable-background="new 0 0 3840 800" fill="none"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
+    <style>
+        .icon-1 {
+        animation: bounce-and-scale .9s ease-in-out;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0,.85,.6,.99);
+        animation-iteration-count: infinite;
+        animation-delay: 0.4s;
+        }
+
+        .icon-2 {
+        animation: bounce-and-scale .8s ease-in-out;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0,.85,.6,.99);
+        animation-iteration-count: infinite;
+        animation-delay: 0.1s;
+        }
+
+        .icon-3 {
+        animation: bounce-and-scale 0.8s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0,.85,.6,.99);
+        animation-iteration-count: infinite;
+        animation-delay: 0.3s;
+        }
+
+        .icon-4 {
+        animation: bounce-and-scale 0.8s;
+        animation-direction: alternate;
+        animation-timing-function: cubic-bezier(0,.85,.6,.99);
+        animation-iteration-count: infinite;
+        animation-delay: 0.2s;
+        }
+
+        @keyframes bounce-and-scale {
+        0% {
+        transform: translateY(0);
+        }
+        100% {
+        transform: translateY(-60px);
+        }
+        }
+    </style>
     <g clip-path="url(#clip0_573_4773)">
         <rect width="3840" height="800" fill="#121212"/>
         <path d="M1522.72 496L1531.97 490.774C1532.01 490.774 1532.01 490.736 1531.97 490.736L1500.31 473H1500.28L1491.03 478.226C1490.99 478.226 1490.99 478.264 1491.03 478.264L1522.72 496C1522.69 496 1522.72 496 1522.72 496Z"

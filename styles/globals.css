@@ -16,38 +16,6 @@ a {
     font-family: 'SF Pro Display', sans-serif;
 }
 
-.icon-1 {
-    animation: bounce-and-scale .9s ease-in-out;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0,.85,.6,.99);
-    animation-iteration-count: infinite;
-    animation-delay: 0.4s;
-}
-
-.icon-2 {
-    animation: bounce-and-scale .8s ease-in-out;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0,.85,.6,.99);
-    animation-iteration-count: infinite;
-    animation-delay: 0.1s;
-}
-
-.icon-3 {
-    animation: bounce-and-scale 0.8s;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0,.85,.6,.99);
-    animation-iteration-count: infinite;
-    animation-delay: 0.3s;
-}
-
-.icon-4 {
-    animation: bounce-and-scale 0.8s;
-    animation-direction: alternate;
-    animation-timing-function: cubic-bezier(0,.85,.6,.99);
-    animation-iteration-count: infinite;
-    animation-delay: 0.2s;
-}
-
 .swiper-pagination-bullets-dynamic  {
   transform: translate(-93%, 40px) !important;
 }
