@@ -43,7 +43,7 @@ const themesMap = {
     
 
     &:hover {
-      animation: change-color 1s ease-in-out 1;
+      animation: change-color 0.3s ease-in-out 1;
     }
   `,
 
@@ -94,9 +94,6 @@ const Button = ({theme, size, children}) => {
     <CustomButton
       size={size || BUTTON_SIZE.SMALL}
       theme={theme || BUTTON_THEME.YELLOW}
-      // width={width}
-      // disabled={disabled}
-      // onClick={onClick}
     >
       {children}
     </CustomButton>
