@@ -108,17 +108,26 @@ const Description = styled.h3`
   }
 `;
 
-const BackImg = styled(Icon)`
+const BackImg = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-image: url("./backgraundImg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 `
 
 const MainBlock = () => (
   <Wrapper>
     <BackImg />
+    {/*<Icon style={{ position: "absolute", left: "50%", transform: "translateX(-50%)",bottom: 0, top: 0  }} />*/}
+
     <Content>
       <Title>Antimatter - B2</Title>
       <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>

@@ -111,6 +111,16 @@ const Icon = styled.div`
 
 const Link = styled.a`
   text-decoration: none;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    margin-bottom: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: initial;
+
+    min-height: initial;
+    max-height: 100%;
+  }
 `;
 
 const StayWithUs = () => (
@@ -145,7 +155,6 @@ const StayWithUs = () => (
             <BlockDescription>Blogs and tutorials</BlockDescription>
           </Block>
         </Link>
-
         <Link href="https://discord.gg/P8DHHpdJTe">
           <Block>
             <Icon>

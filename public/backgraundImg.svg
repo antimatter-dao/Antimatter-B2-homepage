@@ -1,4 +1,6 @@
-<svg width="3840" height="800" viewBox="0 0 3840 800" fill="none" xmlns="http://www.w3.org/2000/svg"
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="800" width="3840" viewBox="0 0 3840 800" enable-background="new 0 0 3840 800" fill="none"
+     xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink">
     <g clip-path="url(#clip0_573_4773)">
         <rect width="3840" height="800" fill="#121212"/>
@@ -2906,7 +2908,7 @@
             <path d="M2538 380.385L2540 379C2540 379 2539.62 379.769 2538.79 381C2538.54 381 2538 381 2538 381V380.385Z"
                   fill="white"/>
         </g>
-        <path d="M2516 368H2530V370H2515L2516 368Z" fill="white"/>
+
         <g class="icon-2">
             <circle cx="2301" cy="612" r="38.5" fill="white" stroke="black" stroke-width="3"/>
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -2942,8 +2944,6 @@
             <path d="M1931 707.385L1933 706C1933 706 1932.62 706.769 1931.79 708C1931.54 708 1931 708 1931 708V707.385Z"
                   fill="white"/>
         </g>
-
-        <path d="M1909 695H1923V697H1908L1909 695Z" fill="white"/>
 
         <g class="icon-4">
             <circle cx="1426" cy="571" r="38.5" fill="white" stroke="black" stroke-width="3"/>
