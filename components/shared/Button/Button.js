@@ -6,13 +6,13 @@ export const BUTTON_THEME = {
   TRANSPARENT: "transparent",
   BORDER: "border",
   BLACK_BORDER: "black_border",
-}
+};
 
 export const BUTTON_SIZE = {
   SMALL: "small",
   LARGE: "large",
   MEDIUM: "medium",
-}
+};
 
 const sizesMap = {
   [BUTTON_SIZE.SMALL]: css`
@@ -30,37 +30,40 @@ const sizesMap = {
 
 const themesMap = {
   [BUTTON_THEME.YELLOW]: css`
-    background: linear-gradient(90deg, #F8D448 0%, #F8D448 100%);
+
+  background-image: linear-gradient(to right, #F8D448, #FCEE21, #5BB847);
+    transition: all 0.4s ease-in-out;
+    background-image: linear-gradient(to right, #f8d448, #fcee21, #5bb847); 
     border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 120%;
     text-align: center;
-    color: #1B1A1F;
+    color: #1b1a1f;
     border: none;
-    
+    background-size: 300% 100%;
 
     &:hover {
-      animation: change-color 0.3s ease-in-out 1;
+      background-position: 100% 0;
+      transition: all 0.4s ease-in-out;
     }
   `,
 
   [BUTTON_THEME.BORDER]: css`
-    border: 1px solid #F8D448;
+    border: 1px solid #f8d448;
     background: transparent;
     border-radius: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
     line-height: 120%;
     text-align: center;
-    color: #F8D448;
+    color: #f8d448;
 
     &:hover {
-     
     }
   `,
 
@@ -68,7 +71,7 @@ const themesMap = {
     border: 1px solid #000000;
     border-radius: 20px;
     background: transparent;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -77,7 +80,6 @@ const themesMap = {
     color: #000000;
 
     &:hover {
-     
     }
   `,
 };
@@ -85,19 +87,17 @@ const themesMap = {
 const CustomButton = styled.button`
   cursor: pointer;
 
-  ${props => props.theme && themesMap[props.theme]};
-  ${props => props.size && sizesMap[props.size]};
+  ${(props) => props.theme && themesMap[props.theme]};
+  ${(props) => props.size && sizesMap[props.size]};
 `;
 
-const Button = ({theme, size, children}) => {
+const Button = ({ theme, size, children }) => {
+  console.log(theme);
   return (
-    <CustomButton
-      size={size || BUTTON_SIZE.SMALL}
-      theme={theme || BUTTON_THEME.YELLOW}
-    >
+    <CustomButton size={size || BUTTON_SIZE.SMALL} theme={theme || BUTTON_THEME.YELLOW}>
       {children}
     </CustomButton>
   );
-}
+};
 
 export default React.memo(Button);
