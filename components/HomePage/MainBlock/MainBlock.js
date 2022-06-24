@@ -43,7 +43,7 @@ const ButtonsContainer = styled.div`
   margin-top: 48px;
 
   a {
-    button{
+    button {
       &:first-child {
         margin-right: 20px;
 
@@ -58,11 +58,13 @@ const ButtonsContainer = styled.div`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    
+
     a {
       width: 100%;
+
       button {
         width: 100%;
+
         &:last-child {
           margin-top: 16px;
         }
@@ -107,25 +109,31 @@ const Description = styled.h3`
   }
 `;
 
-const MainBlock = () => (
-  <Wrapper>
-    <object data="./backgraundImg.svg" type="image/svg+xml"  style={{ position: "absolute", left: "50%", transform: "translateX(-50%)",bottom: 0, top: 0  }} />
+const MainBlock = ({ ref, loaded, onLoad }) => {
 
-    <Content>
-      <Title>Antimatter - B2</Title>
-      <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>
-      <ButtonsContainer>
-        <a href="https://docs.antimatter.finance/b2/notice-and-disclaimer">
-          <Button>Build on B2</Button>
-        </a>
-        <a href="https://t.me/antimatterchat">
-          <Button theme={BUTTON_THEME.BORDER} size={BUTTON_SIZE.LARGE}>
-            Join Community
-          </Button>
-        </a>
-      </ButtonsContainer>
-    </Content>
-  </Wrapper>
-);
+  console.log("loaded", loaded)
+  return (
+    <Wrapper>
+      <object ref={ref} onLoad={onLoad} data="./backgraundImg.svg" type="image/svg+xml"
+              style={{position: "absolute", left: "50%", transform: "translateX(-50%)", bottom: 0, top: 0}}/>
+      {loaded && (
+        <Content>
+          <Title>Antimatter - B2</Title>
+          <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>
+          <ButtonsContainer>
+            <a href="https://docs.antimatter.finance/b2/notice-and-disclaimer">
+              <Button>Build on B2</Button>
+            </a>
+            <a href="https://t.me/antimatterchat">
+              <Button theme={BUTTON_THEME.BORDER} size={BUTTON_SIZE.LARGE}>
+                Join Community
+              </Button>
+            </a>
+          </ButtonsContainer>
+        </Content>
+      )}
+    </Wrapper>
+  )
+};
 
 export default MainBlock;
