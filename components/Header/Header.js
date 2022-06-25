@@ -54,7 +54,6 @@ const LinkA = styled.a`
   opacity: 0.8;
   padding-right: 40px;
   cursor: pointer;
-  text-shadow: 2px 2px black;
 
   &:last-child {
     padding-right: 0;
@@ -63,7 +62,6 @@ const LinkA = styled.a`
 
 const Container = styled.div`
   min-width: 1200px;
-  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
