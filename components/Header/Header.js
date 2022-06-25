@@ -92,6 +92,7 @@ const ContactWrapper = styled.div`
   top: 30px;
   padding: 20px;
   right: -5%;
+  border: 1px solid black;
 `;
 
 const ContactListWrapper = styled.ul`
