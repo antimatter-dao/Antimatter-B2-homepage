@@ -38,7 +38,7 @@ const IconWrapper = styled.div`
 
   svg {
     path {
-      fill: ${(props) => (props?.fill ? "#000000" : "#F8D448")};
+      fill: ${({fill}) => (fill ? "#000000" : "#F8D448")};
     }
   }
 `;
@@ -48,7 +48,7 @@ const Links = styled.div`
   position: relative;
   display: flex;
   > a {
-    color: ${(props) => (props?.fill ? "#000000" : "#FFFFFF")} !important;
+    color: ${({fill}) => (fill ? "#000000" : "#FFFFFF")} !important;
   }
 
   @media (min-width: 360px) and (max-width: 992px) {
@@ -137,17 +137,17 @@ const ArrowWrapper = styled.div`
   transform: ${({ isContactOpen }) => (isContactOpen ? "rotate(0deg)" : "rotate(180deg)")};
 
   & svg path {
-    stroke: ${({ isContactOpen }) => (isContactOpen ? "#f8d448" : "#ffffff")};
+    stroke: ${({ isContactOpen, fill }) => (isContactOpen ? "#f8d448" : `${fill ? "#000000" : '#ffffff'}`)};
   }
 `;
 
 const GlobalStyle = createGlobalStyle`
   body {
-    overflow: ${(props) => (props?.isMenuOpen ? "hidden  !important" : "auto  !important")}
+    overflow: ${({isMenuOpen}) => (isMenuOpen ? "hidden  !important" : "auto  !important")}
   }
 `;
 
-const Header = (props) => {
+const Header = ({fill}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactOpen, setContactOpen] = useState(false);
   const ref = useRef(null);
@@ -167,7 +167,7 @@ const Header = (props) => {
 
   useOutsideClick(ref, closeContact, contactRef);
 
-  const isInversionColor = props.fill !== "white";
+  const isInversionColor = fill !== "white";
 
   return (
     <>
@@ -177,14 +177,14 @@ const Header = (props) => {
         <Container>
           <Link href="/">
             <a>
-              <IconWrapper fill={props.fill}>
+              <IconWrapper fill={fill}>
                 <Logo />
               </IconWrapper>
             </a>
           </Link>
 
           <BurgerMenu isMenuOpen={isMenuOpen} onMenuClick={onMenuClick} isInversionColor={isInversionColor} />
-          <Links fill={props.fill}>
+          <Links fill={fill}>
             <Link href="/ecosystem" passHref>
               <LinkA>Ecosystem</LinkA>
             </Link>
@@ -199,7 +199,7 @@ const Header = (props) => {
             </LinkA>
             <LinkA onClick={toggleContact} ref={contactRef}>
               Contact
-              <ArrowWrapper isContactOpen={isContactOpen}>
+              <ArrowWrapper isContactOpen={isContactOpen} fill={fill}>
                 <Arrow />
               </ArrowWrapper>
             </LinkA>
