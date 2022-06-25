@@ -163,7 +163,7 @@ const MobileMenu = () => {
               </LinkContact>
             </ListItem>
             <ListItem>
-              <LinkContact>
+              <LinkContact href="https://forum.antimatter.finance" target="_blank" rel="noreferrer">
                 <IconContact>
                   <Forum />
                 </IconContact>
