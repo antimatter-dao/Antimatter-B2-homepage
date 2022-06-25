@@ -7,8 +7,8 @@ function MyApp({ Component, pageProps }) {
   return(
     <React.Fragment>
       <Head>
-        <title>Antimatter b2</title>
-        <meta name="description" content="Antimatter b2" />
+        <title>Antimatter B2</title>
+        <meta name="description" content="Antimatter B2" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Component {...pageProps} />

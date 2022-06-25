@@ -31,7 +31,6 @@ const sizesMap = {
 const themesMap = {
   [BUTTON_THEME.YELLOW]: css`
 
-  background-image: linear-gradient(to right, #F8D448, #FCEE21, #5BB847);
     transition: all 0.4s ease-in-out;
     background-image: linear-gradient(to right, #f8d448, #fcee21, #5bb847); 
     border-radius: 20px;

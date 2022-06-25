@@ -88,9 +88,8 @@ const Block = styled.div`
 
   &:hover {
     div {
-      animation: change-icon-color 0.5s ease-in-out infinite;
-      animation-direction: alternate;
-      animation-fill-mode: both;
+      background-position: 100% 0;
+      transition: all 0.4s ease-in-out;
     }
   }
 
@@ -129,6 +128,10 @@ const IconBlock = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 28px;
+
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #31b047, #fcee21, #f8d448);
+  background-size: 300% 100%;
 `;
 
 const Link = styled.a`

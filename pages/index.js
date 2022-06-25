@@ -50,7 +50,7 @@ const BlockAnimation = styled.div`
   height: 100px;
 `
 
-const sliderContent = ["Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon", "Financial support", "icon", "Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon"];
+const sliderContent = ["Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon", "Financial Support", "icon", "Scalability", "icon", "Financial Infrastructure", "icon", "Security", "icon", "Ecosystem", "icon"];
 
 const useImageLoaded = () => {
   const [loaded, setLoaded] = useState(false)

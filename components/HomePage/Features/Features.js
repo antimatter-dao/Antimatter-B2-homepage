@@ -6,7 +6,6 @@ import Lock from "../../../public/lock.svg";
 import LinkSolid from "../../../public/linkSolid.svg";
 import Arc from "../../../public/arc.svg";
 
-
 const Wrapper = styled.div`
   display: flex;
   margin: 120px auto 0;
@@ -37,7 +36,7 @@ const Blocks = styled.div`
 
 const Title = styled.h1`
   display: flex;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 48px;
@@ -62,8 +61,8 @@ const Block = styled.div`
   padding: 32px 24px;
   min-width: 385px;
   min-height: 410px;
-  
-  &:nth-child(2){
+
+  &:nth-child(2) {
     margin: 0 20px;
 
     @media (min-width: 360px) and (max-width: 992px) {
@@ -76,27 +75,28 @@ const Block = styled.div`
     min-width: 100%;
     max-width: 100%;
   }
- 
 `;
 
 const IconBlock = styled.div`
   width: 60px;
   height: 60px;
-  background: #31B047;
   border-radius: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
 
+  transition: all 0.4s ease-in-out;
+  background-image: linear-gradient(to right, #31b047, #fcee21, #f8d448);
+  background-size: 300% 100%;
+
   &:hover {
-    animation: change-icon-color .5s ease-in-out infinite;
-    animation-direction: alternate;
-    animation-fill-mode: both;
+    background-position: 100% 0;
+    transition: all 0.4s ease-in-out;
   }
 `;
 
 const SubTitle = styled.h3`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 28px;
@@ -106,32 +106,33 @@ const SubTitle = styled.h3`
 `;
 
 const Description = styled.span`
-  font-family: 'SF Pro Display', sans-serif;
+  font-family: "SF Pro Display", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 145%;
-  color: #1B1A1F;`;
+  color: #1b1a1f;
+`;
 
 const AnimationBlock = styled.div`
   position: absolute;
   top: -111px;
   right: 20px;
   transition: 4s;
-  transform: translate(${props => props?.isVisible ? "0px, 30px": "0px 0px"});
+  transform: translate(${(props) => (props?.isVisible ? "0px, 30px" : "0px 0px")});
 
   @media (min-width: 360px) and (max-width: 992px) {
     display: none;
   }
-`
+`;
 
 const Features = () => {
   const parallaxArc = useParallax({
     translateY: [0, 60],
-    speed: 20
+    speed: 20,
   });
 
-  return(
+  return (
     <Wrapper>
       <Content>
         <Title>Features</Title>
@@ -141,27 +142,21 @@ const Features = () => {
               <Zap />
             </IconBlock>
             <SubTitle>High-speed Transactions</SubTitle>
-            <Description>
-              B2 is designed for very high transaction outputs. This is achieved by having a smaller set of validators
-            </Description>
+            <Description>B2 is designed for very high transaction outputs. This is achieved by having a smaller set of validators</Description>
           </Block>
           <Block>
             <IconBlock>
               <LinkSolid />
             </IconBlock>
             <SubTitle>On-chain Governance</SubTitle>
-            <Description>
-              A governance system let&apos;s B2 validator owners in the chain create new proposals and vote for them. Voting power is distributed based on the total delegated amount to the validator.
-            </Description>
+            <Description>A governance system let&apos;s B2 validator owners in the chain create new proposals and vote for them. Voting power is distributed based on the total delegated amount to the validator.</Description>
           </Block>
           <Block>
             <IconBlock>
               <Lock />
             </IconBlock>
             <SubTitle>Data Storage</SubTitle>
-            <Description>
-              B2 serves as a data storage of our Dapps. This way user records and transactions are stored in a decentralized way and we stay in sync with our multi-chain applications
-            </Description>
+            <Description>B2 serves as a data storage of our Dapps. This way user records and transactions are stored in a decentralized way and we stay in sync with our multi-chain applications</Description>
             <AnimationBlock ref={parallaxArc.ref}>
               <Arc />
             </AnimationBlock>
@@ -169,7 +164,7 @@ const Features = () => {
         </Blocks>
       </Content>
     </Wrapper>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;
