@@ -7,7 +7,7 @@ import GitHub from "../../public/Networks/gitHub.svg";
 import Telegram from "../../public/Networks/telegram.svg";
 import Social from "../../public/Networks/social.svg";
 
-const Wrapper = styled.div`
+const Wrapper = styled.footer`
   background: #121212;
   width: 100%;
   border-top: 1px solid #ffffff;

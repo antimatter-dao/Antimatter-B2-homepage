@@ -7,7 +7,7 @@ import BurgerMenu from "../shared/BurgerMenu";
 import MobileMenu from "./MobileMenu";
 import { LoadingBar } from "react-redux-loading-bar";
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   display: flex;
   top: 0;
   position: absolute;
@@ -54,7 +54,7 @@ const LinkA = styled.a`
   opacity: 0.8;
   padding-right: 40px;
   cursor: pointer;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
 
   &:last-child {
     padding-right: 0;
