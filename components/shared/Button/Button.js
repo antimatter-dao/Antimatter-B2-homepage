@@ -91,7 +91,6 @@ const CustomButton = styled.button`
 `;
 
 const Button = ({ theme, size, children }) => {
-  console.log(theme);
   return (
     <CustomButton size={size || BUTTON_SIZE.SMALL} theme={theme || BUTTON_THEME.YELLOW}>
       {children}

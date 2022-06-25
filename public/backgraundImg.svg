@@ -2965,9 +2965,10 @@
             <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M2302 605.5C2302 609.642 2298.64 613 2294.5 613C2290.36 613 2287 609.642 2287 605.5C2287 601.358 2290.36 598 2294.5 598C2298.64 598 2302 601.358 2302 605.5ZM2293.75 601.749H2295.25V604.749H2298.25V606.249H2295.25V609.249H2293.75V606.249H2290.75V604.749H2293.75V601.749Z"
                   fill="black"/>
+            <path d="M2313 618V617H2308V618H2313Z" fill="black"/>
+
         </g>
 
-        <path d="M2313 618V617H2308V618H2313Z" fill="black"/>
 
         <g class="icon-3">
             <circle cx="1918" cy="699" r="34.5" fill="white" stroke="black" stroke-width="3"/>
@@ -3001,9 +3002,10 @@
             <path fill-rule="evenodd" clip-rule="evenodd"
                   d="M1427 564.5C1427 568.642 1423.64 572 1419.5 572C1415.36 572 1412 568.642 1412 564.5C1412 560.358 1415.36 557 1419.5 557C1423.64 557 1427 560.358 1427 564.5ZM1418.75 560.749H1420.25V563.749H1423.25V565.249H1420.25V568.249H1418.75V565.249H1415.75V563.749H1418.75V560.749Z"
                   fill="black"/>
+            <path d="M1438 577V576H1433V577H1438Z" fill="black"/>
         </g>
 
-        <path d="M1438 577V576H1433V577H1438Z" fill="black"/>
+        
     </g>
     <defs>
         <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
