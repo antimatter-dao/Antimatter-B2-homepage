@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Button, {BUTTON_SIZE, BUTTON_THEME} from "../../shared/Button/Button";
+import Button, { BUTTON_SIZE, BUTTON_THEME } from "../../shared/Button/Button";
 
 const Wrapper = styled.div`
   display: flex;
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   width: 100%;
-  height: 800px
+  height: 800px;
 `;
 
 const Content = styled.div`
@@ -110,11 +110,9 @@ const Description = styled.h3`
 `;
 
 const MainBlock = ({ ref, loaded, onLoad }) => {
-
   return (
     <Wrapper>
-      <object ref={ref} onLoad={onLoad} data="./backgraundImg.svg" type="image/svg+xml"
-              style={{position: "absolute", left: "50%", transform: "translateX(-50%)", bottom: 0, top: 0}}/>
+      <object ref={ref} onLoad={onLoad} data="./backgraundImg.svg" type="image/svg+xml" style={{ pointerEvents: "none", position: "absolute", left: "50%", transform: "translateX(-50%)", bottom: 0, top: 0 }} />
       {loaded && (
         <Content>
           <Title>Antimatter - B2</Title>
@@ -132,7 +130,7 @@ const MainBlock = ({ ref, loaded, onLoad }) => {
         </Content>
       )}
     </Wrapper>
-  )
+  );
 };
 
 export default MainBlock;
