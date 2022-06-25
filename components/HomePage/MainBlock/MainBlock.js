@@ -111,7 +111,6 @@ const Description = styled.h3`
 
 const MainBlock = ({ ref, loaded, onLoad }) => {
 
-  console.log("loaded", loaded)
   return (
     <Wrapper>
       <object ref={ref} onLoad={onLoad} data="./backgraundImg.svg" type="image/svg+xml"

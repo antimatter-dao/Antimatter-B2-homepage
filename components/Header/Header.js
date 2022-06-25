@@ -5,7 +5,7 @@ import { useState } from "react";
 import Logo from "../../public/logo.svg";
 import BurgerMenu from "../shared/BurgerMenu";
 import MobileMenu from "./MobileMenu";
-import {LoadingBar} from "react-redux-loading-bar";
+import { LoadingBar } from "react-redux-loading-bar";
 
 const Wrapper = styled.div`
   display: flex;
@@ -54,6 +54,7 @@ const LinkA = styled.a`
   opacity: 0.8;
   padding-right: 40px;
   cursor: pointer;
+  text-shadow: 1px 1px black;
 
   &:last-child {
     padding-right: 0;
@@ -62,6 +63,7 @@ const LinkA = styled.a`
 
 const Container = styled.div`
   min-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -70,7 +72,7 @@ const Container = styled.div`
   @media (min-width: 300px) and (max-width: 1300px) {
     min-width: 100%;
   }
-`
+`;
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -89,9 +91,7 @@ const Header = (props) => {
 
   return (
     <>
-      <LoadingBar
-        style={{ zIndex: 5, backgroundColor: "#000000", position: "fixed" }}
-      />
+      <LoadingBar style={{ zIndex: 5, backgroundColor: "#000000", position: "fixed" }} />
       {isMenuOpen && <MobileMenu />}
       <Wrapper>
         <Container>
@@ -111,8 +111,12 @@ const Header = (props) => {
             <Link href="/resources" passHref>
               <LinkA>Resources</LinkA>
             </Link>
-            <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank">Explorer</LinkA>
-            <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank">Faucet</LinkA>
+            <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank">
+              Explorer
+            </LinkA>
+            <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank">
+              Faucet
+            </LinkA>
             <LinkA>Contact</LinkA>
           </Links>
         </Container>
