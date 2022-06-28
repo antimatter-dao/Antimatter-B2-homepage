@@ -33,6 +33,7 @@ export default function Ecosystem() {
       buttonColor: "#F8D448",
     },
     {
+      href:"https://dov.antimatter.finance/#/defi",
       title: "Defi Option Vault",
       description: "Covered call and put strategies to generate yield from the option market.",
       buttonTitle: "Launch Defi Option Vault",
