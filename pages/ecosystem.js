@@ -76,7 +76,7 @@ export default function Ecosystem() {
       desktopWidth: "77vw",
     },
     {
-      href: "https://invest.antimatter.finance",
+      href: "https://invest.antimatter.finance/#/dual-invest ",
       title: "Dual Investment",
       description: "Sell options while earning a high interest rate.",
       buttonTitle: "Launch Dual Investment",
