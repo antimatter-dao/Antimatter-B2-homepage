@@ -10,12 +10,12 @@ function MyApp({ Component, pageProps }) {
     <React.Fragment>
       <Head>
         <title>Antimatter B2</title>
-        <meta name="description" content="Antimatter powers an ecosystem of products for auctions. Build, design, connect, collect and trade all kinds of assets, tokens nad NFTs across multiple blockchains" />
+        <meta name="description" content="B2 is a Binance Application Sidechain built to facilitate Antimatter's structure products and derivatives. Nonfungible Finance, Structured (Dual Investment, Sharkfin…), DAO and Quanto make up Antimatter's ecosystem." />
         <link rel="icon" href="/favicon.ico" />
 
         <meta property="og:title" content="Antimatter B2" />
         <meta property="og:url" content="https://antimatter.finance/" />
-        <meta property="og:description" content="Antimatter powers an ecosystem of products for auctions. Build, design, connect, collect and trade all kinds of assets, tokens nad NFTs across multiple blockchains" />
+        <meta property="og:description" content="B2 is a Binance Application Sidechain built to facilitate Antimatter's structure products and derivatives. Nonfungible Finance, Structured (Dual Investment, Sharkfin…), DAO and Quanto make up Antimatter's ecosystem." />
         <meta property="og:image" content='https://antimatter.finance/antimatter_social.jpg' />
         <meta property="og:image:width" content={600} />
         <meta property="og:image:height" content={1146} />
@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }) {
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:site" content="https://antimatter.finance/" />
         <meta property="twitter:title" content="Antimatter B2" />
-        <meta property="twitter:description" content="Antimatter powers an ecosystem of products for auctions. Build, design, connect, collect and trade all kinds of assets, tokens nad NFTs across multiple blockchains"  />
+        <meta property="twitter:description" content="B2 is a Binance Application Sidechain built to facilitate Antimatter's structure products and derivatives. Nonfungible Finance, Structured (Dual Investment, Sharkfin…), DAO and Quanto make up Antimatter's ecosystem."  />
         <meta property="twitter:image" content='https://antimatter.finance/antimatter_social.jpg' />
       </Head>
       <Component {...pageProps} />
