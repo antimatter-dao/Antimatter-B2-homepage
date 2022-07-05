@@ -254,7 +254,7 @@ const MainBlock = () => {
         <BlockAntimatterB2Paper>
           <BlockAntimatterB2PaperTitle>Antimatter B2 Paper</BlockAntimatterB2PaperTitle>
           <BlockAntimatterB2PaperDescription>This whitepaper expands the role of B2 in the Antimatter ecosystem, laying out the key advancements for B2 to power a suite of decentralized financial infrastructure for DeFi.</BlockAntimatterB2PaperDescription>
-          <Link href="https://docs.antimatter.finance/introduction/antimatter-overview">
+          <Link href="https://github.com/antimatter-dao/antimatter-assets/blob/main/B2%20Whitepaper.pdf ">
             <BlockButton>Download Whitepaper</BlockButton>
           </Link>
         </BlockAntimatterB2Paper>
