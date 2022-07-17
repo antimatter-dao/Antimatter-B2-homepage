@@ -32,6 +32,8 @@ const Container = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     margin: 0 16px;
     width: 100%;
+    display: flex;
+    align-items: center;
   }
 `;
 
@@ -45,6 +47,7 @@ const Content = styled.div`
   @media (min-width: 360px) and (max-width: 992px) {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -186,39 +189,6 @@ const BlogButton = styled.button`
   }
 `;
 
-const BlogDateImg = styled.img`
-  width: 96px;
-  height: 15px;
-`;
-
-const SlideContainer = styled.div``;
-
-const MobileButton = styled.button`
-  max-width: 390px;
-  min-width: initial;
-  width: 100%;
-  height: 59px;
-
-  margin-top: 66px !important;
-
-  background: linear-gradient(90deg, #f8d448 0%, #f8d448 100%);
-  border-radius: 20px;
-  font-family: "Poppins", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 120%;
-  text-align: center;
-  color: #1b1a1f;
-  border: none;
-
-  &:hover {
-    animation: change-color 0.7s ease-in-out infinite;
-    animation-direction: alternate;
-    animation-fill-mode: both;
-  }
-`;
-
 const modules = [Navigation, Pagination];
 
 const Blog = ({ posts }) => {
@@ -245,7 +215,6 @@ const Blog = ({ posts }) => {
             }}
             slidesPerView={1.1}
             spaceBetween={10}
-            // slidesOffsetBefore={0}
           >
             {posts.map((item) => (
               <SwiperSlide key={item.id}>
