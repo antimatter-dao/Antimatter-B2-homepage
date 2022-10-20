@@ -191,10 +191,10 @@ const Header = ({fill}) => {
             <Link href="/resources" passHref>
               <LinkA>Resources</LinkA>
             </Link>
-            <LinkA href="http://explorer-test.antimatter.finance" target="_blank" rel="noreferrer">
+            <LinkA href="https://bastest-explorer.antimatter.finance" target="_blank" rel="noreferrer">
               Explorer
             </LinkA>
-            <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank" rel="noreferrer">
+            <LinkA href="https://bastest-faucet.antimatter.finance/" target="_blank" rel="noreferrer">
               Faucet
             </LinkA>
             <LinkA onClick={toggleContact} ref={contactRef}>
