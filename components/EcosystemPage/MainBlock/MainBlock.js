@@ -76,13 +76,13 @@ const ButtonsContainer = styled.div`
 
 const LinkContainer = styled.div`
   display: grid;
-  margin-top: 48px;
+  margin-top: 30px;
   grid-template-columns: 1fr 1fr;
   grid-gap: 0 30px;
   font-weight: 500;
   font-size: 20px;
   .app-item {
-    padding: 14px 0;
+    padding: 12px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
