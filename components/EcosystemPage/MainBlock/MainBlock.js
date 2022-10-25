@@ -74,6 +74,45 @@ const ButtonsContainer = styled.div`
   }
 `;
 
+const LinkContainer = styled.div`
+  display: grid;
+  margin-top: 48px;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0 30px;
+  font-weight: 500;
+  font-size: 20px;
+  .app-item {
+    padding: 14px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 342px;
+    border-bottom: 1px solid #000000;
+    cursor: pointer;
+    .p-text {
+      display: flex;
+      align-items: center;
+      p {
+        margin-right: 20px;
+        max-width: 50px;
+        text-align: center;
+        font-weight: 600;
+        font-size: 10px;
+        line-height: 120%;
+      }
+    }
+    &:hover {
+      color: #F3BA2F;
+      svg path {
+        fill: #F3BA2F;
+      }
+    }
+  }
+  @media (min-width: 360px) and (max-width: 992px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
 const Title = styled.h1`
   margin: 0;
   font-family: "Poppins", sans-serif;
@@ -378,6 +417,25 @@ const MainBlock = () => {
   const [displayDao, setDisplayDao] = useState(false);
   const [displayNonfung, setDisplayNonfung] = useState(false);
 
+  const appLinks = [
+    {
+      name: "B2-AMM swap",
+      link: undefined,
+    },
+    {
+      name: "Build on B2",
+      link: "https://docs.antimatter.finance/b2/notice-and-disclaimer",
+    },
+    {
+      name: "B2 NFT",
+      link: undefined,
+    },
+    {
+      name: "Join Community",
+      link: "https://t.me/antimatterchat",
+    },
+  ];
+
   useEffect(() => {
     setTimeout(() => animationQuanto.play(), 1300);
 
@@ -397,14 +455,44 @@ const MainBlock = () => {
       animationNonfung.play();
       setDisplayNonfung(true);
     }, 1500);
-  }, [animationQuanto, animationBull, animationNonfung, animationDao, animationMeta]);
+  }, [
+    animationQuanto,
+    animationBull,
+    animationNonfung,
+    animationDao,
+    animationMeta,
+  ]);
 
   return (
     <Wrapper>
       <Content>
         <Title>Antimatter - B2 Ecosystem</Title>
-        <Description>Antimatter powers an ecosystem of applications on top of B2.</Description>
-        <ButtonsContainer>
+        <Description>
+          Antimatter powers an ecosystem of applications on top of B2.
+        </Description>
+        <LinkContainer>
+          {appLinks.map((item) => (
+            <a href={item.link} className="app-item" key={item.name}>
+              {item.name}
+              <div className="p-text">
+                <p>{item.link ? '' : 'Coming Soon'}</p>
+                <svg
+                  width="15"
+                  height="16"
+                  viewBox="0 0 15 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M15 8.00572C15 8.76781 13.5286 9.43843 11.3321 9.80423C10.7954 9.89741 10.2996 10.1683 9.91505 10.5786C9.5305 10.9889 9.27661 11.5178 9.18928 12.0905C8.83214 14.4339 8.22141 16 7.50355 16C6.7857 16 6.1607 14.4339 5.81427 12.0905C5.72746 11.5176 5.47374 10.9883 5.08909 10.578C4.70444 10.1676 4.20842 9.89686 3.67142 9.80423C1.47142 9.42319 0 8.77162 0 8.00572C0 7.23982 1.47141 6.56537 3.66784 6.20338C4.20463 6.11021 4.70037 5.83932 5.08493 5.42903C5.46948 5.01874 5.72337 4.48983 5.8107 3.91712C6.16784 1.5699 6.78214 0 7.5 0C8.21786 0 8.84285 1.5699 9.1857 3.91712C9.27405 4.48937 9.52828 5.01769 9.91265 5.42778C10.297 5.83788 10.7922 6.10912 11.3286 6.20338C13.5286 6.56537 15 7.23601 15 8.00572Z"
+                    fill="black"
+                  />
+                </svg>
+              </div>
+            </a>
+          ))}
+        </LinkContainer>
+        {/* <ButtonsContainer>
           <a href="https://docs.antimatter.finance/b2/notice-and-disclaimer">
             <Button>Build on B2</Button>
           </a>
@@ -413,7 +501,7 @@ const MainBlock = () => {
               Join Community
             </Button>
           </a>
-        </ButtonsContainer>
+        </ButtonsContainer> */}
       </Content>
 
       <Columns>
@@ -424,7 +512,9 @@ const MainBlock = () => {
 
         <FifthColumn>
           <Column5 />
-          <FifthColumnIcon display={displayBull}>{animationBull.View}</FifthColumnIcon>
+          <FifthColumnIcon display={displayBull}>
+            {animationBull.View}
+          </FifthColumnIcon>
         </FifthColumn>
 
         <ThirdColumn>
@@ -434,12 +524,16 @@ const MainBlock = () => {
 
         <FourthColumn>
           <Column4 />
-          <FourthColumnIcon display={displayNonfung}>{animationNonfung.View}</FourthColumnIcon>
+          <FourthColumnIcon display={displayNonfung}>
+            {animationNonfung.View}
+          </FourthColumnIcon>
         </FourthColumn>
 
         <SecondColumn>
           <Column2 />
-          <SecondColumnIcon display={displayDao}>{animationDao.View}</SecondColumnIcon>
+          <SecondColumnIcon display={displayDao}>
+            {animationDao.View}
+          </SecondColumnIcon>
         </SecondColumn>
 
         <SixthColumn>
