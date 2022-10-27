@@ -18,9 +18,10 @@ const Wrapper = styled.div`
 export default function Ecosystem() {
   const slideArray = [
     {
+      href:"https://test.quantocrypto.org/",
       title: "BNB Quanto Derivatives",
       description: "An onchain decentralized perpetual contract with underlying  in BNB, but the instrument is settled in other crypto.",
-      buttonTitle: "Coming Soon",
+      buttonTitle: "Launch Quanto",
       backgroundFill: "#121212",
       colorText: "#FFFFFF",
       imgSvg: <Candles />,

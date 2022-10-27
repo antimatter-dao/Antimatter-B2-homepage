@@ -118,7 +118,7 @@ const MainBlock = ({ ref, loaded, onLoad }) => {
           <Title>Antimatter - B2</Title>
           <Description>A BNB Chain Sidechain for the scalability of financial infrastructure</Description>
           <ButtonsContainer>
-            <a href="https://docs.antimatter.finance/b2/notice-and-disclaimer">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfftf9pBch1Tmvt-Jvk_ageIMksQsOb06yTCVo2lfwEBKKCmg/viewform">
               <Button>Build on B2</Button>
             </a>
             <a href="https://t.me/antimatterchat">

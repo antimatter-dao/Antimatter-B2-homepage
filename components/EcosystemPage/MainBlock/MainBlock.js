@@ -420,20 +420,22 @@ const MainBlock = () => {
   const appLinks = [
     {
       name: "B2-AMM swap",
-      link: undefined,
+      testNet: true,
+      link: 'https://test.b2swap.com/',
     },
     {
       name: "Build on B2",
-      link: "https://docs.antimatter.finance/b2/notice-and-disclaimer",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSfftf9pBch1Tmvt-Jvk_ageIMksQsOb06yTCVo2lfwEBKKCmg/viewform",
     },
     {
       name: "B2 NFT",
-      link: undefined,
+      testNet: true,
+      link: 'https://b2nft.xyz/',
     },
-    {
-      name: "Join Community",
-      link: "https://t.me/antimatterchat",
-    },
+    // {
+    //   name: "Join Community",
+    //   link: "https://t.me/antimatterchat",
+    // },
   ];
 
   useEffect(() => {
@@ -475,7 +477,7 @@ const MainBlock = () => {
             <a href={item.link} className="app-item" key={item.name}>
               {item.name}
               <div className="p-text">
-                <p>{item.link ? '' : 'Coming Soon'}</p>
+                <p>{item.testNet ? 'Testnet' : ''}</p>
                 <svg
                   width="15"
                   height="16"
