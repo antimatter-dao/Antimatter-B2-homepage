@@ -6,7 +6,6 @@ import MainBlock from "../components/EcosystemPage/MainBlock/MainBlock";
 import Slide from "../components/EcosystemPage/Slide/Slide";
 import Candles from "../public/candles.svg";
 import { WithScrollFreezing } from "../hook/withScrollFreezingProps";
-import { useRef, useState } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,105 +14,9 @@ const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
 `;
-const HomeWrapper = styled.div`
-  display: flex;
-  height: ${(props) => props?.minHeight && props?.minHeight};
-  background: ${(props) => props?.background && props?.background};
-  border-radius: 30px 30px 0 0;
-  position: relative;
-  justify-content: space-between;
-  overflow: hidden;
-
-  @media (min-width: 360px) and (max-width: 992px) {
-    flex-direction: column;
-    height: max-content;
-  }
-`;
 
 export default function Ecosystem() {
-  const ref = useRef(null);
-
-  const firstPage = {
-    href:"https://dov.antimatter.finance/#/defi",
-    title: "Defi Option Vault",
-    description: "Covered call and put strategies to generate yield from the option market.",
-    buttonTitle: "Launch Defi Option Vault",
-    backgroundFill: "#F0F1F3",
-    colorText: "#121212",
-    imgUrl: "./Screenshots/OptionValueScreenshot.png",
-    id: 2,
-    translate: `20px, -13px`,
-    minHeight: "100vh",
-    mobileMinHeight: "62vh",
-    marginTopButton: "32px",
-    widthImg: "63vw",
-    mobile: {
-      translate: `0px,50px`,
-      widthImg: "100%",
-      minHeight: "49vh",
-    },
-    desktopWidth: "67vw",
-  }
   const slideArray = [
-    {
-      href:"https://test.quantocrypto.org/",
-      title: "BNB Quanto Derivatives",
-      description: "An onchain decentralized perpetual contract with underlying  in BNB, but the instrument is settled in other crypto.",
-      buttonTitle: "Launch Quanto",
-      backgroundFill: "#121212",
-      colorText: "#FFFFFF",
-      imgSvg: <Candles />,
-      id: 1,
-      minHeight: "100vh",
-      mobileMinHeight: "max-content",
-      marginTopButton: "32px",
-      buttonBackground: "transparent",
-      buttonBorder: "1px solid #F8D448",
-      buttonColor: "#F8D448",
-    },
-    // {
-    //   href:"https://dov.antimatter.finance/#/defi",
-    //   title: "Defi Option Vault",
-    //   description: "Covered call and put strategies to generate yield from the option market.",
-    //   buttonTitle: "Launch Defi Option Vault",
-    //   backgroundFill: "#F0F1F3",
-    //   colorText: "#121212",
-    //   imgUrl: "./Screenshots/OptionValueScreenshot.png",
-    //   id: 2,
-    //   translate: `20px, -13px`,
-    //   minHeight: "100vh",
-    //   mobileMinHeight: "62vh",
-    //   marginTopButton: "32px",
-    //   widthImg: "63vw",
-    //   mobile: {
-    //     translate: `0px,50px`,
-    //     widthImg: "100%",
-    //     minHeight: "49vh",
-    //   },
-    //   desktopWidth: "67vw",
-    // },
-    {
-      href: "https://sharkfin.antimatter.finance",
-      title: "Sharkfin",
-      description: "Earn varying yield based on a specified price range of the underlying asset.",
-      buttonTitle: "Launch Sharkfin",
-      backgroundFill: "#FFFFFF",
-      colorText: "#121212",
-      fill: "black",
-      list: ["Guaranteed rate of return of at least the amount invested, and a possible gain.", "Weekly cycles with redemption at maturity. The higher the settlement price the higher the APR.", "Ethereum and Bitcoin as underlying assets. Invest $BTC, $ETH or $USDT."],
-      imgUrl: "./Screenshots/SharkfinScreenshot.png",
-      id: 3,
-      translate: `30px, -20px`,
-      minHeight: "100vh",
-      mobileMinHeight: "50vh",
-      widthImg: "70vw",
-      mobile: {
-        translate: `0px, 32px`,
-        widthImg: "100%",
-        minHeight: "39vh",
-      },
-      desktopWidth: "77vw",
-    },
     {
       href: "https://invest.antimatter.finance/#/dual-invest ",
       title: "Dual Investment",
@@ -135,6 +38,65 @@ export default function Ecosystem() {
         minHeight: "43vh",
       },
       desktopWidth: "68vw",
+    },
+    {
+      href:"https://test.quantocrypto.org/",
+      title: "BNB Quanto Derivatives",
+      description: "An onchain decentralized perpetual contract with underlying  in BNB, but the instrument is settled in other crypto.",
+      buttonTitle: "Launch Quanto",
+      backgroundFill: "#121212",
+      colorText: "#FFFFFF",
+      imgSvg: <Candles />,
+      id: 1,
+      minHeight: "100vh",
+      mobileMinHeight: "max-content",
+      marginTopButton: "32px",
+      buttonBackground: "transparent",
+      buttonBorder: "1px solid #F8D448",
+      buttonColor: "#F8D448",
+    },
+    {
+      href:"https://dov.antimatter.finance/#/defi",
+      title: "Defi Option Vault",
+      description: "Covered call and put strategies to generate yield from the option market.",
+      buttonTitle: "Launch Defi Option Vault",
+      backgroundFill: "#F0F1F3",
+      colorText: "#121212",
+      imgUrl: "./Screenshots/OptionValueScreenshot.png",
+      id: 2,
+      translate: `20px, -13px`,
+      minHeight: "100vh",
+      mobileMinHeight: "62vh",
+      marginTopButton: "32px",
+      widthImg: "63vw",
+      mobile: {
+        translate: `0px,50px`,
+        widthImg: "100%",
+        minHeight: "49vh",
+      },
+      desktopWidth: "67vw",
+    },
+    {
+      href: "https://sharkfin.antimatter.finance",
+      title: "Sharkfin",
+      description: "Earn varying yield based on a specified price range of the underlying asset.",
+      buttonTitle: "Launch Sharkfin",
+      backgroundFill: "#FFFFFF",
+      colorText: "#121212",
+      fill: "black",
+      list: ["Guaranteed rate of return of at least the amount invested, and a possible gain.", "Weekly cycles with redemption at maturity. The higher the settlement price the higher the APR.", "Ethereum and Bitcoin as underlying assets. Invest $BTC, $ETH or $USDT."],
+      imgUrl: "./Screenshots/SharkfinScreenshot.png",
+      id: 3,
+      translate: `30px, -20px`,
+      minHeight: "100vh",
+      mobileMinHeight: "50vh",
+      widthImg: "70vw",
+      mobile: {
+        translate: `0px, 32px`,
+        widthImg: "100%",
+        minHeight: "39vh",
+      },
+      desktopWidth: "77vw",
     },
     {
       href: "https://app.antimatter.finance",
@@ -209,19 +171,11 @@ export default function Ecosystem() {
       <Wrapper>
         <WithScrollFreezing isChainBlock={true}>
           <Header fill={"white"} />
-          <Slide slide={firstPage} />
+          <MainBlock />
         </WithScrollFreezing>
-        {slideArray.map((slide, idx) => {
-          if (idx ===0 ) {
-            return <WithScrollFreezing>
-                        <HomeWrapper mobileMinHeight={firstPage.mobileMinHeight} background={firstPage.backgroundFill} minHeight={firstPage.minHeight} ref={ref}>
-                          <MainBlock />
-                        </HomeWrapper>
-                      </WithScrollFreezing>
-          }
+        {slideArray.map((slide) => {
           return <Slide key={slide.id} slide={slide} />;
         })}
-
       </Wrapper>
     </ParallaxProvider>
   );
