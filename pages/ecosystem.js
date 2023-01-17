@@ -6,6 +6,7 @@ import MainBlock from "../components/EcosystemPage/MainBlock/MainBlock";
 import Slide from "../components/EcosystemPage/Slide/Slide";
 import Candles from "../public/candles.svg";
 import { WithScrollFreezing } from "../hook/withScrollFreezingProps";
+import { useRef, useState } from "react";
 
 const Wrapper = styled.div`
   display: flex;
@@ -14,8 +15,45 @@ const Wrapper = styled.div`
   position: relative;
   overflow: hidden;
 `;
+const HomeWrapper = styled.div`
+  display: flex;
+  height: ${(props) => props?.minHeight && props?.minHeight};
+  background: ${(props) => props?.background && props?.background};
+  border-radius: 30px 30px 0 0;
+  position: relative;
+  justify-content: space-between;
+  overflow: hidden;
+
+  @media (min-width: 360px) and (max-width: 992px) {
+    flex-direction: column;
+    height: max-content;
+  }
+`;
 
 export default function Ecosystem() {
+  const ref = useRef(null);
+
+  const firstPage = {
+    href:"https://dov.antimatter.finance/#/defi",
+    title: "Defi Option Vault",
+    description: "Covered call and put strategies to generate yield from the option market.",
+    buttonTitle: "Launch Defi Option Vault",
+    backgroundFill: "#F0F1F3",
+    colorText: "#121212",
+    imgUrl: "./Screenshots/OptionValueScreenshot.png",
+    id: 2,
+    translate: `20px, -13px`,
+    minHeight: "100vh",
+    mobileMinHeight: "62vh",
+    marginTopButton: "32px",
+    widthImg: "63vw",
+    mobile: {
+      translate: `0px,50px`,
+      widthImg: "100%",
+      minHeight: "49vh",
+    },
+    desktopWidth: "67vw",
+  }
   const slideArray = [
     {
       href:"https://test.quantocrypto.org/",
@@ -33,27 +71,27 @@ export default function Ecosystem() {
       buttonBorder: "1px solid #F8D448",
       buttonColor: "#F8D448",
     },
-    {
-      href:"https://dov.antimatter.finance/#/defi",
-      title: "Defi Option Vault",
-      description: "Covered call and put strategies to generate yield from the option market.",
-      buttonTitle: "Launch Defi Option Vault",
-      backgroundFill: "#F0F1F3",
-      colorText: "#121212",
-      imgUrl: "./Screenshots/OptionValueScreenshot.png",
-      id: 2,
-      translate: `20px, -13px`,
-      minHeight: "100vh",
-      mobileMinHeight: "62vh",
-      marginTopButton: "32px",
-      widthImg: "63vw",
-      mobile: {
-        translate: `0px,50px`,
-        widthImg: "100%",
-        minHeight: "49vh",
-      },
-      desktopWidth: "67vw",
-    },
+    // {
+    //   href:"https://dov.antimatter.finance/#/defi",
+    //   title: "Defi Option Vault",
+    //   description: "Covered call and put strategies to generate yield from the option market.",
+    //   buttonTitle: "Launch Defi Option Vault",
+    //   backgroundFill: "#F0F1F3",
+    //   colorText: "#121212",
+    //   imgUrl: "./Screenshots/OptionValueScreenshot.png",
+    //   id: 2,
+    //   translate: `20px, -13px`,
+    //   minHeight: "100vh",
+    //   mobileMinHeight: "62vh",
+    //   marginTopButton: "32px",
+    //   widthImg: "63vw",
+    //   mobile: {
+    //     translate: `0px,50px`,
+    //     widthImg: "100%",
+    //     minHeight: "49vh",
+    //   },
+    //   desktopWidth: "67vw",
+    // },
     {
       href: "https://sharkfin.antimatter.finance",
       title: "Sharkfin",
@@ -171,11 +209,19 @@ export default function Ecosystem() {
       <Wrapper>
         <WithScrollFreezing isChainBlock={true}>
           <Header fill={"white"} />
-          <MainBlock />
+          <Slide slide={firstPage} />
         </WithScrollFreezing>
-        {slideArray.map((slide) => {
+        {slideArray.map((slide, idx) => {
+          if (idx ===0 ) {
+            return <WithScrollFreezing>
+                        <HomeWrapper mobileMinHeight={firstPage.mobileMinHeight} background={firstPage.backgroundFill} minHeight={firstPage.minHeight} ref={ref}>
+                          <MainBlock />
+                        </HomeWrapper>
+                      </WithScrollFreezing>
+          }
           return <Slide key={slide.id} slide={slide} />;
         })}
+
       </Wrapper>
     </ParallaxProvider>
   );
