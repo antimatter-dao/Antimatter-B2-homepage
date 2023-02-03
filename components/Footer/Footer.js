@@ -172,7 +172,7 @@ const Footer = () => {
               </a>
             </SocialNetworkIcon>
             <SocialNetworkIcon>
-              <a href="t.me/antimatterdefi">
+              <a href="https://t.me/antimatterchat">
                 <Telegram />
               </a>
             </SocialNetworkIcon>
