@@ -421,7 +421,7 @@ const MainBlock = () => {
     {
       name: "B2-AMM swap",
       testNet: true,
-      link: 'https://test.b2swap.com/',
+      link: 'https://swap.antimatter.finance/#/swap',
     },
     {
       name: "Build on B2",
