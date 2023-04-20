@@ -116,7 +116,7 @@ const MobileMenu = () => {
             Resources <Arrow />
           </LinkA>
         </Link>
-        <LinkA href="http://bas-node.antimatter.finance:4000" target="_blank" rel="noreferrer">
+        <LinkA href="https://b2-explorer.antimatter.finance/" target="_blank" rel="noreferrer">
           Explorer <Arrow />
         </LinkA>
         <LinkA href="http://bas-node.antimatter.finance:5000" target="_blank" rel="noreferrer">

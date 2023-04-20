@@ -38,7 +38,7 @@ const IconWrapper = styled.div`
 
   svg {
     path {
-      fill: ${({fill}) => (fill ? "#000000" : "#F8D448")};
+      fill: ${({ fill }) => (fill ? "#000000" : "#F8D448")};
     }
   }
 `;
@@ -48,7 +48,7 @@ const Links = styled.div`
   position: relative;
   display: flex;
   > a {
-    color: ${({fill}) => (fill ? "#000000" : "#FFFFFF")} !important;
+    color: ${({ fill }) => (fill ? "#000000" : "#FFFFFF")} !important;
   }
 
   @media (min-width: 360px) and (max-width: 992px) {
@@ -143,11 +143,11 @@ const ArrowWrapper = styled.div`
 
 const GlobalStyle = createGlobalStyle`
   body {
-    overflow: ${({isMenuOpen}) => (isMenuOpen ? "hidden  !important" : "auto  !important")}
+    overflow: ${({ isMenuOpen }) => (isMenuOpen ? "hidden  !important" : "auto  !important")}
   }
 `;
 
-const Header = ({fill}) => {
+const Header = ({ fill }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isContactOpen, setContactOpen] = useState(false);
   const ref = useRef(null);
@@ -191,7 +191,7 @@ const Header = ({fill}) => {
             <Link href="/resources" passHref>
               <LinkA>Resources</LinkA>
             </Link>
-            <LinkA href="https://bastest-explorer.antimatter.finance" target="_blank" rel="noreferrer">
+            <LinkA href="https://b2-explorer.antimatter.finance/" target="_blank" rel="noreferrer">
               Explorer
             </LinkA>
             <LinkA href="https://bastest-faucet.antimatter.finance/" target="_blank" rel="noreferrer">
