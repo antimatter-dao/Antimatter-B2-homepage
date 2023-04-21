@@ -424,13 +424,17 @@ const MainBlock = () => {
       link: 'https://swap.antimatter.finance/#/swap',
     },
     {
-      name: "Build on B2",
-      link: "https://docs.google.com/forms/d/e/1FAIpQLSfftf9pBch1Tmvt-Jvk_ageIMksQsOb06yTCVo2lfwEBKKCmg/viewform",
+      name: "B2 Random",
+      link: 'https://random.antimatter.finance/',
     },
     {
       name: "B2 NFT",
       testNet: true,
       link: 'https://b2nft.xyz/',
+    },
+    {
+      name: "Build on B2",
+      link: "https://docs.google.com/forms/d/e/1FAIpQLSfftf9pBch1Tmvt-Jvk_ageIMksQsOb06yTCVo2lfwEBKKCmg/viewform",
     },
     // {
     //   name: "Join Community",
