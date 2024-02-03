@@ -1,9 +1,9 @@
-import {useEffect, useRef, useState} from "react";
-import styled, {createGlobalStyle} from "styled-components";
+import { useEffect, useRef, useState } from "react";
+import styled, { createGlobalStyle } from "styled-components";
 import { format } from "date-fns";
-import {ParallaxProvider} from "react-scroll-parallax";
-import {parse} from "rss-to-json";
-import {parse as htmlParse} from "node-html-parser";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { parse } from "rss-to-json";
+import { parse as htmlParse } from "node-html-parser";
 import { useLottie } from "lottie-react";
 
 import Slider from "../components/Slider";
@@ -81,31 +81,31 @@ const optionsLoader = {
   loop: true,
 };
 
-export default function Home({posts}) {
-  const [ref, loaded, onLoad ] = useImageLoaded()
+export default function Home({ posts }) {
+  const [ref, loaded, onLoad] = useImageLoaded()
   const animationLoader = useLottie(optionsLoader);
 
   return (
     <ParallaxProvider>
       <Wrapper>
-        {!loaded &&(
+        {!loaded && (
           <Loading>
             <BlockAnimation>
               {animationLoader.View}
             </BlockAnimation>
           </Loading>
         )}
-        <Header/>
-        <MainBlock ref={ref} loaded={loaded} onLoad={onLoad}/>
-        <Slider sliderContent={sliderContent}/>
-        <InformationAboutB2/>
-        <AboutB2/>
-        <Features/>
-        <AntimatterDapps/>
-        <BackedBy/>
-        <Partners/>
-        <Blog posts={posts}/>
-        <Footer/>
+        <Header />
+        <MainBlock ref={ref} loaded={loaded} onLoad={onLoad} />
+        <Slider sliderContent={sliderContent} />
+        <InformationAboutB2 />
+        <AboutB2 />
+        <Features />
+        <AntimatterDapps />
+        <BackedBy />
+        <Partners />
+        <Blog posts={posts} />
+        <Footer />
       </Wrapper>
       <GlobalStyle loaded={loaded} />
     </ParallaxProvider>
@@ -122,7 +122,7 @@ const mapRss = (posts) => {
 };
 
 export async function getServerSideProps(context) {
-  const rss = await parse("https://medium.com/feed/@antimatterdefi");
+  const rss = await parse("https://medium.com/@bitunebtc/feed");
   const posts = rss.items.slice(0, 6);
   const mappedPosts = posts.map((post) => {
     const html = htmlParse(post.content);

@@ -34,7 +34,7 @@ export default function AntimatterDocuments({ posts }) {
 }
 
 export async function getServerSideProps(context) {
-  const rss = await parse("https://medium.com/feed/@antimatterdefi");
+  const rss = await parse("https://medium.com/@bitunebtc/feed");
   const posts = rss.items.slice(0, 6);
   const mappedPosts = posts.map((post) => {
     const html = htmlParse(post.content);
