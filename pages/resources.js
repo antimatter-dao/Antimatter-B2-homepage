@@ -18,14 +18,14 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-export default function AntimatterDocuments({ posts }) {
+export default function AntimatterDocuments() {
   return (
     <ParallaxProvider>
       <Wrapper>
         <Header fill={"white"} />
         <MainBlock />
         <Resources />
-        <Blog posts={posts} />
+        {/* <Blog posts={posts} /> */}
         <StayWithUs />
         <Footer />
       </Wrapper>
@@ -33,25 +33,25 @@ export default function AntimatterDocuments({ posts }) {
   );
 }
 
-export async function getServerSideProps(context) {
-  const rss = await parse("https://medium.com/@bitunebtc/feed");
-  const posts = rss.items.slice(0, 6);
-  const mappedPosts = posts.map((post) => {
-    const html = htmlParse(post.content);
-    const img = html.querySelector("img").getAttribute("src");
-    const description = html.querySelector("p").textContent;
+// export async function getServerSideProps(context) {
+//   const rss = await parse("https://medium.com/@bitunebtc/feed");
+//   const posts = rss.items.slice(0, 6);
+//   const mappedPosts = posts.map((post) => {
+//     const html = htmlParse(post.content);
+//     const img = html.querySelector("img").getAttribute("src");
+//     const description = html.querySelector("p").textContent;
 
-    return {
-      title: post.title,
-      date: format(new Date(post.published), "LLL d, yyyy"),
-      img,
-      link: post.link,
-      description,
-    };
-  });
-  return {
-    props: {
-      posts: JSON.parse(JSON.stringify(mappedPosts)),
-    },
-  };
-}
+//     return {
+//       title: post.title,
+//       date: format(new Date(post.published), "LLL d, yyyy"),
+//       img,
+//       link: post.link,
+//       description,
+//     };
+//   });
+//   return {
+//     props: {
+//       posts: JSON.parse(JSON.stringify(mappedPosts)),
+//     },
+//   };
+// }
